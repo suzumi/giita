@@ -20,6 +20,7 @@
 <style>
 .navbar-default {
     background-color: inherit !important;
+    margin-bottom: 0;
 }
 .blue-knowledge-list {
     padding: 0;
@@ -86,6 +87,11 @@
 }
 .snippet-form-tag {
     margin-bottom: 15px;
+}
+.snippet-form-wrapper {
+    min-width: 800px;
+    padding: 20px 15px 30px;
+    background-color: #f8faf7;
 }
 </style>
 </head>

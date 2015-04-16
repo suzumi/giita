@@ -33,6 +33,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-info pull-right">投稿する</button>
+                        </div>
+                    </div>
                 </form>
             {{--</div>--}}
         </div>
