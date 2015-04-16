@@ -17,6 +17,67 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+.navbar-default {
+    background-color: inherit !important;
+}
+.blue-knowledge-list {
+    padding: 0;
+    margin: 40px 0;
+}
+.blue-knowledge-list > li {
+    display: table;
+    padding: 10px 0;
+    width: 100%;
+    border-top: 1px #ccc solid;
+    list-style: none;
+}
+.blue-knowledge-list > li:first-child {
+    border-top: none;
+}
+.blue-knowledge-list-info {
+    display: table-cell;
+    padding-left: 16px;
+    width: 100%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.blue-knowledge-list-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #337ab7;
+    line-height: 24px;
+    text-decoration: none;
+}
+.blue-knowledge-list-title:hover,
+.blue-knowledge-list-title:visited {
+    color: #685987;
+}
+.blue-knowledge-list-thumb {
+    display: table-cell;
+    width: 50px;
+    height: 50px;
+}
+.blue-knowledge-list-name {
+    float: right;
+    margin: 0 0 0 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}
+.blue-knowledge-list-date {
+    float: right;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}
+.btn-post {
+    margin-bottom: 20px;
+}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
@@ -49,6 +110,7 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/auth/login') }}">ログイン</a></li>
+                    <li><a href="{{ url('/auth/register') }}">レジスター</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
