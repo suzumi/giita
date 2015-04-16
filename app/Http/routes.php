@@ -14,7 +14,7 @@
 //Route::get('/', 'WelcomeController@index');
 
 Route::get('/', 'HomeController@index');
-
+Route::resource('snippet', 'SnippetController');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -77,6 +77,16 @@
 .btn-post {
     margin-bottom: 20px;
 }
+.snippet-form-title {
+    margin-bottom: 15px;
+}
+.snippet-form-title input {
+    height: 56px;
+    font-size: 28px;
+}
+.snippet-form-tag {
+    margin-bottom: 15px;
+}
 </style>
 </head>
 <body>

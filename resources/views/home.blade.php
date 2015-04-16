@@ -4,7 +4,7 @@
     <div class="container article-container">
         <div class="row">
             <div class="col-sm-9">
-                <a href="" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
+                <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
                         <li class="active"><a href="#newarraival" data-toggle="tab">新着</a></li>
