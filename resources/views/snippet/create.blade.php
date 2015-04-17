@@ -29,8 +29,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6 snippet-body">
-                                    <div class="snippet-form-body-preview-panel">
-                                        <h2>ここがプレビューです</h2>
+                                    <div class="snippet-form-body-preview-panel" id="snippet-preview">
                                     </div>
                                 </div>
                             </div>
