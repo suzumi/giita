@@ -24,7 +24,7 @@
                             <div class="snippet-body-wrapper clearfix">
                                 <div class="col-sm-6 snippet-body">
                                     <div class="snippet-form-body-panel">
-                                        {!! Form::textarea('raw_body', null, ['class' => 'form-control snippet-form-body']) !!}
+                                        {!! Form::textarea('raw_body', null, ['class' => 'form-control snippet-form-body', 'id' => 'snippet-body']) !!}
                                         {{--<textarea class="form-control snippet-form-body"></textarea>--}}
                                     </div>
                                 </div>
