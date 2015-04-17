@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <div class="container article-container">
+    <div class="container snippet-container">
         <div class="row">
             <div class="col-sm-9">
                 <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>

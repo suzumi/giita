@@ -21,14 +21,16 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="snippet-form-body-panel">
-                                    <textarea class="form-control snippet-form-body-"></textarea>
+                            <div class="snippet-body-wrapper clearfix">
+                                <div class="col-sm-6 snippet-body">
+                                    <div class="snippet-form-body-panel">
+                                        <textarea class="form-control snippet-form-body"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="snippet-form-body-preview-panel">
-                                    //
+                                <div class="col-sm-6 snippet-body">
+                                    <div class="snippet-form-body-preview-panel">
+                                        <h2>ここがプレビューです</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>

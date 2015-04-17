@@ -19,3 +19,8 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+	Route::get('test', 'SnippetController@test');
+	Route::post('preview', 'SnippetController@preview');
+});

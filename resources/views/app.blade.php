@@ -20,7 +20,11 @@
 <style>
 .navbar-default {
     background-color: inherit !important;
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
+}
+
+.snippet-container {
+    padding: 15px 0;
 }
 .blue-knowledge-list {
     padding: 0;
@@ -93,10 +97,25 @@
     padding: 20px 15px 30px;
     background-color: #f8faf7;
 }
+.snippet-body-wrapper {
+    margin-bottom: 15px;
+}
+.snippet-form-body {
+    min-height: 440px;
+    width: 100%;
+}
+.snippet-body {
+    min-height: 440px;
+    background-color: #fff;
+    padding: 0;
+}
+.u-mb0 {
+    margin-bottom: 0 !important;
+}
 </style>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top u-mb0">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
