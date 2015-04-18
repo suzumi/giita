@@ -1,9 +1,10 @@
-;(function (w) {
+;(function(w) {
+    "use strict";
 
     w.app = w.app || {};
 
     app.Snippet = function() {
-        this.$preview = $("#snippet-body");
+        this.$snippetBody = $("#snippet-body");
 
         this._initialize();
     };
@@ -17,7 +18,10 @@
                 }
             });
 
-            this.$preview.keyup(function() {
+            this._preview();
+        },
+        _preview: function() {
+            this.$snippetBody.keypress(function() {
 
                 var text = $('textarea[name="raw_body"]').val();
                 $.ajax({
