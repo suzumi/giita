@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\snippet;
+
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +32,8 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+        $snippets = Snippet::all();
+        return view('home')->with(compact('snippets'));
 	}
 
 }

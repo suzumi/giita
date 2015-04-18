@@ -2,14 +2,17 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Snippet;
 use Illuminate\Http\Request;
 
 class SnippetController extends Controller
 {
 
-    public function __construct()
+    private $snippet;
+
+    public function __construct(Snippet $snippet)
     {
+        $this->snippet = $snippet;
         $this->middleware('auth');
     }
 
@@ -20,7 +23,8 @@ class SnippetController extends Controller
      */
     public function index()
     {
-        //
+        $snippets = $this->snippet->all();
+        return view('home')->with(compact('snippets'));
     }
 
     /**
@@ -38,10 +42,13 @@ class SnippetController extends Controller
      *
      * @return Response
      */
-    public function store($markdown)
+    public function store(Request $request)
     {
-        $parser = new \cebe\markdown\GithubMarkdown();
-        return $parser->parse($markdown);
+        $input =  $request->all();
+        $this->snippet->fill($input);
+        $this->snippet->save();
+
+        return redirect()->to('/');
     }
 
     /**

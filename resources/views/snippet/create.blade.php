@@ -4,11 +4,11 @@
     <div class="snippet-form-wrapper">
         <div class="container-fluid">
             {{--<div class="row">--}}
-            {!! Form::open(['url' => 'api/preview', 'method' => 'post']) !!}
+            {!! Form::open(['route' => 'snippet.store']) !!}
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="snippet-form-title">
-                                <input placeholder="タイトル" class="form-control" type="text">
+                                {!! Form::input('text', 'title', null, ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                             <div class="snippet-body-wrapper clearfix">
                                 <div class="col-sm-6 snippet-body">
                                     <div class="snippet-form-body-panel">
-                                        {!! Form::textarea('raw_body', null, ['class' => 'form-control snippet-form-body', 'id' => 'snippet-body']) !!}
+                                        {!! Form::textarea('body', null, ['class' => 'form-control snippet-form-body', 'id' => 'snippet-body']) !!}
                                         {{--<textarea class="form-control snippet-form-body"></textarea>--}}
                                     </div>
                                 </div>

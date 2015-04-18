@@ -23,7 +23,7 @@
         _preview: function() {
             this.$snippetBody.keypress(function() {
 
-                var text = $('textarea[name="raw_body"]').val();
+                var text = $('textarea[name="body"]').val();
                 $.ajax({
                     'type': 'POST',
                     'url': '/api/preview',
