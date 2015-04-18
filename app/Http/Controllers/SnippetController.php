@@ -34,6 +34,10 @@ class SnippetController extends Controller
      */
     public function create()
     {
+        $isWeeklyReport = \Session::get('isWeeklyReport');
+        if($isWeeklyReport) {
+            return view('snippet/create')->with(compact('isWeeklyReport'));
+        }
         return view('snippet/create');
     }
 
@@ -98,6 +102,17 @@ class SnippetController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * 「週報」リンクから遷移してきたときにパラメータを渡すためリダイレクトする
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function weeklyReportTemplate()
+    {
+        $isWeeklyReport = true;
+        return redirect()->to('/snippet/create')->with(compact('isWeeklyReport'));
     }
 
 }

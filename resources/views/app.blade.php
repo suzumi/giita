@@ -104,6 +104,7 @@
 .snippet-form-body {
     min-height: 500px;
     width: 100%;
+    resize:none;
 }
 .snippet-body {
     min-height: 500px;
@@ -168,6 +169,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="">マイページ</a></li>
                             <li><a href="">プロフィール変更</a></li>
+                            <li><a href="/weekly-report">週報</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url('/auth/logout') }}">ログアウト</a></li>
                         </ul>

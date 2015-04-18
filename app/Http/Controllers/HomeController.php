@@ -32,7 +32,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $snippets = Snippet::all();
+        $snippets = Snippet::all()->sortByDesc('created_at');
         return view('home')->with(compact('snippets'));
 	}
 
