@@ -59,7 +59,12 @@ class SnippetController extends Controller
      */
     public function show($id)
     {
-        //
+        $parser = new \cebe\markdown\GithubMarkdown();
+
+        $snippet = $this->snippet->find($id);
+        $markdown = $parser->parse($snippet->body);
+        $snippet['body'] = $markdown;
+        return view('snippet.show')->with(compact('snippet'));
     }
 
     /**

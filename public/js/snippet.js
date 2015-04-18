@@ -12,23 +12,23 @@
     app.Snippet.prototype = {
         _initialize: function() {
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
             this._preview();
         },
         _preview: function() {
             this.$snippetBody.keypress(function() {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
 
                 var text = $('textarea[name="body"]').val();
                 $.ajax({
                     'type': 'POST',
                     'url': '/api/preview',
                     'data': {
-                        'raw_body': text
+                        'body': text
                     }
                 })
                 .done(function (data) {

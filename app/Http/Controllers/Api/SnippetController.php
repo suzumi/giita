@@ -13,6 +13,6 @@ class SnippetController extends Controller
     {
         $input = $request->all();
         $parser = new \cebe\markdown\GithubMarkdown();
-        return $parser->parse($input['raw_body']);
+        return $parser->parse($input['body']);
     }
 }

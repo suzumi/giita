@@ -114,6 +114,14 @@
     max-height: 500px;
     overflow: auto;
 }
+
+.item-header {
+    background-color: #31a5cc;
+    color: #fff;
+    margin-bottom: 30px;
+    height: 200px;
+}
+
 .u-mb0 {
     margin-bottom: 0 !important;
 }
