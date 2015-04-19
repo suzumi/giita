@@ -32,9 +32,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-//        $snippets = Snippet::with('tags')->get()->sortByDesc('created_at');
-        $snippet = new Snippet();
-        $snippets = $snippet->getTags();
+        $snippets = Snippet::with('tags')->get()->sortByDesc('created_at');
+//        $snippet = new Snippet();
+//        $snippets = $snippet->getTags();
 //        dd($snippet);
 //        dd($snippet->getTags());
         return view('home')->with(compact('snippets'));

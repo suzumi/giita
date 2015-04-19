@@ -10,13 +10,13 @@ class Snippet extends Model {
         'body'
     ];
 
-    public function getTags()
-    {
-        return DB::table('snippets')
-            ->leftjoin('snippet_tag', 'snippets.id', '=', 'snippet_tag.snippet_id')
-            ->leftjoin('tags', 'tags.id', '=', 'snippet_tag.tag_id')
-            ->get();
-    }
+//    public function getTags()
+//    {
+//        return DB::table('snippets')
+//            ->leftjoin('snippet_tag', 'snippets.id', '=', 'snippet_tag.snippet_id')
+//            ->leftjoin('tags', 'tags.id', '=', 'snippet_tag.tag_id')
+//            ->get();
+//    }
 
     public function tags()
     {
