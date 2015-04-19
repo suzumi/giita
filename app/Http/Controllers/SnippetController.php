@@ -35,8 +35,9 @@ class SnippetController extends Controller
     public function create()
     {
         $isWeeklyReport = \Session::get('isWeeklyReport');
+        $template = \Session::get('template');
         if($isWeeklyReport) {
-            return view('snippet/create')->with(compact('isWeeklyReport'));
+            return view('snippet/create')->with(compact('isWeeklyReport', 'template'));
         }
         return view('snippet/create');
     }
@@ -112,7 +113,28 @@ class SnippetController extends Controller
     public function weeklyReportTemplate()
     {
         $isWeeklyReport = true;
-        return redirect()->to('/snippet/create')->with(compact('isWeeklyReport'));
+        $template = <<< EOS
+
+## 取組中の課題
+---
+
+## 使用したリソース
+---
+
+## 作業完了までの見積値と実績値
+---
+
+## 現場で取り組んでいる内容
+---
+
+## 個人的に学習している内容
+---
+
+## 所感
+---
+EOS;
+
+        return redirect()->to('/snippet/create')->with(compact('isWeeklyReport', 'template'));
     }
 
 }

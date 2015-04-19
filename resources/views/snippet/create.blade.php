@@ -10,7 +10,7 @@
                             <div class="snippet-form-title">
                                 @if(isset($isWeeklyReport))
                                 {{--{!! Form::input('text', 'title', "週報  あなたの名前＜＞" , ['required', 'class' => 'form-control']) !!}--}}
-                                    <input type="text" name="title" class="form-control" value="＜週報＞  あなたの名前＜{{date('Y/m/d')}}＞">
+                                    <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞">
                                 @else
                                     {!! Form::input('text', 'title', null, ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
                                 @endif
@@ -31,15 +31,7 @@
                                     <div class="snippet-form-body-panel">
                                         @if(isset($isWeeklyReport))
                                             <textarea class="form-control snippet-form-body" id="snippet-body" name="body">
-## 今日の進捗
----
-
-## 明日の予定
----
-
-## 所感
----
-
+                                                {{{ $template }}}
                                             </textarea>
                                         @else
                                             {!! Form::textarea('body', null, ['class' => 'form-control snippet-form-body', 'id' => 'snippet-body']) !!}

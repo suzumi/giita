@@ -11,6 +11,9 @@
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:300' rel='stylesheet' type='text/css'>
+    {{--<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>--}}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,6 +22,12 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
+    .brand-logo {
+        color: #2ec4cc !important;
+        font-family: 'Comfortaa', cursive;
+        /*font-family: 'Quicksand', sans-serif;*/
+        font-size: 35px;
+    }
 .navbar-default {
     background-color: inherit !important;
     /*margin-bottom: 0;*/
@@ -120,7 +129,17 @@
     background-color: #31a5cc;
     color: #fff;
     margin-bottom: 30px;
-    height: 200px;
+    padding: 30px 0;
+    height: 250px;
+}
+
+.stock-list {
+    border-right: 1px solid #fff;
+}
+
+.count-num {
+    font-size: 22px;
+    font-weight: 500;
 }
 
 .u-mb0 {
@@ -140,8 +159,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
-                Blue Knowledge
+            <a class="navbar-brand brand-logo" href="/">
+                Biita
             </a>
         </div>
 
