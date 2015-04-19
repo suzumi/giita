@@ -3,13 +3,11 @@
 @section('content')
     <div class="snippet-form-wrapper">
         <div class="container-fluid">
-            {{--<div class="row">--}}
             {!! Form::open(['route' => 'snippet.store']) !!}
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="snippet-form-title">
                                 @if(isset($isWeeklyReport))
-                                {{--{!! Form::input('text', 'title', "週報  あなたの名前＜＞" , ['required', 'class' => 'form-control']) !!}--}}
                                     <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞">
                                 @else
                                     {!! Form::input('text', 'title', null, ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
@@ -20,7 +18,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="snippet-form-tag">
-                                <input placeholder="タグ" class="form-control" type="text">
+                                <select class="js-tags-autocomplete form-control" multiple="multiple"></select>
                             </div>
                         </div>
                     </div>
@@ -51,7 +49,6 @@
                         </div>
                     </div>
             {!! Form::close() !!}
-            {{--</div>--}}
         </div>
     </div>
 @endsection

@@ -1,5 +1,4 @@
 ;(function(w) {
-    "use strict";
 
     w.app = w.app || {};
 
@@ -12,7 +11,17 @@
     app.Snippet.prototype = {
         _initialize: function() {
 
+            this._tagAutocomplete();
             this._preview();
+        },
+        _tagAutocomplete: function () {
+
+            var tags = [{id: 0, text: 'Scala'},{id: 1, text: 'PHP'},{id: 2, text: 'WordPress'},{id: 3, text: '週報'}];
+            $(".js-tags-autocomplete").select2({
+                placeholder: "タグを選択してください",
+                data: tags
+            });
+
         },
         _preview: function() {
             this.$snippetBody.keypress(function() {
