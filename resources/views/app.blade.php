@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Laravel</title>
+    <title>Biita</title>
 
+    <link href="{{ asset('/css/glanceyear.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
@@ -22,19 +23,21 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
-    .brand-logo {
-        color: #2ec4cc !important;
-        font-family: 'Comfortaa', cursive;
-        /*font-family: 'Quicksand', sans-serif;*/
-        font-size: 35px;
-    }
+.brand-logo {
+    color: #2ec4cc !important;
+    font-family: 'Comfortaa', cursive;
+    /*font-family: 'Quicksand', sans-serif;*/
+    font-size: 35px;
+}
 .navbar-default {
     background-color: inherit !important;
     /*margin-bottom: 0;*/
 }
-
+.img-profile-icon{
+    height: 28px;
+}
 .snippet-container {
-    padding: 15px 0;
+    padding: 15px 0 50px 0;
 }
 .blue-knowledge-list {
     padding: 0;
@@ -105,7 +108,8 @@
 .snippet-form-wrapper {
     min-width: 800px;
     padding: 20px 15px 30px;
-    background-color: #f8faf7;
+    /*background-color: #f8faf7;*/
+    background-color: #f3faf8;
 }
 .snippet-body-wrapper {
     margin-bottom: 15px;
@@ -119,6 +123,7 @@
     min-height: 500px;
     background-color: #fff;
     padding: 0;
+    border-radius: 5px;
 }
 .snippet-form-body-preview-panel {
     max-height: 500px;
@@ -133,6 +138,10 @@
     height: 250px;
 }
 
+.item-body {
+    padding-bottom: 50px;
+}
+
 .stock-list {
     border-right: 1px solid #fff;
 }
@@ -142,6 +151,28 @@
     font-weight: 500;
 }
 
+
+/*-------------------------------------
+  Footer
+-------------------------------------*/
+.global-footer {
+    border-top: 1px solid #eee;
+    padding: 30px;
+}
+
+.footer-form-body {
+    margin-bottom: 15px;
+}
+
+.footer-form {
+    min-height: 100px;
+    resize: none;
+}
+
+
+/*-------------------------------------
+  Component
+-------------------------------------*/
 .u-mb0 {
     margin-bottom: 0 !important;
 }
@@ -182,13 +213,13 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="img-rounded img-profile-icon" src="">
+                            <img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">
                             <span>{{ Auth::user()->name }}</span>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="">マイページ</a></li>
                             <li><a href="">プロフィール変更</a></li>
-                            <li><a href="/weekly-report">週報</a></li>
+                            <li><a href="/weekly-report">週報を投稿する</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url('/auth/logout') }}">ログアウト</a></li>
                         </ul>
@@ -203,9 +234,13 @@
 
 @yield('content')
 
+@section('footer')
+    @include('layout.footer')
+@show
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="{{ asset('/js/snippet.js') }}"></script>
+<script src="{{ asset('js/jquery.glanceyear.min.js') }}"></script>
 </body>
 </html>

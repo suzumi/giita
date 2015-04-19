@@ -4,11 +4,12 @@
     <div class="container snippet-container">
         <div class="row">
             <div class="col-sm-9">
+                <h4>ナレッジを共有しよう</h4>
                 <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
                         <li class="active"><a href="#newarraival" data-toggle="tab">新着</a></li>
-                        <li><a href="#myfeed" data-toggle="tab">マイフィード</a></li>
+                        <li><a href="#weekly-report" data-toggle="tab">週報</a></li>
                     </ul>
                     <div class="tab-content">
                         <!--新着-->
