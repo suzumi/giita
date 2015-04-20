@@ -24,7 +24,7 @@
                                             <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
                                             {{{ $snippet->tag }}}
                                             <p class="blue-knowledge-list-name">osamu38</p>
-                                            <p class="blue-knowledge-list-date">{{{ $snippet->created_at }}}</p>
+                                            <p class="blue-knowledge-list-date">{{{ $snippet->created_at->format('Y/m/d') }}}に投稿</p>
                                         </div>
                                     </li>
                                     @endforeach

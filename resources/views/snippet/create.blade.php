@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="snippet-form-tag">
-                                <select class="js-tags-autocomplete form-control" multiple="multiple"></select>
+                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple"></select>
                             </div>
                         </div>
                     </div>

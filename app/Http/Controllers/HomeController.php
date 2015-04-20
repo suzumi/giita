@@ -33,6 +33,7 @@ class HomeController extends Controller {
 	public function index()
 	{
         $snippets = Snippet::with('tags')->get()->sortByDesc('created_at');
+//		dd(Snippet::find(1)->tags());
 //        $snippet = new Snippet();
 //        $snippets = $snippet->getTags();
 //        dd($snippet);

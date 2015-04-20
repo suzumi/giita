@@ -15,6 +15,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
+Route::get('mypage', 'SnippetController@mypage');
 Route::resource('snippet', 'SnippetController');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -23,4 +24,5 @@ Route::controllers([
 
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 	Route::post('preview', 'SnippetController@preview');
+	Route::get('tag', 'TagController@all');
 });

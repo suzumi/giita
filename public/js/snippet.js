@@ -16,10 +16,19 @@
         },
         _tagAutocomplete: function () {
 
-            var tags = [{id: 0, text: 'Scala'},{id: 1, text: 'PHP'},{id: 2, text: 'WordPress'},{id: 3, text: '週報'}];
-            $(".js-tags-autocomplete").select2({
-                placeholder: "タグを選択してください",
-                data: tags
+            $.ajax({
+                'type': 'GET',
+                'url': '/api/tag'
+            })
+            .done(function (data) {
+
+                $(".js-tags-autocomplete").select2({
+                    placeholder: "タグを選択してください",
+                    data: data
+                });
+            })
+            .fail(function () {
+                console.log(data);
             });
 
         },
@@ -45,7 +54,7 @@
                     console.log(data);
                 })
                 .fail(function (data) {
-                    //console.log(data);
+                    console.log(data);
                 });
             });
         }

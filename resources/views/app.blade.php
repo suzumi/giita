@@ -126,6 +126,7 @@
     border-radius: 5px;
 }
 .snippet-form-body-preview-panel {
+    padding: 6px 12px;
     max-height: 500px;
     overflow: auto;
 }
