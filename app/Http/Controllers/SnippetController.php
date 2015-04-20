@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Snippet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SnippetController extends Controller
 {
@@ -50,8 +51,10 @@ class SnippetController extends Controller
     public function store(Request $request)
     {
         $input =  $request->all();
+        $input['user_id'] = Auth::user()->id;
         $this->snippet->fill($input);
         $this->snippet->save();
+        // スニペットにタグを紐付ける
         $snippet = Snippet::find($this->snippet->id);
         $snippet->tags()->attach($input['selected-tags']);
 

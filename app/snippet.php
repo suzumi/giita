@@ -9,7 +9,8 @@ class Snippet extends Model {
 
     protected $fillable = [
         'title',
-        'body'
+        'body',
+        'user_id'
     ];
 
 //    public function getTags()

@@ -9,6 +9,15 @@
                         <div class="item-title">
                             <h1>{{{ $snippet->title }}}</h1>
                         </div>
+                        <div class="tags">
+                            <ul class="list-inline">
+                                @foreach($snippet->tags as $tag)
+                                    <li>
+                                        <a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="item-stock-view">

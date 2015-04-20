@@ -270,7 +270,7 @@
                             <span>{{ Auth::user()->name }}</span>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">マイページ</a></li>
+                            <li><a href="/mypage">マイページ</a></li>
                             <li><a href="">プロフィール変更</a></li>
                             <li><a href="/weekly-report">週報を投稿する</a></li>
                             <li class="divider"></li>

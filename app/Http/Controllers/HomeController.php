@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Snippet;
-use App\Tag;
+use App\User;
 
 class HomeController extends Controller {
 
