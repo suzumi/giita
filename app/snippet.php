@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 
 class Snippet extends Model {
 
+    protected $table = 'snippets';
+
     protected $fillable = [
         'title',
         'body'
@@ -20,6 +22,6 @@ class Snippet extends Model {
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag');
+        return $this->belongsToMany('App\Tag', 'snippet_tag', 'snippet_id', 'tag_id')->withTimestamps();
     }
 }
