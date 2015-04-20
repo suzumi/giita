@@ -219,6 +219,9 @@
     resize: none;
 }
 
+.footer-copyright {
+    margin-bottom: 10px;
+}
 
 /*-------------------------------------
   Component
