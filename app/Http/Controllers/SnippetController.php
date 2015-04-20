@@ -52,6 +52,8 @@ class SnippetController extends Controller
         $input =  $request->all();
         $this->snippet->fill($input);
         $this->snippet->save();
+        $snippet = Snippet::find($this->snippet->id);
+        $snippet->tags()->attach($input['selected-tags']);
 
         return redirect()->to('/');
     }

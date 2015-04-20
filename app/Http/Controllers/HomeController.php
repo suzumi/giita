@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Snippet;
+use App\Tag;
 
 class HomeController extends Controller {
 
@@ -32,7 +33,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $snippets = Snippet::with('tags')->get()->sortByDesc('created_at');
+        $snippets = Snippet::all()->sortByDesc('created_at');
 //		$snippet = Snippet::first();
 //		dd($snippet->tags->toArray());
 //        $snippet = new Snippet();
