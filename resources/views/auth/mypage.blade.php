@@ -2,31 +2,34 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
+    <div class="row mypage">
+        <div class="col-md-3 mypage-user">
             <!-- 左側 -->
-            <img src="http://dummyimage.com/200x200/000/fff">
-            <p>Github</p>
-            <p>twitter</p>
+            <img src="http://dummyimage.com/200x200/000/fff" class="mypage-user-thumb">
+            <a href="" class="mypage-user-account"><i class="fa fa-github u-mr8"></i>GitHub</a>
+            <a href="" class="mypage-user-account"><i class="fa fa-twitter u-mr8"></i>Twitter</a>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <!-- 右側 -->
-            <p>ユーザ太郎</p>
-            <p>0スニペット</p>
+            <div class="mypage-user-profile">
+                <p class="mypage-user-name">ユーザ太郎</p>
+                <div class="mypage-user-edit-btn">
+                    <a href="" class="btn btn-info">編集する</a>
+                </div>
+            </div>
+            <p class="mypage-user-snipets">0スニペット</p>
             <div>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#" class="btn btn-default btn-xs">PHP</a>
-                        <a href="#" class="btn btn-default btn-xs">Scala</a>
-                        <a href="#" class="btn btn-default btn-xs">Play framework</a>
-                        <a href="#" class="btn btn-default btn-xs">Rails</a>
-                        <a href="#" class="btn btn-default btn-xs">Vagrant</a>
-                        <a href="#" class="btn btn-default btn-xs">Swift</a>
-                        <a href="#" class="btn btn-default btn-xs">CentOS</a>
-                        <a href="#" class="btn btn-default btn-xs">HTML</a>
-                        <a href="#" class="btn btn-default btn-xs">Objective-C</a>
-                        <a href="#" class="btn btn-default btn-xs">CSS</a>
-                    </li>
+                <ul class="tag-list clearfix">
+                    <li><a href="#" class="btn btn-default btn-xs">PHP</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">Scala</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">Play framework</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">Rails</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">Vagrant</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">Swift</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">CentOS</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">HTML</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">Objective-C</a></li>
+                    <li><a href="#" class="btn btn-default btn-xs">CSS</a></li>
                 </ul>
             </div>
             <div class="panel panel-default">

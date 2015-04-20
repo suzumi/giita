@@ -23,6 +23,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
+.u-mr8 {
+    margin-right: 8px;
+}
 .brand-logo {
     color: #2ec4cc !important;
     font-family: 'Comfortaa', cursive;
@@ -33,7 +36,7 @@
     background-color: inherit !important;
     /*margin-bottom: 0;*/
 }
-.img-profile-icon{
+.img-profile-icon {
     height: 28px;
 }
 .snippet-container {
@@ -151,8 +154,54 @@
     font-size: 22px;
     font-weight: 500;
 }
-
-
+.mypage {
+    padding: 40px 0;
+}
+.mypage-user-thumb {
+    margin-bottom: 12px;
+}
+.mypage-user {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.mypage-user-account {
+    display: block;
+    font-size: 18px;
+}
+.mypage-user-profile {
+    display: table;
+    width: 100%;
+}
+.mypage-user-name {
+    display: table-cell;
+    padding-right: 20px;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+}
+.mypage-user-edit-btn {
+    display: table-cell;
+    vertical-align: middle;
+}
+.mypage-user-snipets {
+    font-size: 22px;
+    font-weight: bold;
+}
+.tag-list {
+    padding: 0;
+    margin: 0;
+}
+.tag-list > li {
+    float: left;
+    margin: 0 10px 10px 0;
+    list-style: none;
+}
+.glanceyear-content {
+    overflow: hidden;
+}
+.panel {
+    margin-bottom: 0;
+}
 /*-------------------------------------
   Footer
 -------------------------------------*/
