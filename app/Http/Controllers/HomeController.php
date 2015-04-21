@@ -33,7 +33,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $snippets = Snippet::all()->sortByDesc('created_at');
+		$snippets = Snippet::orderBy('created_at', 'desc')->paginate(15);
 //		$snippet = Snippet::first();
 //		dd($snippet->tags->toArray());
 //        $snippet = new Snippet();

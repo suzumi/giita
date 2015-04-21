@@ -37,7 +37,7 @@
                                 </ul>
                             </div>
                             <div class="btn-more text-center">
-                                <a id="view-more" class="btn btn-default btn-block" href="#">もっと見る</a>
+                                {!! $snippets->render() !!}
                             </div>
                         </div>
                         <!--マイフィード-->
