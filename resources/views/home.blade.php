@@ -8,7 +8,7 @@
                 <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
-                        <li class="active"><a href="#newarraival" data-toggle="tab">新着</a></li>
+                        <li class="active"><a href="#newarraival" data-toggle="tab">新着投稿</a></li>
                         <li><a href="#weekly-report" data-toggle="tab">週報</a></li>
                     </ul>
                     <div class="tab-content">
@@ -29,8 +29,8 @@
                                                 </li>
                                             @endforeach
                                             </ul>
-                                            <p class="blue-knowledge-list-name">osamu38</p>
-                                            <p class="blue-knowledge-list-date">{{{ $snippet->created_at->format('Y/m/d') }}}に投稿</p>
+                                            <p class="blue-knowledge-list-name">{{{ $snippet->users['name'] }}}</p>
+                                            <p class="blue-knowledge-list-date">{{{ $snippet->created_at->format('Y/m/d') }}}</p>
                                         </div>
                                     </li>
                                     @endforeach

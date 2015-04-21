@@ -25,4 +25,9 @@ class Snippet extends Model {
     {
         return $this->belongsToMany('App\Tag', 'snippet_tag', 'snippet_id', 'tag_id')->withTimestamps();
     }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }

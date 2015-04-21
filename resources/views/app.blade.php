@@ -134,12 +134,20 @@
     overflow: auto;
 }
 
+/*-------------------------------------
+  Snippet
+-------------------------------------*/
+
 .item-header {
     background-color: #31a5cc;
     color: #fff;
     margin-bottom: 30px;
     padding: 30px 0;
-    height: 250px;
+    /*height: 250px;*/
+}
+
+.snippet-formed-user {
+    padding: 15px 0;
 }
 
 .item-body {
@@ -154,6 +162,11 @@
     font-size: 22px;
     font-weight: 500;
 }
+
+/*-------------------------------------
+  Mypage
+-------------------------------------*/
+
 .mypage {
     padding: 40px 0;
 }
@@ -264,6 +277,15 @@
                     <li><a href="{{ url('/auth/login') }}">ログイン</a></li>
                     <li><a href="{{ url('/auth/register') }}">レジスター</a></li>
                 @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span>新規作成</span>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/snippet/create">新規投稿する</a></li>
+                            <li><a href="/weekly-report">週報を投稿する</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">

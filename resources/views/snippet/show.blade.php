@@ -18,6 +18,24 @@
                                 @endforeach
                             </ul>
                         </div>
+                        <div class="snippet-formed-user">
+                            @if($snippet->users['id'] === Auth::user()->id)
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-warning btn-sm">投稿を編集</button>
+                                    <button type="button" class="btn btn-warning dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-cog"></i>
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">投稿を削除</a></li>
+                                    </ul>
+                                </div>
+                            @endif
+                            <span>
+                                {{{ $snippet->users['name'] }}}が{{{ $snippet->created_at->format('Y/m/d') }}}に投稿
+                            </span>
+                        </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="item-stock-view">
