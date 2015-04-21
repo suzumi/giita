@@ -37,7 +37,7 @@
     /*margin-bottom: 0;*/
 }
 .img-profile-icon {
-    height: 28px;
+    height: 22px;
 }
 .snippet-container {
     padding: 15px 0 50px 0;
@@ -163,6 +163,27 @@
     font-weight: 500;
 }
 
+.dropdown-form-button {
+    text-align: left;
+    -webkit-appearance: none;
+    border: none;
+    margin: 0;
+    background-color: inherit;
+    width: 100%;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.dropdown-form-button:hover {
+    color: #262626;
+    background-color: #f5f5f5;
+}
+
 /*-------------------------------------
   Mypage
 -------------------------------------*/
@@ -242,6 +263,9 @@
 .u-mb0 {
     margin-bottom: 0 !important;
 }
+.btn-default.btn-noborder {
+    border: none;
+}
 </style>
 </head>
 <body>
@@ -294,7 +318,6 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/mypage">マイページ</a></li>
                             <li><a href="">プロフィール変更</a></li>
-                            <li><a href="/weekly-report">週報を投稿する</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url('/auth/logout') }}">ログアウト</a></li>
                         </ul>

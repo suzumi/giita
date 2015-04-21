@@ -18,7 +18,9 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="snippet-form-tag">
-                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple"></select>
+                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple" required>
+                                    <option value="9999" selected>未選択</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -45,7 +47,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="btn btn-info pull-right">投稿する</button>
+                            <button class="btn btn-info pull-right"><i class="fa fa-pencil-square-o"></i>投稿する</button>
                         </div>
                     </div>
             {!! Form::close() !!}

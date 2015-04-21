@@ -30,7 +30,7 @@
                                             @endforeach
                                             </ul>
                                             <p class="blue-knowledge-list-name">{{{ $snippet->users['name'] }}}</p>
-                                            <p class="blue-knowledge-list-date">{{{ $snippet->created_at->format('Y/m/d') }}}</p>
+                                            <p class="blue-knowledge-list-date">{{{ $snippet->created_at->format('Y/m/d H:i') }}}</p>
                                         </div>
                                     </li>
                                     @endforeach
@@ -75,8 +75,8 @@
             <div class="col-sm-3">
                 <div class="list-group">
                     <a class="list-group-item" href="#">週報</a>
+                    <a class="list-group-item" href="#">伝達事項</a>
                     <a class="list-group-item" href="#">ほげほげ</a>
-                    <a class="list-group-item" href="#">ふがふが</a>
                 </div>
             </div>
         </div>

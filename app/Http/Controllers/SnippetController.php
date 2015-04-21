@@ -58,7 +58,7 @@ class SnippetController extends Controller
         $snippet = Snippet::find($this->snippet->id);
         $snippet->tags()->attach($input['selected-tags']);
 
-        return redirect()->to('/');
+        return redirect()->to("/snippet/{$this->snippet->id}");
     }
 
     /**
@@ -85,7 +85,9 @@ class SnippetController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $snippet = $this->snippet->find($id);
+        return view('snippet.edit')->with(compact('snippet'));
     }
 
     /**
@@ -94,9 +96,16 @@ class SnippetController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $this->snippet->where('id', $id)->update(['title' => $input['title'], 'body' => $input['body']]);
+        // スニペットにタグを紐付ける
+        $snippet = Snippet::find($id);
+        $snippet->tags()->detach();
+        $snippet->tags()->attach($input['selected-tags']);
+
+        return redirect()->to("/snippet/$id");
     }
 
     /**
@@ -107,7 +116,10 @@ class SnippetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = $this->snippet->find($id);
+        $data->delete();
+
+        return redirect()->to('/');
     }
 
     /**
