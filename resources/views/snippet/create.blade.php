@@ -30,11 +30,11 @@
                                 <div class="col-sm-6 snippet-body">
                                     <div class="snippet-form-body-panel">
                                         @if(isset($isWeeklyReport))
-                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body">
+                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>
                                                 {{{ $template }}}
                                             </textarea>
                                         @else
-                                            {!! Form::textarea('body', null, ['class' => 'form-control snippet-form-body', 'id' => 'snippet-body']) !!}
+                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required></textarea>
                                         @endif
                                     </div>
                                 </div>

@@ -192,7 +192,11 @@
     padding: 40px 0;
 }
 .mypage-user-thumb {
+    display: inline-block;
     margin-bottom: 12px;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
 }
 .mypage-user {
     padding-bottom: 20px;
@@ -312,11 +316,12 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">
+                            {{--<img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">--}}
+                            <img class="img-rounded img-profile-icon" src="data:image/jpg;base64,{{ Auth::user()->thumbnail }}">
                             <span>{{ Auth::user()->name }}</span>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/mypage">マイページ</a></li>
+                            <li><a href="/users/{{ Auth::user()->id }}">マイページ</a></li>
                             <li><a href="">プロフィール変更</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ url('/auth/logout') }}">ログアウト</a></li>
