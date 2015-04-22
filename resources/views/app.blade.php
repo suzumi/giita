@@ -137,6 +137,19 @@
 /*-------------------------------------
   Snippet
 -------------------------------------*/
+.snippet-user-thumb {
+    width: 23px;
+    height: 23px;
+    margin: 0 5px;
+}
+
+.snippet-user-name {
+    color: #fff;
+}
+
+.snippet-user-name:hover {
+    color: #fff;
+}
 
 .item-header {
     background-color: #31a5cc;

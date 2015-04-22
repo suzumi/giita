@@ -5,10 +5,14 @@
     <div class="row mypage">
         <div class="col-md-3 mypage-user">
             <!-- 左側 -->
-            <img src="data:image/jpg;base64,{{{ $user->thumbnail }}}" class="mypage-user-thumb img-rounded">
+            <img src="data:image/jpg;base64,{{ $user->thumbnail }}" class="mypage-user-thumb img-rounded">
             {{--<div style="backgrund-image: url(data:image/jpg;base64,{{{ $user->thumbnail }}});" class="mypage-user-thumb"></div>--}}
-            <a href="" class="mypage-user-account"><i class="fa fa-github u-mr8"></i>GitHub</a>
-            <a href="" class="mypage-user-account"><i class="fa fa-twitter u-mr8"></i>Twitter</a>
+            @if($user->github)
+                <a href="{{ $user->github }}" class="mypage-user-account" target="_blank"><i class="fa fa-github u-mr8"></i>GitHub</a>
+            @endif
+            @if($user->twitter)
+                <a href="{{ $user->twitter }}" class="mypage-user-account" target="_blank"><i class="fa fa-twitter u-mr8"></i>Twitter</a>
+            @endif
         </div>
         <div class="col-md-9">
             <!-- 右側 -->
@@ -20,7 +24,7 @@
                     @endif
                 </div>
             </div>
-            <p class="mypage-user-snipets"><span class="snippet-count">0</span>Snippets</p>
+            <p class="mypage-user-snipets"><span class="snippet-count">0</span>snippets</p>
             {{--<div>--}}
                 {{--<ul class="tag-list clearfix">--}}
                     {{--<li><a href="#" class="btn btn-default btn-xs">PHP</a></li>--}}
@@ -59,6 +63,24 @@
     </div>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#" data-toggle="tab">投稿した一覧</a></li>
+        @foreach($snippets as $snippet)
+            <ul class="blue-knowledge-list">
+                <li>
+                    <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
+                    <div class="blue-knowledge-list-info">
+                        <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                        {{--<ul class="list-inline">--}}
+                            {{--@foreach($snippet->tags as $tag)--}}
+                                {{--<li>--}}
+                                    {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
+                                {{--</li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
+                        {{--<p class="blue-knowledge-list-name">{{{ $snippet->name }}}が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>--}}
+                    </div>
+                </li>
+            </ul>
+        @endforeach
         <li ><a href="#" data-toggle="tab">ストックした一覧</a></li>
     </ul>
 

@@ -35,4 +35,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\Snippet', 'id');
 	}
 
+
+	public static function getSnippets($id)
+	{
+		return \DB::table('users')
+			->leftjoin('snippets', 'users.id', '=', 'snippets.user_id')
+			->where('snippets.user_id', '=', $id)
+			->orderBy('snippets.created_at', 'desc')
+			->get();
+	}
 }

@@ -39,7 +39,7 @@
                                 </div>
                             @endif
                             <span>
-                                {{{ $snippet->users['name'] }}}が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿
+                                <img src="data:image/jpg;base64,{{$snippet->users['thumbnail']}}" class="snippet-user-thumb img-rounded"><a href="/users/{{ $snippet->users['id'] }}" class="snippet-user-name">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿
                             </span>
                         </div>
                     </div>

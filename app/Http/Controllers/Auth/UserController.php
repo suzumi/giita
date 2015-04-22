@@ -53,9 +53,10 @@ class UserController extends Controller {
 	public function show($id)
 	{
 		$user = User::find($id);
+		$snippets = User::getSnippets($id);
 //		$profIcon = \Storage::get('proficons/user1.jpg');
 
-		return view('auth.mypage')->with(compact('user'));
+		return view('auth.mypage')->with(compact('user', 'snippets'));
 	}
 
 	/**
