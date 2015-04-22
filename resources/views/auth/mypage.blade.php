@@ -63,25 +63,25 @@
     </div>
     <ul class="nav nav-tabs">
         <li class="active"><a href="#" data-toggle="tab">投稿した一覧</a></li>
-        @foreach($snippets as $snippet)
-            <ul class="blue-knowledge-list">
-                <li>
-                    <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
-                    <div class="blue-knowledge-list-info">
-                        <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
-                        {{--<ul class="list-inline">--}}
-                            {{--@foreach($snippet->tags as $tag)--}}
-                                {{--<li>--}}
-                                    {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
-                                {{--</li>--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
-                        {{--<p class="blue-knowledge-list-name">{{{ $snippet->name }}}が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>--}}
-                    </div>
-                </li>
-            </ul>
-        @endforeach
         <li ><a href="#" data-toggle="tab">ストックした一覧</a></li>
+    </ul>
+    <ul class="blue-knowledge-list">
+        @foreach($snippets as $snippet)
+            <li>
+                <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
+                <div class="blue-knowledge-list-info">
+                    <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                    {{--<ul class="list-inline">--}}
+                    {{--@foreach($snippet->tags as $tag)--}}
+                    {{--<li>--}}
+                    {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
+                    {{--</li>--}}
+                    {{--@endforeach--}}
+                    {{--</ul>--}}
+                    {{--<p class="blue-knowledge-list-name">{{{ $snippet->name }}}が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>--}}
+                </div>
+            </li>
+        @endforeach
     </ul>
 
 </div>
