@@ -9,10 +9,20 @@ use Illuminate\Http\Request;
 class SnippetController extends Controller
 {
 
+    /**
+     * リアルタイムプレビューを表示する
+     * @param Request $request
+     * @return string
+     */
     public function preview(Request $request)
     {
         $input = $request->all();
         $parser = new \cebe\markdown\GithubMarkdown();
         return $parser->parse($input['body']);
+    }
+
+    public function stock()
+    {
+        //
     }
 }

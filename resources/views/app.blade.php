@@ -200,7 +200,6 @@
 /*-------------------------------------
   Mypage
 -------------------------------------*/
-
 .mypage {
     padding: 40px 0;
 }
@@ -252,6 +251,64 @@
 }
 .panel {
     margin-bottom: 0;
+}
+.mypage-snippet-list-wrapper {
+    padding-bottom: 40px;
+}
+.mypage-stock-count {
+    margin-left: 10px;
+}
+.mypage-knowledge-list {
+    padding: 0 10px;
+}
+.mypage-knowledge-list > li {
+    display: table;
+    padding: 10px 0;
+    width: 100%;
+    border-top: 1px #ccc solid;
+    list-style: none;
+}
+.mypage-knowledge-list > li:first-child {
+    border-top: none;
+}
+.mypage-knowledge-list-info {
+    display: table-cell;
+    padding-left: 16px;
+    width: 100%;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mypage-knowledge-list-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #337ab7;
+    line-height: 24px;
+    text-decoration: none;
+}
+.mypage-knowledge-list-title:hover,
+.mypage-knowledge-list-title:visited {
+    color: #685987;
+}
+.mypage-knowledge-list-thumb {
+    display: table-cell;
+    width: 50px;
+    height: 50px;
+}
+.mypage-knowledge-list-name {
+    float: right;
+    margin: 0 0 0 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}
+.mypage-knowledge-list-date {
+    float: right;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
 }
 /*-------------------------------------
   Footer
@@ -360,29 +417,29 @@
 <script src="{{ asset('/js/snippet.js') }}"></script>
 <script src="{{ asset('js/jquery.glanceyear.min.js') }}"></script>
 <script>
-    var massive = [
-        {date: '2014-8-3', value:'1'},
-        {date: '2014-8-4', value:'2'},
-        {date: '2014-9-3', value:'3'},
-        {date: '2014-10-14', value:'2'},
-        {date: '2014-10-13', value:'8'},
-        {date: '2014-7-3', value:'1'},
-        {date: '2014-7-4', value:'2'},
-        {date: '2014-7-7', value:'3'},
-        {date: '2014-7-14', value:'2'},
-        {date: '2014-6-3', value:'1'},
-        {date: '2014-6-4', value:'2'},
-        {date: '2014-6-5', value:'3'},
-        {date: '2014-6-14', value:'2'}
-    ];
-    $('div#js-glanceyear').glanceyear(massive,
-            {
-                eventClick: function(e) { $('#debug').html('Date: '+ e.date + ', Count: ' + e.count); },
-                months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-                weeks: ['M','T','W','T','F','S', 'S'],
-                showToday: false,
-                today: new Date()
-            });
+//    var massive = [
+//        {date: '2014-8-3', value:1},
+//        {date: '2014-8-4', value:2},
+//        {date: '2014-9-3', value:3},
+//        {date: '2014-10-14', value:2},
+//        {date: '2014-10-13', value:8},
+//        {date: '2014-7-3', value:1},
+//        {date: '2014-7-4', value:2},
+//        {date: '2014-7-7', value:3},
+//        {date: '2014-7-14', value:2},
+//        {date: '2014-6-3', value:1},
+//        {date: '2014-6-4', value:2},
+//        {date: '2014-6-5', value:3},
+//        {date: '2014-6-14', value:2}
+//    ];
+//    $('div#js-glanceyear').glanceyear(massive,
+//            {
+//                eventClick: function(e) { $('#debug').html('Date: '+ e.date + ', Count: ' + e.count); },
+//                months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+//                weeks: ['M','T','W','T','F','S', 'S'],
+//                showToday: false,
+//                today: new Date()
+//            });
 </script>
 </body>
 </html>

@@ -13,6 +13,7 @@
 
             this._tagAutocomplete();
             this._preview();
+            this._activity();
         },
         _tagAutocomplete: function () {
 
@@ -56,6 +57,29 @@
                 .fail(function (data) {
                     console.log(data);
                 });
+            });
+        },
+        _activity: function() {
+            var url = location.href;
+            var userId = url.match(".+/(.+?)([\?#;].*)?$")[1];
+
+            $.ajax({
+                'type': 'GET',
+                'url': '/api/activity/' + userId
+            })
+            .done(function(data) {
+
+                $('div#js-glanceyear').glanceyear(data,
+                    {
+                        eventClick: function(e) { $('#debug').html('Date: '+ e.date + ', Count: ' + e.count); },
+                        months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                        weeks: ['M','T','W','T','F','S', 'S'],
+                        showToday: false,
+                        today: new Date()
+                    });
+            })
+            .fail(function() {
+                console.log(data);
             });
         }
     };

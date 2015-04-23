@@ -24,7 +24,7 @@
                     @endif
                 </div>
             </div>
-            <p class="mypage-user-snipets"><span class="snippet-count">0</span>snippets</p>
+            {{--<p class="mypage-user-snipets"><span class="snippet-count">{{ count($snippets) }}</span>snippets</p>--}}
             {{--<div>--}}
                 {{--<ul class="tag-list clearfix">--}}
                     {{--<li><a href="#" class="btn btn-default btn-xs">PHP</a></li>--}}
@@ -61,28 +61,55 @@
             </div>
         </div>
     </div>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#" data-toggle="tab">投稿した一覧</a></li>
-        <li ><a href="#" data-toggle="tab">ストックした一覧</a></li>
-    </ul>
-    <ul class="blue-knowledge-list">
-        @foreach($snippets as $snippet)
-            <li>
-                <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
-                <div class="blue-knowledge-list-info">
-                    <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
-                    {{--<ul class="list-inline">--}}
-                    {{--@foreach($snippet->tags as $tag)--}}
-                    {{--<li>--}}
-                    {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
-                    {{--</li>--}}
-                    {{--@endforeach--}}
-                    {{--</ul>--}}
-                    {{--<p class="blue-knowledge-list-name">{{{ $snippet->name }}}が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>--}}
-                </div>
-            </li>
-        @endforeach
-    </ul>
-
 </div>
+<div class="row mypage-snippet-area">
+    <div class="container">
+        <div class="col-sm-7 mypage-snippet-list-wrapper">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#" data-toggle="tab">投稿した一覧</a></li>
+                <li ><a href="#" data-toggle="tab">ストックした一覧</a></li>
+            </ul>
+            <ul class="mypage-knowledge-list">
+                @foreach($snippets as $snippet)
+                    <li>
+                        <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
+                        <div class="blue-knowledge-list-info">
+                            <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                            {{--<ul class="list-inline">--}}
+                            {{--@foreach($snippet->tags as $tag)--}}
+                            {{--<li>--}}
+                            {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
+                            {{--</li>--}}
+                            {{--@endforeach--}}
+                            {{--</ul>--}}
+                            <p class="blue-knowledge-list-name">{{{ $snippet->created_at }}}に投稿</p>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+            @if(count($snippets) >= 5)
+                <button class="btn btn-default btn-block">もっと見る</button>
+            @endif
+        </div>
+        <div class="col-sm-5">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">人気の投稿</div>
+                </div>
+                {{--<div class="panel-body">ここがパネルに記載する本文</div>--}}
+                <ul class="list-group">
+                    @foreach($snippets as $snippet)
+                    <li class="list-group-item">
+                        <i class="fa fa-folder-o"></i><strong class="mypage-stock-count">40</strong><span>ストック</span>
+                        <div class="blue-knowledge-list-info">
+                            <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
