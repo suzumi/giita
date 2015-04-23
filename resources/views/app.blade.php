@@ -123,6 +123,19 @@
     width: 100%;
     resize:none;
 }
+.one-brefore-snippet {
+    max-height: 300px;
+    background-color: #fff;
+    padding: 6px 12px;
+    margin: 15px 0 30px 0;
+    overflow: auto;
+}
+.one-brefore-snippet > pre {
+    border: none;
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 3px;
+}
 .snippet-body {
     min-height: 500px;
     background-color: #fff;

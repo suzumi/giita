@@ -24,6 +24,13 @@
                             </div>
                         </div>
                     </div>
+                    @if(isset($isWeeklyReport))
+                    <div class="one-brefore-snippet">
+                        {{--<div class="one-brefore-snippet">--}}
+                            {!! $oneBeforeSnippet !!}
+                        {{--</div>--}}
+                    </div>
+                    @endif
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="snippet-body-wrapper clearfix">

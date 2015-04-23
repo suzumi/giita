@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Snippet;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,8 +38,11 @@ class SnippetController extends Controller
     {
         $isWeeklyReport = \Session::get('isWeeklyReport');
         $template = \Session::get('template');
+        $oneBeforeSnippetRow = User::getSnippets(Auth::user()->id, 1);
+        $parser = new \cebe\markdown\GithubMarkdown();
+        $oneBeforeSnippet = $parser->parse($oneBeforeSnippetRow[0]->body);
         if($isWeeklyReport) {
-            return view('snippet/create')->with(compact('isWeeklyReport', 'template'));
+            return view('snippet/create')->with(compact('isWeeklyReport', 'template', 'oneBeforeSnippet'));
         }
         return view('snippet/create');
     }

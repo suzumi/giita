@@ -40,13 +40,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @param $id
 	 * @return mixed
 	 */
-	public static function getSnippets($id)
+	public static function getSnippets($id, $count = 5)
 	{
 		return \DB::table('users')
 			->leftjoin('snippets', 'users.id', '=', 'snippets.user_id')
 			->where('snippets.user_id', '=', $id)
 			->orderBy('snippets.created_at', 'desc')
-			->take(5)
+			->take($count)
 			->get();
 	}
 
