@@ -14,9 +14,9 @@ class AddExcerptToUsersTable extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table)
 		{
-			$table->text('thumbnail');
-			$table->string('github');
-			$table->string('twitter');
+			$table->text('thumbnail')->nullable();
+			$table->string('github')->nullable();
+			$table->string('twitter')->nullable();
 		});
 	}
 

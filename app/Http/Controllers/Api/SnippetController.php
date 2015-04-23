@@ -21,7 +21,20 @@ class SnippetController extends Controller
         return $parser->parse($input['body']);
     }
 
-    public function stock()
+    /**
+     * ストックする
+     * @param Request $request
+     */
+    public function stock(Request $request)
+    {
+        $input = $request->all();
+    }
+
+    /**
+     * アンストックする
+     * @param Request $request
+     */
+    public function unstock(Request $request)
     {
         //
     }

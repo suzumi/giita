@@ -25,6 +25,7 @@ Route::controllers([
 
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 	Route::post('preview', 'SnippetController@preview');
+	Route::post('stock', 'SnippetController@stock');
 	Route::get('tag', 'TagController@all');
 	Route::resource('activity', 'UserController');
 });

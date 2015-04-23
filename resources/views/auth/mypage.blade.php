@@ -70,22 +70,28 @@
                 <li ><a href="#" data-toggle="tab">ストックした一覧</a></li>
             </ul>
             <ul class="mypage-knowledge-list">
-                @foreach($snippets as $snippet)
-                    <li>
-                        <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
-                        <div class="blue-knowledge-list-info">
-                            <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
-                            {{--<ul class="list-inline">--}}
-                            {{--@foreach($snippet->tags as $tag)--}}
-                            {{--<li>--}}
-                            {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
-                            {{--</li>--}}
-                            {{--@endforeach--}}
-                            {{--</ul>--}}
-                            <p class="blue-knowledge-list-name">{{{ $snippet->created_at }}}に投稿</p>
-                        </div>
-                    </li>
-                @endforeach
+                @if($snippets)
+                    @foreach($snippets as $snippet)
+                        <li>
+                            <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $snippet->thumbnail }}" alt="">
+                            <div class="blue-knowledge-list-info">
+                                <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                                {{--<ul class="list-inline">--}}
+                                {{--@foreach($snippet->tags as $tag)--}}
+                                {{--<li>--}}
+                                {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
+                                {{--</li>--}}
+                                {{--@endforeach--}}
+                                {{--</ul>--}}
+                                <p class="blue-knowledge-list-name">{{{ $snippet->created_at }}}に投稿</p>
+                            </div>
+                        </li>
+                    @endforeach
+                @else
+                    <div>
+                        <p>まだ投稿されていません</p>
+                    </div>
+                @endif
             </ul>
             @if(count($snippets) >= 5)
                 <button class="btn btn-default btn-block">もっと見る</button>
@@ -98,14 +104,20 @@
                 </div>
                 {{--<div class="panel-body">ここがパネルに記載する本文</div>--}}
                 <ul class="list-group">
-                    @foreach($snippets as $snippet)
-                    <li class="list-group-item">
-                        <i class="fa fa-folder-o"></i><strong class="mypage-stock-count">40</strong><span>ストック</span>
-                        <div class="blue-knowledge-list-info">
-                            <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
-                        </div>
-                    </li>
-                    @endforeach
+                    @if($snippets)
+                        @foreach($snippets as $snippet)
+                        <li class="list-group-item">
+                            <i class="fa fa-folder-o"></i><strong class="mypage-stock-count">40</strong><span>ストック</span>
+                            <div class="blue-knowledge-list-info">
+                                <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                            </div>
+                        </li>
+                        @endforeach
+                    @else
+                        <li class="list-group-item">
+                            <p>まだ人気の記事はありません</p>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
