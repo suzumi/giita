@@ -9,6 +9,7 @@
 
     <link href="{{ asset('/css/glanceyear.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/github.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -133,7 +134,12 @@
     max-height: 500px;
     overflow: auto;
 }
-
+.snippet-form-body-preview-panel > pre {
+    border: none;
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 3px;
+}
 /*-------------------------------------
   Snippet
 -------------------------------------*/
@@ -165,6 +171,13 @@
 
 .item-body {
     padding-bottom: 50px;
+}
+.item-body > .container > pre {
+    border: none;
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 3px;
+    overflow: auto;
 }
 
 .stock-list {
@@ -415,6 +428,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 <script src="{{ asset('/js/snippet.js') }}"></script>
+<script src="{{ asset('/js/highlight.pack.js') }}"></script>
+<script src="{{ asset('/js/marked.min.js') }}"></script>
 <script src="{{ asset('js/jquery.glanceyear.min.js') }}"></script>
 <script>
 //    var massive = [

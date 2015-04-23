@@ -34,29 +34,32 @@
 
         },
         _preview: function() {
-            this.$snippetBody.keypress(function() {
+            this.$snippetBody.keyup(function() {
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+                var html = marked($(this).val());
+                $('#snippet-preview').html(html);
 
-                var text = $('textarea[name="body"]').val();
-                $.ajax({
-                    'type': 'POST',
-                    'url': '/api/preview',
-                    'data': {
-                        'body': text
-                    }
-                })
-                .done(function (data) {
-                    $("#snippet-preview").html(data);
-                    console.log(data);
-                })
-                .fail(function (data) {
-                    console.log(data);
-                });
+                //$.ajaxSetup({
+                //    headers: {
+                //        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                //    }
+                //});
+                //
+                //var text = $('textarea[name="body"]').val();
+                //$.ajax({
+                //    'type': 'POST',
+                //    'url': '/api/preview',
+                //    'data': {
+                //        'body': text
+                //    }
+                //})
+                //.done(function (data) {
+                //    $("#snippet-preview").html(data);
+                //    console.log(data);
+                //})
+                //.fail(function (data) {
+                //    console.log(data);
+                //});
             });
         },
         _activity: function() {
