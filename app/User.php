@@ -84,4 +84,27 @@ SQL;
 	{
 		//
 	}
+
+	/**
+	 * ストックする
+	 * @param array $params
+	 */
+	public static function postStock($params)
+	{
+		\DB::transaction(function() use($params){
+			\DB::table('stocks')
+				->insert(['user_id' => $params['userId'], 'snippet_id' => $params['snippetId']]);
+		});
+
+	}
+
+	public static function deleteStock($params)
+	{
+		\DB::transaction(function() use($params){
+			\DB::table('stocks')
+				->where('user_id', '=', $params['userId'])
+				->where('snippet_id', '=', $params['snippetId'])
+				->delete();
+		});
+	}
 }

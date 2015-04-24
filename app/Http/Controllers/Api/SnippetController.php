@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
-class SnippetController extends Controller
+class SnippetController extends BaseApiController
 {
 
     /**
@@ -28,6 +28,17 @@ class SnippetController extends Controller
     public function stock(Request $request)
     {
         $input = $request->all();
+        try {
+
+            User::postStock($input);
+            return $this->buildSuccess();
+
+        } catch(\Exception $e) {
+
+            return $this->buildError();
+        }
+
+
     }
 
     /**
@@ -36,6 +47,15 @@ class SnippetController extends Controller
      */
     public function unstock(Request $request)
     {
-        //
+        $input = $request->all();
+        try {
+
+            User::deleteStock($input);
+            return $this->buildSuccess();
+
+        } catch(\Exception $e) {
+
+            return $this->buildError();
+        }
     }
 }

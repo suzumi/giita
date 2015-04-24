@@ -5,6 +5,7 @@
     app.Snippet = function() {
         this.$snippetBody = $("#snippet-body");
         this.$snippetForm = $('.snippet-form');
+        this.$stockForm = $('.js-stock-form');
 
         this._initialize();
     };
@@ -12,10 +13,21 @@
     app.Snippet.prototype = {
         _initialize: function() {
 
+
             this._tagAutocomplete();
             this._preview();
             this._activity();
+            this.$stockForm.on('submit', this._hoge.bind(this));
+
             //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
+        },
+        _hoge: function(e) {
+            e.preventDefault();
+            if (this.$stockForm.hasClass('stock')) {
+                this._unstock();
+            } else {
+                this._stock();
+            }
         },
         //_snippetFormPost: function(e) {
         //    e.preventDefault();
@@ -102,6 +114,66 @@
             })
             .fail(function() {
                 console.log(data);
+            });
+        },
+        _stock: function () {
+
+            var self = this;
+
+            var param = this.$stockForm.serialize();
+
+            $('.js-spinner').html('<img src="/img/icon/stock_spinner.gif">');
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                'type': 'POST',
+                'url': '/api/stock',
+                'data': param
+            })
+            .done(function (data) {
+                console.log("ストック成功");
+                if(data['code'] == 1) {
+                    $(".js-stock-btn").html('<button class="btn btn-warning btn-block js-spinner"><i class="fa fa-folder"></i>ストックを解除</button>');
+                    self.$stockForm.addClass('stock');
+                }
+            })
+            .fail(function (data) {
+                console.log("失敗");
+            });
+        },
+        _unstock: function() {
+
+            var self = this;
+
+            var param = this.$stockForm.serialize();
+
+            $('.js-spinner').html('<img src="/img/icon/unstock_spinner.gif">');
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                'type': 'POST',
+                'url': '/api/unstock',
+                'data': param
+            })
+            .done(function (data) {
+                console.log("アンストック成功");
+                if(data['code'] == 1) {
+                    $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストックする</button>');
+                    self.$stockForm.removeClass('stock');
+                }
+            })
+            .fail(function (data) {
+                console.log("失敗");
             });
         }
     };
