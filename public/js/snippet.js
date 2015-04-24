@@ -4,6 +4,7 @@
 
     app.Snippet = function() {
         this.$snippetBody = $("#snippet-body");
+        this.$snippetForm = $('.snippet-form');
 
         this._initialize();
     };
@@ -14,7 +15,25 @@
             this._tagAutocomplete();
             this._preview();
             this._activity();
+            //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
         },
+        //_snippetFormPost: function(e) {
+        //    e.preventDefault();
+        //    var param = {};
+        //    $(this.$snippetForm.serializeArray()).each(function(i, v) {
+        //        param[v.name] = v.value;
+        //    });
+        //    if (Object.keys(param).length < 4) {
+        //        console.log("param taran");
+        //    }
+        //    console.log(param);
+        //    //for (var key in param) {
+        //    //    console.log("key: " + key + ", value: " + param[key]);
+        //    //    if (!param[key]) {
+        //    //        alert("入力されていない項目があります。");
+        //    //    }
+        //    //}
+        //},
         _tagAutocomplete: function () {
 
             $.ajax({

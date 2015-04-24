@@ -39,8 +39,10 @@ class SnippetController extends Controller
         $isWeeklyReport = \Session::get('isWeeklyReport');
         $template = \Session::get('template');
         $oneBeforeSnippetRow = User::getSnippets(Auth::user()->id, 1);
-        $parser = new \cebe\markdown\GithubMarkdown();
-        $oneBeforeSnippet = $parser->parse($oneBeforeSnippetRow[0]->body);
+        if (!empty($oneBeforeSnippetRow)) {
+            $parser = new \cebe\markdown\GithubMarkdown();
+            $oneBeforeSnippet = $parser->parse($oneBeforeSnippetRow[0]->body);
+        }
         if($isWeeklyReport) {
             return view('snippet/create')->with(compact('isWeeklyReport', 'template', 'oneBeforeSnippet'));
         }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="snippet-form-wrapper">
         <div class="container-fluid">
-            {!! Form::open(['route' => 'snippet.store']) !!}
+            {!! Form::open(['route' => 'snippet.store', 'class' => 'snippet-form', 'novalidate' => true]) !!}
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="snippet-form-title">
@@ -18,18 +18,22 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="snippet-form-tag">
-                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple" required>
-                                    <option value="9999" selected>未選択</option>
+                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple">
+                                    {{--@if(isset($isWeeklyReport))--}}
+                                    {{--<option value="9999" selected>週報</option>--}}
+                                    {{--@endif--}}
                                 </select>
                             </div>
                         </div>
                     </div>
                     @if(isset($isWeeklyReport))
-                    <div class="one-brefore-snippet">
-                        {{--<div class="one-brefore-snippet">--}}
-                            {!! $oneBeforeSnippet !!}
-                        {{--</div>--}}
-                    </div>
+                        @if(!empty($oneBeforeSnippet))
+                            <div class="one-brefore-snippet">
+                                {{--<div class="one-brefore-snippet">--}}
+                                    {!! $oneBeforeSnippet !!}
+                                {{--</div>--}}
+                            </div>
+                        @endif
                     @endif
                     <div class="row">
                         <div class="col-sm-12">

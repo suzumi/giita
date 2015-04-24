@@ -43,6 +43,9 @@
 .snippet-container {
     padding: 15px 0 50px 0;
 }
+.no-post-yet {
+    padding: 15px 0 0 0;
+}
 .blue-knowledge-list {
     padding: 0;
     margin: 40px 0;

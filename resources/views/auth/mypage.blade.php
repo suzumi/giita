@@ -89,7 +89,8 @@
                     @endforeach
                 @else
                     <div>
-                        <p>まだ投稿されていません</p>
+                        <p class="no-post-yet">投稿がまだありません</p>
+                        <p class="">あなたの知見を共有しましょう！</p>
                     </div>
                 @endif
             </ul>
