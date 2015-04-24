@@ -93,11 +93,20 @@ SQL;
 	{
 		\DB::transaction(function() use($params){
 			\DB::table('stocks')
-				->insert(['user_id' => $params['userId'], 'snippet_id' => $params['snippetId']]);
+				->insert([
+                    'user_id' => $params['userId'],
+                    'snippet_id' => $params['snippetId'],
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
 		});
 
 	}
 
+    /**
+     * アンストックする
+     * @param $params
+     */
 	public static function deleteStock($params)
 	{
 		\DB::transaction(function() use($params){
@@ -107,4 +116,24 @@ SQL;
 				->delete();
 		});
 	}
+
+    /**
+     * ストックしたスニペットリスト
+     * @param $id
+     * @return mixed
+     */
+    public static function myStocks($id)
+    {
+        return \DB::table('users')
+            ->leftjoin('stocks', 'users.id', '=', 'stocks.user_id')
+            ->leftjoin('snippets', 'snippets.id', '=', 'stocks.snippet_id')
+            ->where('users.id', '=', $id)
+            ->orderBy('snippets.created_at', 'desc')
+            ->select([
+                'snippets.id as snippet_id',
+                'snippets.title',
+                'snippets.created_at'
+            ])
+            ->get();
+    }
 }
