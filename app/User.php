@@ -128,7 +128,7 @@ SQL;
             ->leftjoin('stocks', 'users.id', '=', 'stocks.user_id')
             ->leftjoin('snippets', 'snippets.id', '=', 'stocks.snippet_id')
             ->where('users.id', '=', $id)
-            ->orderBy('snippets.created_at', 'desc')
+            ->orderBy('stocks.created_at', 'desc')
             ->select([
                 'snippets.id as snippet_id',
                 'snippets.title',
