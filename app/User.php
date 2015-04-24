@@ -118,6 +118,31 @@ SQL;
 	}
 
     /**
+     * ストックしてるかの存在チェック(true|false)
+     * @param $userId
+     * @param $snippetId
+     * @return mixed
+     */
+    public static function isStocked($userId, $snippetId)
+    {
+        // asに``をつけること
+        $query = <<< SQL
+select
+    exists(
+        select
+            1
+        from
+            stocks
+        where
+            user_id = $userId
+        and snippet_id = $snippetId
+    ) as `exists`
+SQL;
+
+        return \DB::selectOne($query);
+    }
+
+    /**
      * ストックしたスニペットリスト
      * @param $id
      * @return mixed

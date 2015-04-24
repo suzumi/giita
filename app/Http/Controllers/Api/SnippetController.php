@@ -58,4 +58,15 @@ class SnippetController extends BaseApiController
             return $this->buildError();
         }
     }
+
+    /**
+     * ストックしてるか存在チェック
+     * @param Request $request
+     */
+    public function stocked(Request $request)
+    {
+        $input = $request->all();
+        $result = User::isStocked($input['user_id'], $input['snippet_id']);
+        return $result->exists;
+    }
 }

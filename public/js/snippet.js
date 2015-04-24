@@ -17,11 +17,12 @@
             this._tagAutocomplete();
             this._preview();
             this._activity();
-            this.$stockForm.on('submit', this._hoge.bind(this));
+            this.$stockForm.on('submit', this._hasStockClass.bind(this));
+            this._stocked();
 
             //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
         },
-        _hoge: function(e) {
+        _hasStockClass: function(e) {
             e.preventDefault();
             if (this.$stockForm.hasClass('stock')) {
                 this._unstock();
@@ -175,6 +176,29 @@
             .fail(function (data) {
                 console.log("失敗");
             });
+        },
+        _stocked: function () {
+
+            var self = this;
+            var userId = $(':hidden[name="userId"]').val();
+            var snippetId = $(':hidden[name="snippetId"]').val();
+
+            $.ajax({
+                'type': 'GET',
+                'url': '/api/stocked',
+                'data': {
+                    'user_id': userId,
+                    'snippet_id': snippetId
+                }
+            })
+                .done(function (data) {
+                    if(data == 1) {
+                        $(".js-stock-btn").html('<button class="btn btn-warning btn-block js-spinner"><i class="fa fa-folder"></i>ストックを解除</button>');
+                        self.$stockForm.addClass('stock')
+                    } else {
+                        $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストックする</button>');
+                    }
+                })
         }
     };
 })(window);
