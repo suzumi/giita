@@ -104,34 +104,35 @@
                 <!--ストックした一覧-->
                 <div class="tab-pane fade" id="stock-list">
                     <ul class="mypage-knowledge-list">
-                        @if($stocks)
+
                             @foreach($stocks as $stock)
-                                <li>
-                                    {{--<img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $stock->thumbnail }}" alt="">--}}
-                                    <div class="blue-knowledge-list-info">
-{{--                                        {{{ $stock->snippet_id }}}--}}
-                                        <a href="/snippet/{{{ $stock->snippet_id }}}" class="blue-knowledge-list-title">{{{ $stock->title }}}</a>
-                                        {{--<ul class="list-inline">--}}
-                                        {{--@foreach($snippet->tags as $tag)--}}
-                                        {{--<li>--}}
-                                        {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
-                                        {{--</li>--}}
-                                        {{--@endforeach--}}
-                                        {{--</ul>--}}
-                                        <p class="blue-knowledge-list-name">{{{ $stock->created_at }}}に投稿</p>
+                                @if($stock->snippet_id != null)
+                                    <li>
+                                        {{--<img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{ $stock->thumbnail }}" alt="">--}}
+                                        <div class="blue-knowledge-list-info">
+                                            <a href="/snippet/{{{ $stock->snippet_id }}}" class="blue-knowledge-list-title">{{{ $stock->title }}}</a>
+                                            {{--<ul class="list-inline">--}}
+                                            {{--@foreach($snippet->tags as $tag)--}}
+                                            {{--<li>--}}
+                                            {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
+                                            {{--</li>--}}
+                                            {{--@endforeach--}}
+                                            {{--</ul>--}}
+                                            <p class="blue-knowledge-list-name">{{{ $stock->created_at }}}に投稿</p>
+                                        </div>
+                                    </li>
+                                @else
+                                    <div>
+                                        <p class="no-post-yet">ストックがまだありません</p>
+                                        <p class="">お気に入りのスニペットをストックしましょう！</p>
                                     </div>
-                                </li>
+                                @endif
                             @endforeach
 
                             @if(count($stocks) >= 5)
                                 <button class="btn btn-default btn-block">もっと見る</button>
                             @endif
-                        @else
-                            <div>
-                                <p class="no-post-yet">ストックがまだありません</p>
-                                <p class="">お気に入りのスニペットをストックしましょう！</p>
-                            </div>
-                        @endif
+
                     </ul>
 
                 </div>
