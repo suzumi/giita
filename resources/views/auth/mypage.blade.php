@@ -138,7 +138,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 mypage-popular-list-wrapper">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title">人気の投稿</div>

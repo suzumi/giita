@@ -284,6 +284,9 @@
 .mypage-snippet-list-wrapper {
     padding-bottom: 40px;
 }
+.mypage-popular-list-wrapper {
+    padding-bottom: 40px;
+}
 .mypage-stock-count {
     margin-left: 10px;
 }
