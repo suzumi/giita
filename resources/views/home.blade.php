@@ -19,7 +19,7 @@
                                     @foreach($snippets as $snippet)
 {{--                                        {{{ dd($snippet) }}}--}}
                                     <li>
-                                        <img class="blue-knowledge-list-thumb img-rounded" src="data:image/jpeg;base64,{{{ $snippet->users['thumbnail'] }}}" alt="">
+                                        <img class="blue-knowledge-list-thumb img-rounded" src="/{{{ $snippet->users['thumbnail'] }}}" alt="">
                                         <div class="blue-knowledge-list-info">
                                             <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
                                             <ul class="list-inline">

@@ -1,6 +1,11 @@
 @extends('app')
 
 @section('content')
+    @if(Session::has('success'))
+        <div class="alert alert-success text-center" role="alert">
+            {!! Session::get('success') !!}
+        </div>
+    @endif
     <div class="container">
         <h2>ユーザー設定<br />
         </h2>
@@ -23,7 +28,7 @@
                         <label>アイコン</label>
                     </dt>
                     <dd class="clearfix">
-                        <img src="data:image/jpg;base64,{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded">
+                        <img src="/{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded">
                         <label class="mypage-input-file-wrap">
                             <input type="file" name="profile-icon" class="mypage-input-file">
                             ファイルを選択
