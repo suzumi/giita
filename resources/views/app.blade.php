@@ -225,6 +225,58 @@
     color: #262626;
     background-color: #f5f5f5;
 }
+.text-advertisement {
+    border-top: 1px dotted #ccc;
+    padding-top: 20px;
+}
+.item-comment {
+    margin: 15px 0 5px 0;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+.comment-form-icon {
+    height: 35px;
+    width: 35px;
+}
+.comment-form-title {
+    display: inline-block;
+    font-size: 15px;
+    padding: 0 5px;
+    line-height: 35px;
+}
+.comment-form-content {
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.comment-form-tabs {
+    font-size: 0;
+    border-radius: 4px 4px 0 0;
+    background-color: #fafafa;
+}
+.comment-form-tab {
+    padding: 10px 0;
+    width: 100px;
+    font-size: 14px;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    -webkit-appearance: none;
+}
+.comment-form-tab:first-child {
+    border-radius: 4px 0 0 0;
+}
+.comment-form-tab.is-active {
+    background-color: #fff;
+}
+.comment-form-content-tab-content {
+    padding: 15px;
+}
+.comment-form-textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+}
 
 /*-------------------------------------
   Mypage
