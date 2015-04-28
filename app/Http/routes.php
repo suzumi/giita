@@ -15,6 +15,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
+
 //Route::get('mypage', 'SnippetController@mypage');
 Route::resource('snippet', 'SnippetController');
 Route::resource('users', 'Auth\UserController');
@@ -30,4 +31,8 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
     Route::get('stocked', 'SnippetController@stocked');
 	Route::get('tag', 'TagController@all');
 	Route::resource('activity', 'UserController');
+});
+Route::group(['prefix' => 'settings'], function () {
+	Route::get('account', 'SettingController@account');
+	Route::post('account-update', 'SettingController@accountUpdate');
 });

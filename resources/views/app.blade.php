@@ -342,6 +342,96 @@
     font-weight: bold;
     color: #555;
 }
+
+/*-------------------------------------
+  Mypage Edit
+-------------------------------------*/
+.nav-sidebar {
+    width: 100%;
+    padding: 8px 0;
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+.nav-sidebar .active a {
+    cursor: default;
+    background-color: #428bca;
+    color: #fff;
+    text-shadow: 1px 1px 1px #666;
+}
+.nav-sidebar .active a:hover {
+    background-color: #428bca;
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+/* Right-aligned sidebar */
+.nav-sidebar.pull-right {
+    border-right: 0;
+    border-left: 1px solid #ddd;
+}
+.nav-sidebar.pull-right a {
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.mypage-user-edit-thumb {
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin-right: 15px;
+}
+
+.mypage-input-file-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+}
+.mypage-input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.edit-form-wrapper {
+    padding: 30px 0;
+}
+
+
 /*-------------------------------------
   Footer
 -------------------------------------*/
