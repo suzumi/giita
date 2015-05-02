@@ -182,7 +182,7 @@
             .done(function (data) {
                 console.log("ストック成功");
                 if(data['code'] == 1) {
-                    $(".js-stock-btn").html('<button class="btn btn-warning btn-block js-spinner"><i class="fa fa-folder"></i>ストックを解除</button>');
+                    $(".js-stock-btn").html('<button class="btn btn-warning btn-block js-spinner">ストック済み</button>');
                     self.$stockForm.addClass('stock');
                 }
             })
@@ -212,7 +212,7 @@
             .done(function (data) {
                 console.log("アンストック成功");
                 if(data['code'] == 1) {
-                    $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストックする</button>');
+                    $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストック</button>');
                     self.$stockForm.removeClass('stock');
                 }
             })
@@ -236,10 +236,10 @@
             })
                 .done(function (data) {
                     if(data == 1) {
-                        $(".js-stock-btn").html('<button class="btn btn-warning btn-block js-spinner"><i class="fa fa-folder"></i>ストックを解除</button>');
+                        $(".js-stock-btn").html('<button class="btn btn-warning btn-block js-spinner">ストック済み</button>');
                         self.$stockForm.addClass('stock')
                     } else {
-                        $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストックする</button>');
+                        $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストック</button>');
                     }
                 })
         }

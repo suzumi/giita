@@ -74,8 +74,8 @@
                             </ul>
                             <form class="js-stock-form">
                                 <span class="js-stock-btn">
-                                    <button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストックする
-                                    </button>
+                                    {{--<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストックする--}}
+                                    {{--</button>--}}
                                 </span>
                                 <input type="hidden" name="snippetId" value="{{ $snippet->id }}">
                                 <input type="hidden" name="userId" value="{{ Auth::user()->id }}">
