@@ -24,21 +24,6 @@
                     @endif
                 </div>
             </div>
-            {{--<p class="mypage-user-snipets"><span class="snippet-count">{{ count($snippets) }}</span>snippets</p>--}}
-            {{--<div>--}}
-                {{--<ul class="tag-list clearfix">--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">PHP</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">Scala</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">Play framework</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">Rails</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">Vagrant</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">Swift</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">CentOS</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">HTML</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">Objective-C</a></li>--}}
-                    {{--<li><a href="#" class="btn btn-default btn-xs">CSS</a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
             <div class="panel panel-default">
                 <h1 class="glanceyear-header">Snippet Activity
                     <span class="glanceyear-quantity"></span>

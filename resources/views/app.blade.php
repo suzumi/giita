@@ -541,6 +541,9 @@ pre {
 .btn-default.btn-noborder {
     border: none;
 }
+.fa {
+    padding: 0 5px;
+}
 </style>
 </head>
 <body>
@@ -581,8 +584,8 @@ pre {
                             <span>新規作成</span>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/snippet/create">新規投稿する</a></li>
-                            <li><a href="/weekly-report">週報を投稿する</a></li>
+                            <li><a href="/snippet/create"><i class="fa fa-pencil-square-o"></i>新規投稿する</a></li>
+                            <li><a href="/weekly-report"><i class="fa fa-file-text-o"></i>週報を投稿する</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -592,10 +595,10 @@ pre {
                             <span>{{ Auth::user()->name }}</span>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/users/{{ Auth::user()->id }}">マイページ</a></li>
-                            <li><a href="/settings/account">プロフィール変更</a></li>
+                            <li><a href="/users/{{ Auth::user()->id }}"><i class="fa fa-user"></i>マイページ</a></li>
+                            <li><a href="/settings/account"><i class="fa fa-pencil"></i>プロフィール変更</a></li>
                             <li class="divider"></li>
-                            <li><a href="{{ url('/auth/logout') }}">ログアウト</a></li>
+                            <li><a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i>ログアウト</a></li>
                         </ul>
                     </li>
                 @endif

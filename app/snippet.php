@@ -30,4 +30,21 @@ class Snippet extends Model {
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    /**
+     * ストック数とコメント数を返す
+     * @param $id
+     * @return mixed
+     */
+    public function stocksAndCommentsCount($id)
+    {
+        $query = <<< SQL
+select
+(select count(*) from stocks where snippet_id = $id) as stock_num,
+(select count(*) from comments where snippet_id = $id) as comment_num
+SQL;
+
+        return \DB::select(\DB::raw($query));
+
+    }
 }

@@ -25,9 +25,7 @@
                     <div class="snippet-body-wrapper clearfix">
                         <div class="col-sm-6 snippet-body">
                             <div class="snippet-form-body-panel">
-                                <textarea class="form-control snippet-form-body" id="snippet-body" name="body">
-                                    {{{ $snippet->body }}}
-                                </textarea>
+                                <textarea class="form-control snippet-form-body" id="snippet-body" name="body">{{ $snippet->body }}</textarea>
                             </div>
                         </div>
                         <div class="col-sm-6 snippet-body">

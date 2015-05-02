@@ -80,6 +80,7 @@ class SnippetController extends Controller
 
         $snippet = $this->snippet->find($id);
         $comments = Comment::commentList($id);
+        $stocksAndComments = $this->snippet->stocksAndCommentsCount($id);
 
         $parsedComment = array_map(function($comment) use($parser) {
             $comment->comment = $parser->parse($comment->comment);
@@ -88,7 +89,7 @@ class SnippetController extends Controller
 
         $markdown = $parser->parse($snippet->body);
         $snippet['body'] = $markdown;
-        return view('snippet.show')->with(compact('snippet','parsedComment'));
+        return view('snippet.show')->with(compact('snippet','parsedComment', 'stocksAndComments'));
     }
 
     /**

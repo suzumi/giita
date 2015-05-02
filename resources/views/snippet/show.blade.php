@@ -56,7 +56,7 @@
                                 <li class="stock-list">
                                     <div class="stock-count">
                                         <i class="fa fa-folder-o"></i>
-                                        <span class="count-num">0</span>
+                                        <span class="count-num">{{ $stocksAndComments[0]->stock_num }}</span>
                                     </div>
                                     <div class="stock-count-text">
                                         <span>ストック</span>
@@ -65,7 +65,7 @@
                                 <li class="comment-list">
                                     <div class="comment-count">
                                         <i class="fa fa-comment-o"></i>
-                                        <span class="count-num">0</span>
+                                        <span class="count-num">{{ $stocksAndComments[0]->comment_num }}</span>
                                     </div>
                                     <div class="comment-count-text">
                                         <span>コメント</span>
