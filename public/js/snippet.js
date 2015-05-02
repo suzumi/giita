@@ -9,7 +9,8 @@
         this.$commentFormPreview = $('.js-comment-form-preview');
         this.$commentFormEdit = $('.js-comment-form-edit');
         this.$commentEdit = $('.js-comment-edit');
-        this.$commentDelete = $('.js-comment-delete');
+        this.$commentDeleteBtn = $('.js-comment-delete');
+        this.$snippetDeleteBtn = $('.js-snippet-delete');
 
         this._initialize();
     };
@@ -25,6 +26,7 @@
             this._stocked();
             this._commentPreview();
             this._commentEdit();
+            this._utilDeleteConfirm();
 
             //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
         },
@@ -138,6 +140,23 @@
 
             })
 
+        },
+        _utilDeleteConfirm: function() {
+            this.$commentDeleteBtn.on('click', function() {
+                if(window.confirm("このコメントを削除してもよろしいですか？")) {
+                    location.href = $(this).attr('href');
+                } else {
+                    return false;
+                }
+            });
+
+            this.$snippetDeleteBtn.on('click', function() {
+                if(window.confirm("この投稿を削除してもよろしいですか？")) {
+                    location.href = $(this).attr('href');
+                } else {
+                    return false;
+                }
+            });
         },
         _activity: function() {
             var url = location.href;

@@ -36,7 +36,7 @@
                                             {!!
                                             Form::open(['route'=>['snippet.destroy',$snippet->id],'method'=>'DELETE'])
                                             !!}
-                                            <button class="dropdown-form-button">投稿を削除</button>
+                                            <button class="dropdown-form-button js-snippet-delete"><i class="fa fa-trash-o"></i>投稿を削除</button>
                                             {!! Form::close() !!}
                                         </li>
                                     </ul>
