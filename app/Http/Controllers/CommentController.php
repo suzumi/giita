@@ -90,9 +90,13 @@ class CommentController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Request $request)
 	{
-		//
+        $input = $request->all();
+        $data = $this->comment->find($input['comment_id']);
+        $data->delete();
+
+        return redirect()->to("/snippet/{$input['snippet_id']}");
 	}
 
 }

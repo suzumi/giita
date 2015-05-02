@@ -8,6 +8,8 @@
         this.$stockForm = $('.js-stock-form');
         this.$commentFormPreview = $('.js-comment-form-preview');
         this.$commentFormEdit = $('.js-comment-form-edit');
+        this.$commentEdit = $('.js-comment-edit');
+        this.$commentDelete = $('.js-comment-delete');
 
         this._initialize();
     };

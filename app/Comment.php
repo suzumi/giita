@@ -20,6 +20,7 @@ class Comment extends Model {
             ->orderBy('comments.created_at')
             ->select([
                 '*',
+                'comments.id as comment_id',
                 'comments.created_at as created_at'
             ])
             ->get();

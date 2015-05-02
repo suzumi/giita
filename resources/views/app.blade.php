@@ -258,7 +258,9 @@ pre {
     margin-top: 11px;
     margin-bottom: 20px;
 }
-
+.comment-delete-form {
+    display: inline-block;
+}
 /*コメントフォーム*/
 
 .comment-form-icon {
