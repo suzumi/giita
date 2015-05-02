@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
 
 //Route::get('mypage', 'SnippetController@mypage');
+Route::resource('comment', 'CommentController');
 Route::resource('snippet', 'SnippetController');
 Route::resource('users', 'Auth\UserController');
 Route::controllers([

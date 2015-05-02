@@ -92,22 +92,41 @@
                     <span class="label label-info">PR</span>
                     <a target="_blank" id="ad-48" href="http://engineer.blue-corporation.jp/">blueエンジニアブログで記事を発信しよう - Blue enginner blog</a>
                 </div>
-                <div class="item-comment">
-                    <div class="comment-form-header">
-                        <img src="/{{ Auth::user()->thumbnail }}" class="comment-form-icon img-rounded">
-                        <div class="comment-form-title">コメントを投稿する</div>
-                    </div>
-                    <div class="comment-form-content">
-                        <div class="comment-form-tabs">
-                            <button class="comment-form-tab is-active js-comment-form-edit">編集</button>
-                            <button class="comment-form-tab js-comment-form-preview">プレビュー</button>
+                <div class="comment-wrapper">
+                    @foreach($parsedComment as $comment)
+                        <div class="comment-form-header">
+                            <img src="/{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
+                            <div class="comment-form-title"><a href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
+                            <time class="pull-right">{{ $comment->created_at }}</time>
+                            @if($comment->user_id === Auth::user()->id)
+                                <a href="#">編集</a>
+                                <a href="#">削除</a>
+                            @endif
                         </div>
-                        <div class="comment-form-content-tab-content">
-                            <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea" name="comment-form-edit-area"></textarea>
-                            <div class="markdown-content" style="display: none;"></div>
+                        <div class="comment-content">
+                            {!! $comment->comment !!}
                         </div>
+                    @endforeach
+                    <div class="item-comment">
+                        <div class="comment-form-header">
+                            <img src="/{{ Auth::user()->thumbnail }}" class="comment-form-icon img-rounded">
+                            <div class="comment-form-title">コメントを投稿する</div>
+                        </div>
+                        <div class="comment-form-content">
+                            <div class="comment-form-tabs">
+                                <button class="comment-form-tab is-active js-comment-form-edit">編集</button>
+                                <button class="comment-form-tab js-comment-form-preview">プレビュー</button>
+                            </div>
+                        {!! Form::open(['route' => 'comment.store', 'class' => 'snippet-form']) !!}
+                            <div class="comment-form-content-tab-content">
+                                <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea" name="comment"></textarea>
+                                <div class="markdown-content" style="display: none;"></div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="snippet_id" value="{{ $snippet->id }}">
+                        <button class="btn btn-success js-submit-btn" style="float: right;">投稿する</button>
+                        {!! Form::close() !!}
                     </div>
-                    <button class="btn btn-success js-submit-btn" style="float: right;">投稿する</button>
                 </div>
             </div>
         </div>

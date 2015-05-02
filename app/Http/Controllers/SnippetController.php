@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Snippet;
 use App\User;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -78,9 +79,16 @@ class SnippetController extends Controller
         $parser = new \cebe\markdown\GithubMarkdown();
 
         $snippet = $this->snippet->find($id);
+        $comments = Comment::commentList($id);
+
+        $parsedComment = array_map(function($comment) use($parser) {
+            $comment->comment = $parser->parse($comment->comment);
+            return $comment;
+        }, $comments);
+
         $markdown = $parser->parse($snippet->body);
         $snippet['body'] = $markdown;
-        return view('snippet.show')->with(compact('snippet'));
+        return view('snippet.show')->with(compact('snippet','parsedComment'));
     }
 
     /**

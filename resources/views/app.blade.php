@@ -242,6 +242,25 @@ pre {
     padding: 15px 0;
     border-top: 1px solid #eee;
 }
+
+/*コメント*/
+
+.comment-wrapper {
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: solid 1px #ccc;
+}
+
+.comment-content {
+    border: solid 1px #d9d9d9;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+}
+
+/*コメントフォーム*/
+
 .comment-form-icon {
     height: 35px;
     width: 35px;
