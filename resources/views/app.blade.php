@@ -27,6 +27,13 @@
 .u-mr8 {
     margin-right: 8px;
 }
+pre {
+    border: none;
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 3px;
+    overflow: auto;
+}
 .brand-logo {
     color: #2ec4cc !important;
     font-family: 'Comfortaa', cursive;
@@ -227,6 +234,7 @@
 }
 .text-advertisement {
     border-top: 1px dotted #ccc;
+    margin-top: 30px;
     padding-top: 20px;
 }
 .item-comment {

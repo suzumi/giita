@@ -99,15 +99,15 @@
                     </div>
                     <div class="comment-form-content">
                         <div class="comment-form-tabs">
-                            <button class="comment-form-tab is-active">編集</button>
-                            <button class="comment-form-tab">プレビュー</button>
+                            <button class="comment-form-tab is-active js-comment-form-edit">編集</button>
+                            <button class="comment-form-tab js-comment-form-preview">プレビュー</button>
                         </div>
                         <div class="comment-form-content-tab-content">
-                            <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea" name=""></textarea>
+                            <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea" name="comment-form-edit-area"></textarea>
                             <div class="markdown-content" style="display: none;"></div>
                         </div>
                     </div>
-                    <button class="btn btn-primary js-submit-btn" style="float: right;">投稿する</button>
+                    <button class="btn btn-success js-submit-btn" style="float: right;">投稿する</button>
                 </div>
             </div>
         </div>

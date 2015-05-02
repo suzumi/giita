@@ -6,6 +6,8 @@
         this.$snippetBody = $("#snippet-body");
         this.$snippetForm = $('.snippet-form');
         this.$stockForm = $('.js-stock-form');
+        this.$commentFormPreview = $('.js-comment-form-preview');
+        this.$commentFormEdit = $('.js-comment-form-edit');
 
         this._initialize();
     };
@@ -19,6 +21,8 @@
             this._activity();
             this.$stockForm.on('submit', this._hasStockClass.bind(this));
             this._stocked();
+            this._commentPreview();
+            this._commentEdit();
 
             //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
         },
@@ -71,6 +75,10 @@
                 var html = marked($(this).val());
                 $('#snippet-preview').html(html);
 
+                $('#snippet-preview pre code').each(function(i, e) {
+                    hljs.highlightBlock(e, e.className);
+                });
+
                 //$.ajaxSetup({
                 //    headers: {
                 //        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -93,6 +101,41 @@
                 //    console.log(data);
                 //});
             });
+        },
+        _commentPreview: function() {
+            this.$commentFormPreview.on('click', function() {
+
+                var commentFormText = $('.comment-form-textarea');
+                var markdownContent = $('.markdown-content');
+                var html = marked(commentFormText.val());
+
+                $('.js-comment-form-edit').removeClass('is-active');
+                $(this).addClass('is-active');
+
+                commentFormText.hide();
+                markdownContent.show();
+                markdownContent.html(html);
+
+                $('.markdown-content pre code').each(function(i, e) {
+                    hljs.highlightBlock(e, e.className);
+                });
+
+            });
+        },
+        _commentEdit: function() {
+            this.$commentFormEdit.on('click', function() {
+
+                var commentFormText = $('.comment-form-textarea');
+                var markdownContent = $('.markdown-content');
+
+                $(this).addClass('is-active');
+                $('.js-comment-form-preview').removeClass('is-active');
+
+                commentFormText.show();
+                markdownContent.hide();
+
+            })
+
         },
         _activity: function() {
             var url = location.href;
