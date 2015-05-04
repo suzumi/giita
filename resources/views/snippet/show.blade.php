@@ -99,16 +99,33 @@
                             <div class="comment-form-title"><a href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
                             <time class="pull-right">{{ $comment->created_at }}</time>
                             @if($comment->user_id === Auth::user()->id)
-                            <button class="btn btn-info btn-xs js-comment-edit">編集</button>
+                                <button class="btn btn-info btn-xs js-comment-edit">編集</button>
                                 {!! Form::open(['route'=>['comment.destroy',$snippet->id], 'method'=>'DELETE', 'class' => 'comment-delete-form'])!!}
                                 <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">
                                 <input type="hidden" name="snippet_id" value="{{ $snippet->id }}">
                                 <button class="btn btn-danger btn-xs js-comment-delete">削除</button>
                                 {!! Form::close() !!}
+                                <div class="edit-comment-form clearfix" style="display: none">
+                                    <div class="comment-form-content">
+                                        <div class="comment-form-tabs">
+                                            <button class="comment-form-tab is-active js-comment-edit-form">編集</button>
+                                            <button class="comment-form-tab js-comment-edit-form-preview">プレビュー</button>
+                                        </div>
+                                        {!! Form::open(['route' => ['comment.update', $comment->comment_id], 'method' => 'PUT']) !!}
+                                        <div class="comment-form-content-tab-content">
+                                            <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea js-comment-edit-form-textarea" name="comment">{{ $comment->comment }}</textarea>
+                                            <div class="markdown-content-edit" style="display: none;"></div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="snippet_id" value="{{ $comment->snippet_id }}">
+                                    <button class="btn btn-success js-comment-edit-update-btn pull-right">更新する</button>
+                                    <button class="btn btn-default js-comment-edit-cancel-btn pull-right" style="margin: 0 15px">キャンセル</button>
+                                    {!! Form::close() !!}
+                                </div>
                             @endif
                         </div>
                         <div class="comment-content">
-                            {!! $comment->comment !!}
+                            {!! $comment->parsedComment !!}
                         </div>
                     @endforeach
                     <div class="item-comment">
@@ -123,7 +140,7 @@
                             </div>
                         {!! Form::open(['route' => 'comment.store', 'class' => 'snippet-form']) !!}
                             <div class="comment-form-content-tab-content">
-                                <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea" name="comment"></textarea>
+                                <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea js-comment-form-textarea" name="comment"></textarea>
                                 <div class="markdown-content" style="display: none;"></div>
                             </div>
                         </div>

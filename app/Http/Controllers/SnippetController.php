@@ -83,7 +83,7 @@ class SnippetController extends Controller
         $stocksAndComments = $this->snippet->stocksAndCommentsCount($id);
 
         $parsedComment = array_map(function($comment) use($parser) {
-            $comment->comment = $parser->parse($comment->comment);
+            $comment->parsedComment = $parser->parse($comment->comment);
             return $comment;
         }, $comments);
 

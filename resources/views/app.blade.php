@@ -243,7 +243,7 @@ pre {
     border-top: 1px solid #eee;
 }
 
-/*コメント*/
+/*コメント一覧*/
 
 .comment-wrapper {
     margin-top: 10px;
@@ -260,6 +260,9 @@ pre {
 }
 .comment-delete-form {
     display: inline-block;
+}
+.edit-comment-form {
+    padding-bottom: 20px;
 }
 /*コメントフォーム*/
 

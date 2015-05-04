@@ -79,9 +79,12 @@ class CommentController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $id)
 	{
-		//
+        $input = $request->all();
+        $this->comment->where('id', $id)->update(['comment' => $input['comment']]);
+
+        return redirect()->to("/snippet/{$input['snippet_id']}");
 	}
 
 	/**

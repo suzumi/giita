@@ -8,9 +8,12 @@
         this.$stockForm = $('.js-stock-form');
         this.$commentFormPreview = $('.js-comment-form-preview');
         this.$commentFormEdit = $('.js-comment-form-edit');
-        this.$commentEdit = $('.js-comment-edit');
         this.$commentDeleteBtn = $('.js-comment-delete');
         this.$snippetDeleteBtn = $('.js-snippet-delete');
+        this.$commentEditBtn = $('.js-comment-edit');
+        this.$commentEditCancelBtn = $('.js-comment-edit-cancel-btn');
+        this.$commentEdittingTabBtn = $('.js-comment-edit-form');
+        this.$commentEditPreviewBtn = $('.js-comment-edit-form-preview');
 
         this._initialize();
     };
@@ -27,6 +30,8 @@
             this._commentPreview();
             this._commentEdit();
             this._utilDeleteConfirm();
+            this._commentEditFormShow();
+            this._commentEditCancel();
 
             //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
         },
@@ -106,10 +111,11 @@
                 //});
             });
         },
+        // プレビュータブを押下
         _commentPreview: function() {
             this.$commentFormPreview.on('click', function() {
 
-                var commentFormText = $('.comment-form-textarea');
+                var commentFormText = $('.js-comment-form-textarea');
                 var markdownContent = $('.markdown-content');
                 var html = marked(commentFormText.val());
 
@@ -125,11 +131,30 @@
                 });
 
             });
+
+            this.$commentEditPreviewBtn.on('click', function() {
+
+                var commentFormText = $(this).parent().parent().find('.js-comment-edit-form-textarea');
+                var markdownContent = $(this).parent().parent().find('.markdown-content-edit');
+                var html = marked(commentFormText.val());
+
+                $(this).siblings('.js-comment-edit-form').removeClass('is-active');
+                $(this).addClass('is-active');
+
+                commentFormText.hide();
+                markdownContent.show();
+                markdownContent.html(html);
+
+                $('.markdown-content pre code').each(function(i, e) {
+                    hljs.highlightBlock(e, e.className);
+                });
+            });
         },
+        // 編集タブを押下
         _commentEdit: function() {
             this.$commentFormEdit.on('click', function() {
 
-                var commentFormText = $('.comment-form-textarea');
+                var commentFormText = $('.js-comment-form-textarea');
                 var markdownContent = $('.markdown-content');
 
                 $(this).addClass('is-active');
@@ -140,6 +165,36 @@
 
             })
 
+            this.$commentEdittingTabBtn.on('click', function() {
+
+                var commentFormText = $(this).parent().parent().find('.js-comment-edit-form-textarea');
+                var markdownContent = $(this).parent().parent().find('.markdown-content-edit');
+
+                $(this).addClass('is-active');
+                $(this).siblings('.js-comment-edit-form-preview').removeClass('is-active');
+
+                commentFormText.show();
+                markdownContent.hide();
+
+            })
+
+        },
+         // コメント編集ボタン押下時に編集フォームを表示する
+        _commentEditFormShow: function() {
+            this.$commentEditBtn.on('click', function() {
+
+                //$(this).addClass('is-editting');
+                $(this).parent().next().hide();
+                $(this).siblings('.edit-comment-form').show();
+            });
+        },
+        // コメント編集中のキャンセルボタン押下
+        _commentEditCancel: function() {
+            this.$commentEditCancelBtn.on('click', function(e) {
+                e.preventDefault();
+                $(this).parent().hide();
+                $(this).parent().parent().next('.comment-content').show();
+            });
         },
         _utilDeleteConfirm: function() {
             this.$commentDeleteBtn.on('click', function() {
