@@ -147,7 +147,7 @@ SQL;
      * @param $id
      * @return mixed
      */
-    public static function myStocks($id, $count = 5)
+    public static function myStocks($id, $count = null)
     {
         return \DB::table('snippets')
             ->leftjoin('stocks', 'snippets.id', '=', 'stocks.snippet_id')

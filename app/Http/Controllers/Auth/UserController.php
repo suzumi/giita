@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\File;
 
 class UserController extends Controller {
 
+    const TAKE_STOCK_COUNT = 5;
+
 	public function __construct()
 	{
 		$this->middleware('auth');
@@ -54,7 +56,7 @@ class UserController extends Controller {
 	{
 		$user = User::find($id);
 		$snippets = User::getSnippets($id);
-        $stocks = User::myStocks($id);
+        $stocks = User::myStocks($id, self::TAKE_STOCK_COUNT);
 //        dd($stocks);
 //		$profIcon = \Storage::get('proficons/user1.jpg');
 
@@ -93,5 +95,12 @@ class UserController extends Controller {
 	{
 		//
 	}
+
+    public function stockList($id)
+    {
+        $user = User::find($id);
+        $stocks = User::myStocks($id);
+        return view('auth.stocks')->with(compact('user','stocks'));
+    }
 
 }

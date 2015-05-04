@@ -83,7 +83,7 @@
                         @endif
                     </ul>
                     @if(count($snippets) >= 5)
-                        <button class="btn btn-default btn-block">もっと見る</button>
+                        <a href="/users/{{ $user->id }}/items" class="btn btn-default btn-block">もっと見る</a>
                     @endif
                 </div>
                 <!--ストックした一覧-->
@@ -117,11 +117,9 @@
                             @endforeach
 
                             @if(count($stocks) >= 5)
-                                <button class="btn btn-default btn-block">もっと見る</button>
+                                <a href="/users/{{ $user->id }}/stocks" class="btn btn-default btn-block">もっと見る</a>
                             @endif
-
                     </ul>
-
                 </div>
             </div>
         </div>

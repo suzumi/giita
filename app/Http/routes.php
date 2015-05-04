@@ -33,6 +33,9 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 	Route::get('tag', 'TagController@all');
 	Route::resource('activity', 'UserController');
 });
+Route::group(['prefix' => 'users/{id}'], function() {
+    Route::get('stocks', 'Auth\UserController@stockList');
+});
 Route::group(['prefix' => 'settings'], function () {
 	Route::get('account', 'SettingController@account');
 	Route::post('account-update', 'SettingController@accountUpdate');
