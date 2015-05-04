@@ -58,7 +58,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		$query = <<< SQL
 select
-    DATE_FORMAT(snippets.created_at, '%Y-%c-%d') as date,
+    DATE_FORMAT(snippets.created_at, '%Y-%c-%e') as date,
     count(snippets.created_at) as value
 from
     users
@@ -68,7 +68,7 @@ from
 where
     snippets.user_id = $id
 group by
-    DATE_FORMAT(snippets.created_at, '%Y-%m-%d')
+    DATE_FORMAT(snippets.created_at, '%Y-%c-%e')
 order by
     snippets.`created_at` DESC
 SQL;
@@ -147,7 +147,7 @@ SQL;
      * @param $id
      * @return mixed
      */
-    public static function myStocks($id)
+    public static function myStocks($id, $count = 5)
     {
         return \DB::table('snippets')
             ->leftjoin('stocks', 'snippets.id', '=', 'stocks.snippet_id')
@@ -159,6 +159,7 @@ SQL;
                 'users.id as user_id',
                 'snippets.created_at as snippet_created_at',
             ])
+            ->take($count)
             ->get();
     }
 }
