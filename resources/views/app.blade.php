@@ -106,6 +106,33 @@ pre {
     font-weight: bold;
     color: #555;
 }
+.user-info {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #eee;
+}
+.user-info img {
+    height: 48px;
+    width:  48px;
+}
+.user-info-left, .user-info-right {
+    display: inline-block;
+    /*vertical-align: top;*/
+}
+.user-info-name {
+    padding-left: 5px;
+}
+.ad-banner-blog {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/*-------------------------------------
+  Snippet Form
+-------------------------------------*/
 .btn-post {
     margin-bottom: 20px;
 }

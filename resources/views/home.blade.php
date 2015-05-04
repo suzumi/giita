@@ -9,7 +9,7 @@
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
                         <li class="active"><a href="#newarraival" data-toggle="tab">新着投稿</a></li>
-                        <li><a href="#weekly-report" data-toggle="tab">週報</a></li>
+                        {{--<li><a href="#weekly-report" data-toggle="tab">週報</a></li>--}}
                     </ul>
                     <div class="tab-content">
                         <!--新着-->
@@ -73,10 +73,25 @@
             </div>
             <!--サイドバー-->
             <div class="col-sm-3">
-                <div class="list-group">
-                    <a class="list-group-item" href="#">週報</a>
-                    <a class="list-group-item" href="#">伝達事項</a>
-                    <a class="list-group-item" href="#">ほげほげ</a>
+                <div class="user-info">
+                    <div class="user-info-left">
+                        <img class="img-rounded" src="/{{ Auth::user()->thumbnail }}">
+                    </div>
+                    <div class="user-info-right">
+                        <div class="user-info-name">
+                            <a href="/users/{{ Auth::user()->id }}">{{ Auth::user()->name }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-navigation">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation" class="active"><a href="/">フィード</a></li>
+                    </ul>
+                </div>
+                <div class="ad-banner-blog">
+                    <a href="http://engineer.blue-corporation.jp/" target="_blank">
+                        <img src="/img/assets/07a7b746e4e773b5cb59dfc69a5f5ce2.png" class="img-responsive">
+                    </a>
                 </div>
             </div>
         </div>
