@@ -93,9 +93,9 @@
                             @foreach($stocks as $stock)
                                 @if($stock->snippet_id != null)
                                     <li>
-                                        {{--<img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">--}}
+                                        <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
                                         <div class="blue-knowledge-list-info">
-                                            <a href="/snippet/{{{ $stock->snippet_id }}}" class="blue-knowledge-list-title">{{{ $stock->title }}}</a>
+                                            <a href="/snippet/{{ $stock->snippet_id }}" class="blue-knowledge-list-title">{{ $stock->title }}</a>
                                             {{--<ul class="list-inline">--}}
                                             {{--@foreach($snippet->tags as $tag)--}}
                                             {{--<li>--}}
@@ -103,7 +103,9 @@
                                             {{--</li>--}}
                                             {{--@endforeach--}}
                                             {{--</ul>--}}
-                                            <p class="blue-knowledge-list-name">{{{ $stock->created_at }}}に投稿</p>
+                                            <p class="blue-knowledge-list-name">
+                                                <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ $stock->snippet_created_at }}に投稿
+                                            </p>
                                         </div>
                                     </li>
                                 @else

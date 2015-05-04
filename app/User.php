@@ -149,15 +149,15 @@ SQL;
      */
     public static function myStocks($id)
     {
-        return \DB::table('users')
-            ->leftjoin('stocks', 'users.id', '=', 'stocks.user_id')
-            ->leftjoin('snippets', 'snippets.id', '=', 'stocks.snippet_id')
-            ->where('users.id', '=', $id)
+        return \DB::table('snippets')
+            ->leftjoin('stocks', 'snippets.id', '=', 'stocks.snippet_id')
+            ->leftjoin('users', 'snippets.user_id', '=', 'users.id')
+            ->where('stocks.user_id', '=', $id)
             ->orderBy('stocks.created_at', 'desc')
             ->select([
-                'snippets.id as snippet_id',
-                'snippets.title',
-                'snippets.created_at'
+                '*',
+                'users.id as user_id',
+                'snippets.created_at as snippet_created_at',
             ])
             ->get();
     }
