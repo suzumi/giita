@@ -96,6 +96,11 @@ class UserController extends Controller {
 		//
 	}
 
+	/**
+	 * ストック一覧
+	 * @param $id
+	 * @return $this
+	 */
     public function stockList($id)
     {
         $user = User::find($id);
