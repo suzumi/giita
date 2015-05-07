@@ -110,6 +110,11 @@ class UserController extends Controller
         return view('auth.stocks')->with(compact('user', 'stocks'));
     }
 
+    /**
+     * スニペット一覧
+     * @param $id
+     * @return $this
+     */
     public function mySnippetList($id)
     {
         $user = User::find($id);
