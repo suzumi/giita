@@ -7,105 +7,106 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class UserController extends Controller {
+class UserController extends Controller
+{
 
     const TAKE_STOCK_COUNT = 5;
 
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        //
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
 //	public function create()
 //	{
 //		//
 //	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        //
+    }
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$user = User::find($id);
-		$snippets = User::getSnippets($id);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        $user = User::find($id);
+        $snippets = User::getSnippets($id);
         $stocks = User::myStocks($id, self::TAKE_STOCK_COUNT);
 //        dd($stocks);
 //		$profIcon = \Storage::get('proficons/user1.jpg');
 
-		return view('auth.mypage')->with(compact('user', 'snippets', 'stocks'));
-	}
+        return view('auth.mypage')->with(compact('user', 'snippets', 'stocks'));
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
-	/**
-	 * ストック一覧
-	 * @param $id
-	 * @return $this
-	 */
+    /**
+     * ストック一覧
+     * @param $id
+     * @return $this
+     */
     public function stockList($id)
     {
         $user = User::find($id);
         $stocks = User::myStocks($id, null, true);
-        return view('auth.stocks')->with(compact('user','stocks'));
+        return view('auth.stocks')->with(compact('user', 'stocks'));
     }
 
 }
