@@ -1,6 +1,36 @@
 @extends('app')
 
 @section('content')
+    <div class="user-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 clearfix">
+                    <div class="user-page-icon">
+                        <img src="/{{ $user->thumbnail }}" class="img-rounded img-responsive">
+                    </div>
+                    <div class="user-page-name">
+                        <h2>{{ $user->name }}</h2>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    @if(Auth::user()->id == $user->id)
+                        <a href="/settings/account" class="btn btn-info">プロフィールを編集する</a>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-page-ribbon">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>
+                        <a href="/user/{{ $user->id }}">{{ $user->name }}</a> / 投稿した一覧
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="stocks-wrapper">
             <div>

@@ -89,8 +89,8 @@ pre {
 }
 .blue-knowledge-list-thumb {
     display: table-cell;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 .blue-knowledge-list-name {
     float: right;
@@ -229,11 +229,27 @@ pre {
     border-radius: 3px;
     overflow: auto;
 }
-
 .stock-list {
     border-right: 1px solid #fff;
 }
-
+.stock-list-wrapper {
+    margin-left: 0;
+    font-size: 0;
+}
+.stock-list-wrapper i {
+    font-size: 14px;
+}
+.list-inline > li.stock-list,
+.list-inline > li.comment-list {
+    padding: 0;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.comment-count-text,
+.stock-count-text {
+    font-size: 14px;
+}
 .count-num {
     font-size: 22px;
     font-weight: 500;
@@ -548,6 +564,29 @@ pre {
 .stocks-wrapper {
     margin: 40px 0;
 }
+.user-page-header {
+    padding: 1em 0;
+}
+.user-page-icon {
+    float: left;
+}
+.user-page-icon img {
+    height: 80px;
+    width: 80px;
+    margin-right: 20px;
+}
+.user-page-name {
+    float: left;
+}
+.user-page-name h2{
+    font-weight: 900;
+}
+.user-page-ribbon {
+    background: #E9F8FC;
+    border-bottom: solid 1px #BCD7E0;
+    border-top: solid 1px #BCD7E0;
+    padding: 1em 0;
+}
 /*-------------------------------------
   Footer
 -------------------------------------*/
@@ -625,6 +664,7 @@ pre {
                             <li><a href="/weekly-report"><i class="fa fa-file-text-o"></i>週報を投稿する</a></li>
                         </ul>
                     </li>
+                    <li><a href="/users/{{ Auth::user()->id }}/stocks">ストック一覧</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{--<img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">--}}

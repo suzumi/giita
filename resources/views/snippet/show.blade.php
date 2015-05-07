@@ -52,7 +52,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="item-stock-view">
-                            <ul class="list-inline text-center">
+                            <ul class="list-inline text-center stock-list-wrapper">
                                 <li class="stock-list">
                                     <div class="stock-count">
                                         <i class="fa fa-folder-o"></i>
