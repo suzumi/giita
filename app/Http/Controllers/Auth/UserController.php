@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\File;
 class UserController extends Controller
 {
 
+    const TAKE_SNIPPET_COUNT = 5;
     const TAKE_STOCK_COUNT = 5;
 
     public function __construct()
@@ -56,7 +57,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $snippets = User::getSnippets($id);
+        $snippets = User::getSnippets($id, self::TAKE_SNIPPET_COUNT);
         $stocks = User::myStocks($id, self::TAKE_STOCK_COUNT);
 //        dd($stocks);
 //		$profIcon = \Storage::get('proficons/user1.jpg');
@@ -107,6 +108,13 @@ class UserController extends Controller
         $user = User::find($id);
         $stocks = User::myStocks($id, null, true);
         return view('auth.stocks')->with(compact('user', 'stocks'));
+    }
+
+    public function mySnippetList($id)
+    {
+        $user = User::find($id);
+        $snippets = User::getSnippets($id, null, true);
+        return view('auth.snippets')->with(compact('user', 'snippets'));
     }
 
 }

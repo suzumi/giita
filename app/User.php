@@ -42,14 +42,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @param $id
      * @return mixed
      */
-    public static function getSnippets($id, $count = 5)
+    public static function getSnippets($id, $count = null, $isPaginate = false)
     {
-        return \DB::table('users')
+        $query = \DB::table('users')
             ->leftjoin('snippets', 'users.id', '=', 'snippets.user_id')
             ->where('snippets.user_id', '=', $id)
-            ->orderBy('snippets.created_at', 'desc')
-            ->take($count)
-            ->get();
+            ->orderBy('snippets.created_at', 'desc');
+            if ($isPaginate) {
+                return $query->paginate(20);
+            } else {
+                return $query->take($count)->get();
+            }
+
     }
 
     /**
