@@ -104,7 +104,7 @@ class UserController extends Controller {
     public function stockList($id)
     {
         $user = User::find($id);
-        $stocks = User::myStocks($id);
+        $stocks = User::myStocks($id, null, true);
         return view('auth.stocks')->with(compact('user','stocks'));
     }
 

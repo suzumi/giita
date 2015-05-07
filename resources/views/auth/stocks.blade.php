@@ -36,6 +36,7 @@
                 @endif
             @endforeach
             </ul>
+            {!! $stocks->render() !!}
         </div>
     </div>
 @endsection

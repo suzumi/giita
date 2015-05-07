@@ -142,14 +142,16 @@ SQL;
         return \DB::selectOne($query);
     }
 
-    /**
-     * ストックしたスニペットリスト
-     * @param $id
-     * @return mixed
-     */
-    public static function myStocks($id, $count = null)
+	/**
+	 * ストックしたスニペットリスト
+	 * @param $id
+	 * @param null $count
+	 * @param bool $isPaginate ページネーションが必要か
+	 * @return mixed
+	 */
+    public static function myStocks($id, $count = null, $isPaginate = false)
     {
-        return \DB::table('snippets')
+        $query =  \DB::table('snippets')
             ->leftjoin('stocks', 'snippets.id', '=', 'stocks.snippet_id')
             ->leftjoin('users', 'snippets.user_id', '=', 'users.id')
             ->where('stocks.user_id', '=', $id)
@@ -158,8 +160,12 @@ SQL;
                 '*',
                 'users.id as user_id',
                 'snippets.created_at as snippet_created_at',
-            ])
-            ->take($count)
-            ->get();
+            ]);
+			if ($isPaginate) {
+				return $query->paginate(20);
+			} else {
+				return $query->take($count)->get();
+			}
+
     }
 }
