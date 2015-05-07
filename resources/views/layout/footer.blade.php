@@ -4,8 +4,8 @@
                 <div class="col-sm-8">
                     <div class="footer-feature-list">
                         <ul class="list-inline">
-                            <li><a href="/users">ユーザー一覧</a></li>
-                            <li><a href="/tags">タグ一覧</a></li>
+                            {{--<li><a href="/users">ユーザー一覧</a></li>--}}
+                            {{--<li><a href="/tags">タグ一覧</a></li>--}}
                         </ul>
                     </div>
                     <div class="footer-link-list">

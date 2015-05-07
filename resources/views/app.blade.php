@@ -641,15 +641,15 @@ pre {
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <form class="navbar-form navbar-left" action="/api/search" role="search" method="get">
-                        <div class="form-group">
-                            <input type="search" class="form-control" autocomplete="off" placeholder="検索">
-                        </div>
-                    </form>
-                </li>
-            </ul>
+            {{--<ul class="nav navbar-nav">--}}
+                {{--<li>--}}
+                    {{--<form class="navbar-form navbar-left" action="/api/search" role="search" method="get">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<input type="search" class="form-control" autocomplete="off" placeholder="検索">--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/auth/login') }}">ログイン</a></li>
@@ -699,30 +699,5 @@ pre {
 <script src="{{ asset('/js/highlight.pack.js') }}"></script>
 <script src="{{ asset('/js/marked.min.js') }}"></script>
 <script src="{{ asset('js/jquery.glanceyear.min.js') }}"></script>
-<script>
-//    var massive = [
-//        {date: '2014-8-3', value:1},
-//        {date: '2014-8-4', value:2},
-//        {date: '2014-9-3', value:3},
-//        {date: '2014-10-14', value:2},
-//        {date: '2014-10-13', value:8},
-//        {date: '2014-7-3', value:1},
-//        {date: '2014-7-4', value:2},
-//        {date: '2014-7-7', value:3},
-//        {date: '2014-7-14', value:2},
-//        {date: '2014-6-3', value:1},
-//        {date: '2014-6-4', value:2},
-//        {date: '2014-6-5', value:3},
-//        {date: '2014-6-14', value:2}
-//    ];
-//    $('div#js-glanceyear').glanceyear(massive,
-//            {
-//                eventClick: function(e) { $('#debug').html('Date: '+ e.date + ', Count: ' + e.count); },
-//                months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-//                weeks: ['M','T','W','T','F','S', 'S'],
-//                showToday: false,
-//                today: new Date()
-//            });
-</script>
 </body>
 </html>

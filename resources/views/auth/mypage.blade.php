@@ -49,7 +49,7 @@
 </div>
 <div class="row mypage-snippet-area">
     <div class="container">
-        <div class="col-sm-7 mypage-snippet-list-wrapper">
+        <div class="col-sm-12 mypage-snippet-list-wrapper">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#snippets-list" data-toggle="tab">投稿した一覧</a></li>
                 <li ><a href="#stock-list" data-toggle="tab">ストックした一覧</a></li>
@@ -123,30 +123,30 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-5 mypage-popular-list-wrapper">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">人気の投稿</div>
-                </div>
+        {{--<div class="col-sm-5 mypage-popular-list-wrapper">--}}
+            {{--<div class="panel panel-info">--}}
+                {{--<div class="panel-heading">--}}
+                    {{--<div class="panel-title">人気の投稿</div>--}}
+                {{--</div>--}}
                 {{--<div class="panel-body">ここがパネルに記載する本文</div>--}}
-                <ul class="list-group">
-                    @if($snippets)
-                        @foreach($snippets as $snippet)
-                        <li class="list-group-item">
-                            <i class="fa fa-folder-o"></i><strong class="mypage-stock-count">40</strong><span>ストック</span>
-                            <div class="blue-knowledge-list-info">
-                                <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
-                            </div>
-                        </li>
-                        @endforeach
-                    @else
-                        <li class="list-group-item">
-                            <p>まだ人気の記事はありません</p>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
+                {{--<ul class="list-group">--}}
+                    {{--@if($snippets)--}}
+                        {{--@foreach($snippets as $snippet)--}}
+                        {{--<li class="list-group-item">--}}
+                            {{--<i class="fa fa-folder-o"></i><strong class="mypage-stock-count">40</strong><span>ストック</span>--}}
+                            {{--<div class="blue-knowledge-list-info">--}}
+                                {{--<a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
+                        {{--@endforeach--}}
+                    {{--@else--}}
+                        {{--<li class="list-group-item">--}}
+                            {{--<p>まだ人気の記事はありません</p>--}}
+                        {{--</li>--}}
+                    {{--@endif--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 </div>
 
