@@ -10,6 +10,7 @@
     <link href="{{ asset('/css/glanceyear.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/github.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/particlebackground.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -26,6 +27,9 @@
 <style>
 .u-mr8 {
     margin-right: 8px;
+}
+.login-wrapper {
+    padding-bottom: 30px;
 }
 pre {
     border: none;
@@ -704,5 +708,6 @@ pre {
 <script src="{{ asset('/js/highlight.pack.js') }}"></script>
 <script src="{{ asset('/js/marked.min.js') }}"></script>
 <script src="{{ asset('js/jquery.glanceyear.min.js') }}"></script>
+    <script src="{{ asset('js/particlebackground.js') }}"></script>
 </body>
 </html>
