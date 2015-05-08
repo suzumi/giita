@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <span>
-                        <a href="/user/{{ $user->id }}">{{ $user->name }}</a> / 投稿した一覧
+                        <a href="/users/{{ $user->id }}">{{ $user->name }}</a> / 投稿した一覧
                     </span>
                 </div>
             </div>
