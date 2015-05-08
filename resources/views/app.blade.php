@@ -623,6 +623,11 @@ pre {
 </style>
 </head>
 <body>
+@if(Session::has('feedbackSuccess'))
+    <div class="alert alert-success text-center" role="alert">
+        {!! Session::get('feedbackSuccess') !!}
+    </div>
+@endif
 <nav class="navbar navbar-default navbar-static-top u-mb0">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->

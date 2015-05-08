@@ -15,6 +15,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
+Route::post('/feedback', 'MailController@feedback');
 
 //Route::get('mypage', 'SnippetController@mypage');
 Route::resource('comment', 'CommentController');

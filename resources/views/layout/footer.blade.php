@@ -20,14 +20,14 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="footer-form">
-                        <form>
+                        {!! Form::open(['action' => ['MailController@feedback'], 'method' => 'POST']) !!}
                             <div class="footer-form-body">
-                                <textarea class="form-control footer-form" name="footer-form" placeholder="Biitaについてご意見、バグを報告してください"></textarea>
+                                <textarea class="form-control footer-form" name="feedback-form" placeholder="Biitaについてご意見、バグを報告してください"></textarea>
                             </div>
                             <div class="footer-form-submit">
                                 <button class="btn btn-default btn-block">運営に送信する</button>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
