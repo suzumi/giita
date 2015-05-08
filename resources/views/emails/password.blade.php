@@ -1,1 +1,4 @@
-Click here to reset your password: {{ url('password/reset/'.$token) }}
+<h3>パスワードリセット申請</h3>
+
+以下のURLをクリックしてパスワードをリセットしてください。<br>
+{{ url('password/reset/'.$token) }}

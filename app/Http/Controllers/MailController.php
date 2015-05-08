@@ -28,6 +28,10 @@ class MailController extends Controller
     public function feedback(Request $request)
     {
         $input = $request->all();
+        if(empty($input['feedback-form'])) {
+            \Session::flash('feedbackError', '必ずフォームの内容を入力してください。');
+            return redirect()->back();
+        }
 
         \Mail::send('emails.feedback', ['name' => $this->userName, 'body' => $input['feedback-form']], function($message) {
             $message->to('shibue@blue-corporation.jp')->cc('arata@blue-corporation.jp')->subject("【Biita】{$this->userName}さんからのお問い合わせ【フィードバック】");

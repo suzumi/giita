@@ -643,6 +643,10 @@ pre {
     <div class="alert alert-success text-center" role="alert">
         {!! Session::get('feedbackSuccess') !!}
     </div>
+@elseif(Session::has('feedbackError'))
+    <div class="alert alert-danger text-center" role="alert">
+        {!! Session::get('feedbackError') !!}
+    </div>
 @endif
 <nav class="navbar navbar-default navbar-static-top u-mb0">
     <div class="container">
