@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 class MailController extends Controller
 {
 
+    const GUEST_USER = 'ゲストユーザー';
     private $userName;
 
     public function __construct()
     {
-        $this->userName = \Auth::user()->name;
+        if(\Auth::check()) {
+            $this->userName = \Auth::user()->name;
+        } else {
+            $this->userName = self::GUEST_USER;
+        }
+
     }
 
     /**
