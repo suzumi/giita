@@ -14,8 +14,31 @@
 //Route::get('/', 'WelcomeController@index');
 
 Route::get('/', 'HomeController@index');
+Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
+Route::post('/feedback', 'MailController@feedback');
 
+//Route::get('mypage', 'SnippetController@mypage');
+Route::resource('comment', 'CommentController');
+Route::resource('snippet', 'SnippetController');
+Route::resource('users', 'Auth\UserController');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+	Route::post('preview', 'SnippetController@preview');
+	Route::post('stock', 'SnippetController@stock');
+	Route::post('unstock', 'SnippetController@unstock');
+    Route::get('stocked', 'SnippetController@stocked');
+	Route::get('tag', 'TagController@all');
+	Route::resource('activity', 'UserController');
+});
+Route::group(['prefix' => 'users/{id}'], function() {
+    Route::get('stocks', 'Auth\UserController@stockList');
+	Route::get('items', 'Auth\UserController@mySnippetList');
+});
+Route::group(['prefix' => 'settings'], function () {
+	Route::get('account', 'SettingController@account');
+	Route::post('account-update', 'SettingController@accountUpdate');
+});

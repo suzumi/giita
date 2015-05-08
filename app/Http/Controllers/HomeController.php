@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Snippet;
+use App\User;
+
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +33,14 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		$snippets = Snippet::orderBy('created_at', 'desc')->paginate(15);
+//		$snippet = Snippet::first();
+//		dd($snippet->tags->toArray());
+//        $snippet = new Snippet();
+//        $snippets = $snippet->getTags();
+//        dd($snippet);
+//        dd($snippet->getTags());
+        return view('home')->with(compact('snippets'));
 	}
 
 }
