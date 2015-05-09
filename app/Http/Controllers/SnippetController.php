@@ -58,14 +58,20 @@ class SnippetController extends Controller
     public function store(Request $request)
     {
         $input =  $request->all();
-        $input['user_id'] = Auth::user()->id;
-        $this->snippet->fill($input);
-        $this->snippet->save();
-        // スニペットにタグを紐付ける
-        $snippet = Snippet::find($this->snippet->id);
-        $snippet->tags()->attach($input['selected-tags']);
+        if(array_key_exists('selected-tags', $input)) {
+            $input['user_id'] = Auth::user()->id;
+            $this->snippet->fill($input);
+            $this->snippet->save();
+            // スニペットにタグを紐付ける
+            $snippet = Snippet::find($this->snippet->id);
+            $snippet->tags()->attach($input['selected-tags']);
 
-        return redirect()->to("/snippet/{$this->snippet->id}");
+            return redirect()->to("/snippet/{$this->snippet->id}");
+        } else {
+            \Session::flash('snippetFormError', '必ずタグを選択してください');
+            $request->flashOnly('title', 'body');
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
@@ -114,13 +120,20 @@ class SnippetController extends Controller
     public function update(Request $request, $id)
     {
         $input = $request->all();
-        $this->snippet->where('id', $id)->update(['title' => $input['title'], 'body' => $input['body']]);
-        // スニペットにタグを紐付ける
-        $snippet = Snippet::find($id);
-        $snippet->tags()->detach();
-        $snippet->tags()->attach($input['selected-tags']);
+        if(array_key_exists('selected-tags', $input)) {
+            $this->snippet->where('id', $id)->update(['title' => $input['title'], 'body' => $input['body']]);
+            // スニペットにタグを紐付ける
+            $snippet = Snippet::find($id);
+            $snippet->tags()->detach();
+            $snippet->tags()->attach($input['selected-tags']);
 
-        return redirect()->to("/snippet/$id");
+            return redirect()->to("/snippet/$id");
+        } else {
+            \Session::flash('snippetFormError', '必ずタグを選択してください');
+            $request->flashOnly('title', 'body');
+            return redirect()->back()->withInput();
+        }
+
     }
 
     /**

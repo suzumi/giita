@@ -3,14 +3,14 @@
 @section('content')
     <div class="snippet-form-wrapper">
         <div class="container-fluid">
-            {!! Form::open(['route' => 'snippet.store', 'class' => 'snippet-form', 'novalidate' => true]) !!}
+            {!! Form::open(['route' => 'snippet.store', 'class' => 'snippet-form']) !!}
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="snippet-form-title">
                                 @if(isset($isWeeklyReport))
                                     <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞">
                                 @else
-                                    {!! Form::input('text', 'title', null, ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
+                                    {!! Form::input('text', 'title', old('title'), ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
                                 @endif
                             </div>
                         </div>
@@ -26,6 +26,11 @@
                             </div>
                         </div>
                     </div>
+                    @if(Session::has('snippetFormError'))
+                        <div class="alert alert-danger" role="alert">
+                            {!! Session::get('snippetFormError') !!}
+                        </div>
+                    @endif
                     @if(isset($isWeeklyReport))
                         @if(!empty($oneBeforeSnippet))
                             <div class="one-brefore-snippet">
@@ -43,7 +48,7 @@
                                         @if(isset($isWeeklyReport))
                                             <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{{ $template }}}</textarea>
                                         @else
-                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required></textarea>
+                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{ old('body') }}</textarea>
                                         @endif
                                     </div>
                                 </div>
