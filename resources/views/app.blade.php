@@ -421,6 +421,9 @@ pre {
 .glanceyear-content {
     overflow: hidden;
 }
+.mypage-snippet-area {
+    margin: 0;
+}
 .panel {
     margin-bottom: 0;
 }
