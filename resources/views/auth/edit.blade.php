@@ -30,7 +30,7 @@
                     <dd class="clearfix">
                         <img src="/{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded">
                         <label class="mypage-input-file-wrap">
-                            <input type="file" name="profile-icon" class="mypage-input-file">
+                            <input type="file" name="profile-icon" class="mypage-input-file" accept="image/*">
                             ファイルを選択
                         </label>
                     </dd>
