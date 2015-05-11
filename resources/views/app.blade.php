@@ -657,6 +657,32 @@ pre {
     border-top: solid 1px #BCD7E0;
     padding: 1em 0;
 }
+.tag-list {
+    margin: 100px 0 100px 3px;
+}
+.tag-list > li {
+    float: left;
+    margin: -1px 0 0 -1px;
+    width: 33.33333%;
+    border: 1px #ccc solid;
+    box-sizing: border-box;
+}
+.tag-list > li:nth-child(6n),
+.tag-list > li:nth-child(6n-1),
+.tag-list > li:nth-child(6n-2) {
+    background-color: #f9fff6;
+}
+.tag-list > li > a {
+    display: block;
+    padding: 20px 5px;
+    color: inherit;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
 /*-------------------------------------
   Footer
 -------------------------------------*/

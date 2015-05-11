@@ -38,6 +38,10 @@ Route::group(['prefix' => 'users/{id}'], function() {
     Route::get('stocks', 'Auth\UserController@stockList');
 	Route::get('items', 'Auth\UserController@mySnippetList');
 });
+Route::group(['prefix' => 'tags'], function() {
+	Route::get('/', 'TagController@all');
+	Route::get('{tag}', 'TagController@tag');
+});
 Route::group(['prefix' => 'settings'], function () {
 	Route::get('account', 'SettingController@account');
 	Route::post('account-update', 'SettingController@accountUpdate');
