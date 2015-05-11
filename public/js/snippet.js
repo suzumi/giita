@@ -14,6 +14,8 @@
         this.$commentEditCancelBtn = $('.js-comment-edit-cancel-btn');
         this.$commentEdittingTabBtn = $('.js-comment-edit-form');
         this.$commentEditPreviewBtn = $('.js-comment-edit-form-preview');
+        this.$imagePreviewCancel = $('.js-image-preview-cancel');
+        this.$imagePreviewDecision = $('.js-image-preview-decision');
 
         this._initialize();
     };
@@ -25,13 +27,16 @@
             this._tagAutocomplete();
             this._preview();
             this._activity();
-            this.$stockForm.on('submit', this._hasStockClass.bind(this));
             this._stocked();
             this._commentPreview();
             this._commentEdit();
             this._utilDeleteConfirm();
             this._commentEditFormShow();
             this._commentEditCancel();
+            this.$stockForm.on('submit', this._hasStockClass.bind(this));
+            this.$imagePreviewCancel.on('click', this._imagePreviewCancel.bind(this));
+            this.$imagePreviewDecision.on('click', this._imagePreviewDecision.bind(this));
+            $(document).on('change', '.js-input-file', this._renderPreview.bind(this));
 
             //this.$snippetForm.on('submit', this._snippetFormPost.bind(this));
         },
@@ -318,6 +323,31 @@
                         $(".js-stock-btn").html('<button class="btn btn-default btn-block js-spinner"><i class="fa fa-folder-o"></i>ストック</button>');
                     }
                 })
+        },
+        _renderPreview: function(e) {
+            var self = this;
+            if (!e.target.files.length) {
+                return false;
+            }
+            var file = e.target.files[0],
+                fileReader = new FileReader();
+            self.dataUri = undefined;
+            fileReader.readAsDataURL(file);
+            fileReader.onload = function(event) {
+                self.dataUri = event.target.result;
+                $(".thumbnail-preview").css('background-image', 'url(' + self.dataUri + ')');
+                $(".js-model").click();
+            };
+        },
+        _imagePreviewCancel: function() {
+            $('.js-close-modal').click();
+            $('.js-input-file').replaceWith($('.js-input-file').clone());
+        },
+        _imagePreviewDecision: function() {
+            $('.js-user-thumb').attr({
+                src: this.dataUri
+            });
+            $('.js-close-modal').click();
         }
     };
 })(window);

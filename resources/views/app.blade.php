@@ -535,6 +535,14 @@ pre {
 /*-------------------------------------
   Mypage Edit
 -------------------------------------*/
+.thumbnail-preview {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .nav-sidebar {
     width: 100%;
     padding: 8px 0;
