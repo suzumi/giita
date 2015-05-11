@@ -189,16 +189,59 @@ pre {
     padding: 16px;
     border-radius: 3px;
 }
-.snippet-body {
+.form-control:focus {
+    box-shadow: none;
+}
+.snippet-form-tabs {
+    font-size: 0;
+    color: #999;
+    border-radius: 4px 4px 0 0;
+    background-color: #fafafa;
+}
+.snippet-form-tab {
+    padding: 10px 15px;
+    width: 100px;
+    font-size: 14px;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 5px 0 0 0;
+}
+.snippet-form-body-panel textarea {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.modal-content table thead {
+    color: #999;
+}
+.markdownHelp_body {
+    overflow-y: auto;
+    max-height: 450px;
+}
+.snippet-body-left {
     min-height: 500px;
     background-color: #fff;
     padding: 0;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.snippet-body-right {
+    min-height: 500px;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ddd;
 }
 .snippet-form-body-preview-panel {
     padding: 6px 12px;
     max-height: 500px;
     overflow: auto;
+    min-height: 500px;
 }
 .snippet-form-body-preview-panel > pre {
     border: none;
