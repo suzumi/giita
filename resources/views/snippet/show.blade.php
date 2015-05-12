@@ -113,7 +113,7 @@
                                         </div>
                                         {!! Form::open(['route' => ['comment.update', $comment->comment_id], 'method' => 'PUT']) !!}
                                         <div class="comment-form-content-tab-content">
-                                            <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea js-comment-edit-form-textarea" name="comment">{{ $comment->comment }}</textarea>
+                                            <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea js-comment-edit-form-textarea" name="comment" required>{{ $comment->comment }}</textarea>
                                             <div class="markdown-content-edit" style="display: none;"></div>
                                         </div>
                                     </div>
@@ -140,7 +140,7 @@
                             </div>
                         {!! Form::open(['route' => 'comment.store', 'class' => 'snippet-form']) !!}
                             <div class="comment-form-content-tab-content">
-                                <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea js-comment-form-textarea" name="comment"></textarea>
+                                <textarea rows="4" placeholder="コメントを入力してください。" class="comment-form-textarea js-comment-form-textarea" name="comment" required></textarea>
                                 <div class="markdown-content" style="display: none;"></div>
                             </div>
                         </div>

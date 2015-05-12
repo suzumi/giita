@@ -657,11 +657,13 @@ pre {
     border-top: solid 1px #BCD7E0;
     padding: 1em 0;
 }
-.tag-list__tags {
+.tag-list__tags
+{
     padding: 0;
     margin: 20px 0 20px 3px;
 }
-.tag-list__tags > li {
+.tag-list__tags > li
+{
     float: left;
     margin: -1px 0 0 -1px;
     width: 33.33333%;
@@ -670,10 +672,13 @@ pre {
 }
 .tag-list__tags > li:nth-child(6n),
 .tag-list__tags > li:nth-child(6n-1),
-.tag-list__tags > li:nth-child(6n-2) {
+.tag-list__tags > li:nth-child(6n-2)
+{
     background-color: #f9fff6;
 }
-.tag-list__tags > li > a {
+
+.tag-list__tags > li > a
+{
     display: block;
     padding: 20px 5px;
     color: inherit;
@@ -705,7 +710,7 @@ pre {
     margin-bottom: 10px;
 }
 /*-------------------------------------
-  Snippet Form
+  タグ検索一覧
 -------------------------------------*/
 .tag-metrics {
     background-color: #fafafa;
@@ -741,6 +746,45 @@ pre {
     font-weight: bold;
 }
 /*-------------------------------------
+  ユーザー一覧
+-------------------------------------*/
+.user-list__wrapper {
+    padding: 30px 0;
+}
+.user-list {
+    background-color: #fafafa;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    display: table;
+    width: 100%;
+    color: #555;
+}
+.user-list__thumb {
+    background-color: #fff;
+    display: table-cell;
+    border-right: dotted 1px #e6e6e6;
+    text-align: center;
+    padding: 8px 5px;
+    width: 60px;
+}
+.user-list__thumb img{
+    height: 50px;
+    width: 50px;
+}
+.user-list__showInfo {
+    display: table-cell;
+    padding: 6px 10px;
+    vertical-align: top;
+    color: #999;
+}
+.user-list__showInfo .user-list__name {
+    margin: 0;
+    font-size: 20px;
+}
+.user-list__sns {
+    display: table-cell;
+}
+/*-------------------------------------
   Component
 -------------------------------------*/
 .u-mb0 {
@@ -751,6 +795,9 @@ pre {
 }
 .fa {
     padding: 0 5px;
+}
+.u-paginate {
+    padding: 15px 0;
 }
 </style>
 </head>
