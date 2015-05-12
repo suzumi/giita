@@ -625,7 +625,7 @@ pre {
     opacity: 0;
 }
 .edit-form-wrapper {
-    padding: 30px 0;
+    padding-bottom: 30px;
 }
 
 /*-------------------------------------
@@ -808,7 +808,7 @@ pre {
     font-size: 85%;
     font-weight: 500;
     line-height: 1.27273;
-    margin: 2px 4px 2px 10px;
+    margin: 0 -5px 0 8px;
     padding: 3px 7px;
     position: relative;
     text-decoration: none;
