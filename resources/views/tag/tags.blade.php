@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div>
-            <ul class="tag-list clearfix">
+            <ul class="tag-list__tags clearfix">
                 @foreach($tags as $tag)
                 <li><a href="/tags/{{ $tag->tag }}">{{ $tag->tag }}</a></li>
                 @endforeach
