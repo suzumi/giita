@@ -758,6 +758,7 @@ pre {
     display: table;
     width: 100%;
     color: #555;
+    margin: 10px 0;
 }
 .user-list__thumb {
     background-color: #fff;
