@@ -146,6 +146,7 @@ class SnippetController extends Controller
     {
         $data = $this->snippet->find($id);
         $data->delete();
+        $data->tags()->detach();
 
         return redirect()->to('/');
     }
