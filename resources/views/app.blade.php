@@ -658,7 +658,8 @@ pre {
     padding: 1em 0;
 }
 .tag-list__tags {
-    margin: 100px 0 100px 3px;
+    padding: 0;
+    margin: 20px 0 20px 3px;
 }
 .tag-list__tags > li {
     float: left;
@@ -703,7 +704,42 @@ pre {
 .footer-copyright {
     margin-bottom: 10px;
 }
-
+/*-------------------------------------
+  Snippet Form
+-------------------------------------*/
+.tag-metrics {
+    background-color: #fafafa;
+    border-top: solid 1px #ccc;
+    display: table;
+    width: 100%;
+    color: #555;
+}
+.tag-stats-metric {
+    display: table-cell;
+    border-right: dotted 1px #e6e6e6;
+    text-align: center;
+    padding: 8px 5px;
+    min-width: 60px;
+}
+.tag-stats-metric .count {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.tag-stats-description {
+    display: table-cell;
+    padding: 6px 10px;
+    vertical-align: top;
+    color: #999;
+}
+.tag-search-section {
+    padding-bottom: 20px;
+}
+.tag-search-section h2 {
+    border-top: solid 1px #ccc;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
 /*-------------------------------------
   Component
 -------------------------------------*/

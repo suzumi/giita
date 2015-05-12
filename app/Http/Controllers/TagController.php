@@ -6,18 +6,47 @@ use App\Http\Requests;
 use App\Snippet;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TagController extends Controller
 {
 
+    private $tag;
+
+    public function __construct(Tag $tag)
+    {
+        $this->tag = $tag;
+    }
+
+    /**
+     * タグ一覧
+     * @return $this
+     */
     public function all()
     {
-        $tags = Tag::paginate(30);
+        $tags = $this->tag->paginate(30);
         return view('tag.tags')->with(compact('tags'));
     }
 
-    public function tag()
+    /**
+     * タグ検索一覧
+     * @param $tagName
+     * @return $this
+     */
+    public function tag($tagName)
     {
-        dd('タグ名');
+        try {
+
+            $tag = $this->tag->where('tag', 'like', $tagName)->firstOrFail();
+
+            $snippetsWithTag = $this->tag->getSnippetWithTags($tag->id);
+            return view('tag.tagSearch')->with(compact('tag', 'snippetsWithTag'));
+
+        } catch(ModelNotFoundException $e) {
+
+            return \Response::view('errors.404', [], '404');
+
+        }
+
     }
 }
