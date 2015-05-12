@@ -64,14 +64,14 @@ pre {
     height: 22px;
 }
 .snippet-container {
-    padding: 15px 0 50px 0;
+    padding: 15px 15px 50px 15px;
 }
 .no-post-yet {
     padding: 15px 0 0 0;
 }
 .blue-knowledge-list {
     padding: 0;
-    margin: 40px 0;
+    margin: 10px 0;
 }
 .blue-knowledge-list > li {
     display: table;
@@ -799,6 +799,40 @@ pre {
 }
 .u-paginate {
     padding: 15px 0;
+}
+.u-tag {
+    background-color: #dfdfdf;
+    border-radius: 0px 2px 2px 0px;
+    color: #555;
+    display: inline-block;
+    font-size: 85%;
+    font-weight: 500;
+    line-height: 1.27273;
+    margin: 2px 4px 2px 10px;
+    padding: 3px 7px;
+    position: relative;
+    text-decoration: none;
+}
+.u-tag:before {
+    border-top: 10px solid transparent;
+    border-right: 8px solid #dfdfdf;
+    border-bottom: 10px solid transparent;
+    content: "";
+    height: 0px;
+    position: absolute;
+    top: 0px;
+    left: -8px;
+    width: 0px;
+}
+.u-tag:after {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    content: "";
+    height: 4px;
+    position: absolute;
+    top: 8px;
+    left: -2px;
+    width: 4px;
 }
 </style>
 </head>

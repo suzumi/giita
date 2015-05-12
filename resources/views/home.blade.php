@@ -25,7 +25,7 @@
                                             <ul class="list-inline">
                                             @foreach($snippet->tags as $tag)
                                                 <li>
-                                                    <a href="/tags/{{ $tag['tag'] }}" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>
+                                                    <a href="/tags/{{ $tag['tag'] }}" class="u-tag">{{{ $tag['tag'] }}}</a>
                                                 </li>
                                             @endforeach
                                             </ul>

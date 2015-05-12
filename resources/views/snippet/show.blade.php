@@ -13,8 +13,7 @@
                             <ul class="list-inline">
                                 @foreach($snippet->tags as $tag)
                                     <li>
-                                        <a href="/tags/{{{ $tag['tag'] }}}"
-                                           class="btn btn-default btn-xs btn-noborder">{{{ $tag['tag'] }}}</a>
+                                        <a href="/tags/{{{ $tag['tag'] }}}" class="u-tag u-tag__descript">{{{ $tag['tag'] }}}</a>
                                     </li>
                                 @endforeach
                             </ul>
