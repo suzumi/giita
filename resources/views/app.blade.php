@@ -797,6 +797,37 @@ pre {
     color: #555;
     font-size: 12px;
 }
+#bpush_button {
+    display: block !important;
+}
+#bpush_button a {
+    display: block;
+    margin-bottom: 0;
+    font-weight: 300;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #ffffff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+#bpush_button a:before {
+    content: '通知を受け取る';
+}
+#bpush_button img {
+    display: none;
+}
 /*-------------------------------------
   ユーザー一覧
 -------------------------------------*/
@@ -888,10 +919,11 @@ pre {
 }
 .service-worker {
     background-color: #eee;
-    padding: 5px 10px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 .service-worker__notify {
+    margin-bottom: 5px;
     color: #838383;
 }
 </style>
