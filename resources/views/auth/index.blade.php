@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ユーザー一覧</h1>
+        <h3>ユーザー一覧</h3>
         <div class="row user-list__wrapper">
         @foreach($users as $user)
             <div class="col-sm-4">

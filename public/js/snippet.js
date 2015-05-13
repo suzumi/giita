@@ -353,7 +353,6 @@
         _eventsOfConnpass: function() {
 
             var date = new Date();
-            console.log(date);
 
             $.ajax({
                 'type': 'GET',
@@ -382,7 +381,6 @@
                     '</div>';
                 }
                 $('.js-event-list').html(template);
-                console.log(template);
             })
         }
     };

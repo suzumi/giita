@@ -437,6 +437,7 @@ pre {
 }
 .mypage-user-profile {
     display: table;
+    margin-bottom: 10px;
     width: 100%;
 }
 .mypage-user-name {

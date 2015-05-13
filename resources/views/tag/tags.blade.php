@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>タグ一覧</h1>
+        <h3>タグ一覧</h3>
         <div>
             <ul class="tag-list__tags clearfix">
                 @foreach($tags as $tag)

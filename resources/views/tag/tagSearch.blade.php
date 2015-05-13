@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 tag-search-wrapper">
-                <h1>{{ $tag->tag }}</h1>
+                <h3>{{ $tag->tag }}</h3>
                 <div class="tag-metrics">
                     <div class="tag-stats-metric">
                         <div class="count">{{ count($snippetsWithTag) }}</div>
