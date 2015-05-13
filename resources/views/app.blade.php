@@ -163,10 +163,12 @@ pre {
     margin-bottom: 15px;
 }
 .snippet-form-wrapper {
-    min-width: 800px;
     padding: 20px 15px 30px;
     /*background-color: #f8faf7;*/
     background-color: #f3faf8;
+}
+.select2-container {
+    width: 100% !important;
 }
 .snippet-body-wrapper {
     margin-bottom: 15px;
