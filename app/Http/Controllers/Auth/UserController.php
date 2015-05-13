@@ -6,6 +6,7 @@ use App\Snippet;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserController extends Controller
 {
@@ -57,13 +58,18 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        $snippets = User::getSnippets($id, self::TAKE_SNIPPET_COUNT);
-        $stocks = User::myStocks($id, self::TAKE_STOCK_COUNT);
-//        dd($stocks);
-//		$profIcon = \Storage::get('proficons/user1.jpg');
+        try {
+            $user = User::findOrFail($id);
+            $snippets = User::getSnippets($id, self::TAKE_SNIPPET_COUNT);
+            $stocks = User::myStocks($id, self::TAKE_STOCK_COUNT);
 
-        return view('auth.mypage')->with(compact('user', 'snippets', 'stocks'));
+            return view('auth.mypage')->with(compact('user', 'snippets', 'stocks'));
+
+        } catch(ModelNotFoundException $e){
+            return \Response::view('errors.404', [], '404');
+        }
+
+
     }
 
     /**

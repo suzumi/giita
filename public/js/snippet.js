@@ -33,6 +33,7 @@
             this._utilDeleteConfirm();
             this._commentEditFormShow();
             this._commentEditCancel();
+            this._eventsOfConnpass();
             this.$stockForm.on('submit', this._hasStockClass.bind(this));
             this.$imagePreviewCancel.on('click', this._imagePreviewCancel.bind(this));
             this.$imagePreviewDecision.on('click', this._imagePreviewDecision.bind(this));
@@ -348,6 +349,41 @@
                 src: this.dataUri
             });
             $('.js-close-modal').click();
+        },
+        _eventsOfConnpass: function() {
+
+            var date = new Date();
+            console.log(date);
+
+            $.ajax({
+                'type': 'GET',
+                'url': 'http://connpass.com/api/v1/event/',
+                'dataType': 'jsonp',
+                'data': {
+                    'ym': date.getFullYear() + '0' + (Number(date.getMonth()) + 1),
+                    'keyword': '東京',
+                    'order': 3
+                }
+            })
+            .done(function(data) {
+                var template = '';
+                for (var i = 0; i < data.events.length; i++) {
+                    var dateTime = new Date(data.events[i].started_at);
+                    template +=
+                    '<div class="event-list">' +
+                        '<div class="event-list-date">' +
+                            '<div class="count">' + (dateTime.getMonth() + 1) + '/' + dateTime.getDate()+ '</div>' +
+                            '<div class="unit">' + dateTime.getHours() + ':' + ('0' + dateTime.getMinutes()).slice(-2) + '</div>' +
+                        '</div>' +
+                        '<div class="event-list-description">' +
+                            '<a href="' + data.events[i].event_url + ' " target="_blank">' + data.events[i].title + '</a>' +
+                            '<div class="event-address">' + data.events[i].address + '</div>' +
+                        '</div>' +
+                    '</div>';
+                }
+                $('.js-event-list').html(template);
+                console.log(template);
+            })
         }
     };
 })(window);

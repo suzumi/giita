@@ -712,6 +712,10 @@ pre {
 /*-------------------------------------
   タグ検索一覧
 -------------------------------------*/
+.tag-search-wrapper {
+    margin: 10px 0;
+    border-right: 1px solid #ccc;
+}
 .tag-metrics {
     background-color: #fafafa;
     border-top: solid 1px #ccc;
@@ -744,6 +748,54 @@ pre {
     padding-top: 20px;
     font-size: 18px;
     font-weight: bold;
+}
+.event-col {
+    margin: 10px;
+}
+.event-col-head img{
+    display: inline;
+    height: 50px;
+    width: 50px;
+}
+.event-col-head span {
+    font-size: 18px;
+}
+.event {
+    padding: 10px 0;
+}
+.event-list {
+    border-top: solid 1px #ccc;
+    display: table;
+    width: 100%;
+    color: #fff;
+}
+.event-list-date {
+    display: table-cell;
+    background-color: #32a8ff;
+    border-right: dotted 1px #e6e6e6;
+    text-align: center;
+    padding: 8px 5px;
+    min-width: 60px;
+    width: 60px;
+}
+.event-list-date .count {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.event-list-description {
+    display: table-cell;
+    background-color: #fff;
+    padding: 6px 10px;
+    vertical-align: top;
+    color: #999;
+}
+.event-address {
+    display: table-cell;
+    background-color: #f7f7f7;
+    padding: 6px 10px;
+    vertical-align: top;
+    color: #555;
+    font-size: 12px;
 }
 /*-------------------------------------
   ユーザー一覧

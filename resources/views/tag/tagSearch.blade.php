@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-8 tag-search-wrapper">
                 <h1>{{ $tag->tag }}</h1>
                 <div class="tag-metrics">
                     <div class="tag-stats-metric">
@@ -42,6 +42,16 @@
                     </ul>
                     @endif
                     {!! $snippetsWithTag->render() !!}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="event-col">
+                    <div class="event-col-head">
+                        <img src="{{ asset('/img/assets/connpass_logo_3.png') }}" class="img-responsive">
+                        <span>外部の勉強会(新着順)</span>
+                    </div>
+                    <div class="event js-event-list">
+                    </div>
                 </div>
             </div>
         </div>
