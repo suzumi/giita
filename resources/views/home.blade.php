@@ -73,6 +73,20 @@
             </div>
             <!--サイドバー-->
             <div class="col-sm-3">
+                <div class="service-worker">
+                    <div class="service-worker__notify">デスクトップ通知を受け取ろう！</div>
+                    <div id="bpush_button" style="display: inline-block;"
+                         data-site="93" data-back="http://52.68.38.78/"
+                         data-height="20" data-width="60"></div>
+                    <script>
+                        (function(d,s,ns){
+                            var ns = d.createElement(s);
+                            ns.async=1;ns.src="//bpush.net/connect/button.js";
+                            var s0=d.getElementsByTagName(s)[0];
+                            s0.parentNode.insertBefore(ns, s0);
+                        })(document,'script');
+                    </script>
+                </div>
                 <div class="user-info">
                     <div class="user-info-left">
                         <img class="img-rounded" src="/{{ Auth::user()->thumbnail }}">

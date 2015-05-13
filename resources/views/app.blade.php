@@ -834,6 +834,14 @@ pre {
     left: -2px;
     width: 4px;
 }
+.service-worker {
+    background-color: #eee;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.service-worker__notify {
+    color: #838383;
+}
 </style>
 </head>
 <body>
