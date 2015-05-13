@@ -7,8 +7,7 @@
         </div>
     @endif
     <div class="container">
-        <h2>ユーザー設定<br />
-        </h2>
+        <h3>ユーザー設定</h3>
         <div class="row edit-form-wrapper">
             <div class="col-sm-2">
                 <nav class="nav-sidebar">
@@ -22,7 +21,7 @@
             </div>
             <div class="col-sm-6">
                 {!! Form::open(['action' => 'SettingController@accountUpdate', 'class' => 'profile-edit-form', 'files'=> true]) !!}
-                <h3>ユーザー設定</h3>
+                <h4>ユーザー設定</h4>
                 <dl>
                     <dt>
                         <label>アイコン</label>
