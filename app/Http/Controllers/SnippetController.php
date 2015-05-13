@@ -7,6 +7,7 @@ use App\User;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class SnippetController extends Controller
 {
@@ -84,18 +85,24 @@ class SnippetController extends Controller
     {
         $parser = new \cebe\markdown\GithubMarkdown();
 
-        $snippet = $this->snippet->find($id);
-        $comments = Comment::commentList($id);
-        $stocksAndComments = $this->snippet->stocksAndCommentsCount($id);
+        try {
 
-        $parsedComment = array_map(function($comment) use($parser) {
-            $comment->parsedComment = $parser->parse($comment->comment);
-            return $comment;
-        }, $comments);
+            $snippet = $this->snippet->findOrFail($id);
+            $comments = Comment::commentList($id);
+            $stocksAndComments = $this->snippet->stocksAndCommentsCount($id);
 
-        $markdown = $parser->parse($snippet->body);
-        $snippet['body'] = $markdown;
-        return view('snippet.show')->with(compact('snippet','parsedComment', 'stocksAndComments'));
+            $parsedComment = array_map(function ($comment) use ($parser) {
+                $comment->parsedComment = $parser->parse($comment->comment);
+                return $comment;
+            }, $comments);
+
+            $markdown = $parser->parse($snippet->body);
+            $snippet['body'] = $markdown;
+            return view('snippet.show')->with(compact('snippet', 'parsedComment', 'stocksAndComments'));
+
+        } catch(ModelNotFoundException $e){
+            return \Response::view('errors.404', [], '404');
+        }
     }
 
     /**
