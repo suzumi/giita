@@ -8,10 +8,10 @@
             <img src="/{{ $user->thumbnail }}" class="mypage-user-thumb img-rounded">
             {{--<div style="backgrund-image: url(data:image/jpg;base64,{{{ $user->thumbnail }}});" class="mypage-user-thumb"></div>--}}
             @if($user->github)
-                <a href="{{ $user->github }}" class="mypage-user-account" target="_blank"><i class="fa fa-github u-mr8"></i>GitHub</a>
+                <a href="https://github.com/{{ $user->github }}" class="mypage-user-account" target="_blank"><i class="fa fa-github u-mr8"></i>GitHub</a>
             @endif
             @if($user->twitter)
-                <a href="{{ $user->twitter }}" class="mypage-user-account" target="_blank"><i class="fa fa-twitter u-mr8"></i>Twitter</a>
+                <a href="https://twitter.com/{{ $user->twitter }}" class="mypage-user-account" target="_blank"><i class="fa fa-twitter u-mr8"></i>Twitter</a>
             @endif
         </div>
         <div class="col-md-9">
