@@ -177,7 +177,7 @@ class SnippetController extends Controller
 #### 来週の学習予定時間
 ---
 
-#### 学習予定の内容
+#### 来週の学習予定の内容
 ---
 
 #### 今週の業務内容
