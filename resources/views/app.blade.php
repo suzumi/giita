@@ -336,7 +336,7 @@ pre {
     color: #262626;
     background-color: #f5f5f5;
 }
-.text-advertisement {
+.biita-blog-ad {
     border-top: 1px dotted #ccc;
     margin-top: 30px;
     padding-top: 20px;
