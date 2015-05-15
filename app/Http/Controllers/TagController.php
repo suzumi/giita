@@ -16,6 +16,7 @@ class TagController extends Controller
     public function __construct(Tag $tag)
     {
         $this->tag = $tag;
+        $this->middleware('auth');
     }
 
     /**
