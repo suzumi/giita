@@ -146,6 +146,40 @@ pre {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.faq-title {
+    border: 1px dotted #ccc;
+    border-radius: 3px;
+    padding: 10px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.accordion {
+    margin-top: 5px;
+}
+.accordion:first-child {
+    margin-top: 0;
+}
+.accordion-heading {
+    border: 1px solid #ccc;
+    background-color: #DFF6FF;
+}
+.accordion-heading > a {
+    color: #555;
+    font-size: 12px;
+    padding: 8px 15px;
+    display: block;
+    text-decoration: none;
+}
+.accordion-inner {
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    color: #555;
+    font-size: 12px;
+}
+.accordion-inner {
+    border-top: none;
+}
 /*-------------------------------------
   Snippet Form
 -------------------------------------*/

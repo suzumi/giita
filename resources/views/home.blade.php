@@ -93,6 +93,64 @@
                         <img src="/img/assets/07a7b746e4e773b5cb59dfc69a5f5ce2.png" class="img-responsive">
                     </a>
                 </div>
+                <div class="faq-list">
+                    <div class="faq-title"><i class="fa fa-question-circle"></i>よくある質問</div>
+                    <div class="accordion" id="side-bar">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse"
+                                   data-parent="#side-bar" href="#area01">投稿を編集しようとするとタグが消える</a>
+                            </div>
+                            <div id="area01" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    仕様です。<br>
+                                    使用しているライブラリの都合上消えてしまいます。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="side-bar">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse"
+                                   data-parent="#side-bar" href="#area02">パスワードはどうやって変えるの？</a>
+                            </div>
+                            <div id="area02" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    一旦ログアウトして、<strong>「パスワードをお忘れですか？」</strong>からパスワードリセット申請をしてください。<br>
+                                    ご自身の<code>@blue-corporation.jp</code>ドメインにメールが届いているはずなので、記載されているURLからパスワードをリセットしてください。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="side-bar">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse"
+                                   data-parent="#side-bar" href="#area03">検索機能はないの？</a>
+                            </div>
+                            <div id="area03" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    全文検索を実装しようとしています。<br>
+                                    鋭意開発中です。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="side-bar">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse"
+                                   data-parent="#side-bar" href="#area04">タグを追加したい！</a>
+                            </div>
+                            <div id="area04" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    フッターのお問い合わせから追加したいタグを申請してください。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
