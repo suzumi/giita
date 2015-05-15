@@ -104,7 +104,8 @@
                             <div id="area01" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                     仕様です。<br>
-                                    使用しているライブラリの都合上消えてしまいます。
+                                    使用しているライブラリの都合上消えてしまいます。<br>
+                                    お手数ですが再度タグの設定をお願いします。
                                 </div>
                             </div>
                         </div>
@@ -145,7 +146,8 @@
                             </div>
                             <div id="area04" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    フッターのお問い合わせから追加したいタグを申請してください。
+                                    フッターのお問い合わせから追加したいタグを申請してください。<br>
+                                    業務時間中であれば秒速で対応します。
                                 </div>
                             </div>
                         </div>
