@@ -87,7 +87,7 @@
         <div class="item-body">
             <div class="container">
                 {!! $snippet->body !!}
-                <div class="text-advertisement">
+                <div class="biita-blog-ad">
                     <span class="label label-info">PR</span>
                     <a target="_blank" id="ad-48" href="http://engineer.blue-corporation.jp/">blueエンジニアブログで記事を発信しよう - Blue enginner blog</a>
                 </div>
