@@ -146,6 +146,40 @@ pre {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.faq-title {
+    border: 1px dotted #ccc;
+    border-radius: 3px;
+    padding: 10px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.accordion {
+    margin-top: 5px;
+}
+.accordion:first-child {
+    margin-top: 0;
+}
+.accordion-heading {
+    border: 1px solid #ccc;
+    background-color: #DFF6FF;
+}
+.accordion-heading > a {
+    color: #555;
+    font-size: 12px;
+    padding: 8px 15px;
+    display: block;
+    text-decoration: none;
+}
+.accordion-inner {
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    color: #555;
+    font-size: 12px;
+}
+.accordion-inner {
+    border-top: none;
+}
 /*-------------------------------------
   Snippet Form
 -------------------------------------*/
@@ -336,7 +370,7 @@ pre {
     color: #262626;
     background-color: #f5f5f5;
 }
-.text-advertisement {
+.biita-blog-ad {
     border-top: 1px dotted #ccc;
     margin-top: 30px;
     padding-top: 20px;
@@ -971,7 +1005,6 @@ pre {
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/auth/login') }}">ログイン</a></li>
-                    <li><a href="{{ url('/auth/register') }}">レジスター</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

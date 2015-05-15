@@ -358,6 +358,7 @@
                 'type': 'GET',
                 'url': 'http://connpass.com/api/v1/event/',
                 'dataType': 'jsonp',
+                'timeout':3000,
                 'data': {
                     'ym': date.getFullYear() + '0' + (Number(date.getMonth()) + 1),
                     'keyword': '東京',
@@ -382,6 +383,12 @@
                 }
                 $('.js-event-list').html(template);
             })
+            .fail(function() {
+                var template =
+                    '<h4><code>Connpassがメンテ中の可能性があります。</code></h4>' +
+                    '<a href="http://connpass.com/" target="_blank">connpass公式サイト</a>をご確認ください。';
+                $('.js-event-list').html(template);
+            });
         }
     };
 })(window);

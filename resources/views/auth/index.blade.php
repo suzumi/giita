@@ -15,12 +15,12 @@
                         <div>
                             @if($user->github)
                                 <div class="user-list__sns">
-                                    <a href="{{ $user->github }}" class="mypage-user-account" target="_blank"><i class="fa fa-github"></i></a>
+                                    <a href="https://github.com/{{ $user->github }}" class="mypage-user-account" target="_blank"><i class="fa fa-github"></i></a>
                                 </div>
                             @endif
                             @if($user->twitter)
                                 <div class="user-list__sns">
-                                    <a href="{{ $user->twitter }}" class="mypage-user-account" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://twitter.com/{{ $user->twitter }}" class="mypage-user-account" target="_blank"><i class="fa fa-twitter"></i></a>
                                 </div>
                             @endif
                         </div>

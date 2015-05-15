@@ -57,19 +57,19 @@
                 <dl>
                     <dt>
                         <i class="fa fa-github"></i>
-                        <label>GitHubアカウント</label>
+                        <label>GitHubアカウント(ユーザー名)</label>
                     </dt>
                     <dd>
-                        <input type="text" name="github" class="form-control" value="{{ $user->github }}" placeholder="URL">
+                        <input type="text" name="github" class="form-control" value="{{ $user->github }}" placeholder="GitHubのアカウント名">
                     </dd>
                 </dl>
                 <dl>
                     <dt>
                         <i class="fa fa-twitter"></i>
-                        <label>Twitterアカウント</label>
+                        <label>Twitterアカウント(ユーザー名)※「@」は不要です</label>
                     </dt>
                     <dd>
-                        <input type="text" name="twitter" class="form-control" value="{{ $user->twitter }}" placeholder="URL">
+                        <input type="text" name="twitter" class="form-control" value="{{ $user->twitter }}" placeholder="Twitterのアカウント名">
                     </dd>
                 </dl>
                 <button class="btn btn-success">保存する</button>
