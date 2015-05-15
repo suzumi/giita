@@ -382,6 +382,12 @@
                 }
                 $('.js-event-list').html(template);
             })
+            .fail(function() {
+                var template =
+                    '<h4><code>Connpassがメンテ中の可能性があります。</code></h4>' +
+                    '<a href="http://connpass.com/" target="_blank">connpass公式サイト</a>をご確認ください。';
+                $('.js-event-list').html(template);
+            });
         }
     };
 })(window);
