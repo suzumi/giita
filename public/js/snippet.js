@@ -358,6 +358,7 @@
                 'type': 'GET',
                 'url': 'http://connpass.com/api/v1/event/',
                 'dataType': 'jsonp',
+                'timeout':3000,
                 'data': {
                     'ym': date.getFullYear() + '0' + (Number(date.getMonth()) + 1),
                     'keyword': '東京',
