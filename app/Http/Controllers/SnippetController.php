@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Snippet;
 use App\User;
 use App\Comment;
+use App\Repository\ElasticSearchSnippetRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -193,5 +194,21 @@ EOS;
     public function mypage()
     {
         return view('auth.mypage');
+    }
+
+    public function searchOnES()
+    {
+        $name = \Input::get('q');
+        $es = new ElasticSearchSnippetRepository();
+        $query = $es->search($name);
+        echo '<pre>', print_r($query), '<pre>';
+
+        if($query['hits']['total'] >= 1) {
+            $result = $query['hits']['hits'];
+
+            foreach($result as $res) {
+                echo $res['_source']['title'] . PHP_EOL;
+            }
+        }
     }
 }
