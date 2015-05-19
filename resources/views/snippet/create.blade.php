@@ -23,6 +23,11 @@
                             </div>
                         </div>
                     </div>
+                    @if(isset($isWeeklyReport))
+                    <div class="alert alert-warning">
+                        「***」は罫線です。箇条書きではありません。
+                    </div>
+                    @endif
                     @if(Session::has('snippetFormError'))
                         <div class="alert alert-danger" role="alert">
                             {!! Session::get('snippetFormError') !!}
