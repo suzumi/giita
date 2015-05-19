@@ -21,7 +21,7 @@ class Tag
     {
         \Log::info('Start generate tag of Next week. ');
         $dt = new Carbon();
-        $dt->setTestNow($dt->createFromDate(2015, 5, 31));
+//        $dt->setTestNow($dt->createFromDate(2015, 5, 31));
         if($dt->now()->dayOfWeek === Carbon::SUNDAY) {
             //翌月
             $nextMonth =  $dt->parse('next month')->month;

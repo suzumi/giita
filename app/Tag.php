@@ -30,4 +30,16 @@ class Tag extends Model {
             ->paginate(20);
     }
 
+    /**
+     * 最近追加された週報タグ
+     * @return mixed
+     */
+    public function getRecentlyWeeklyTag()
+    {
+        return \DB::table('tags')
+            ->where('tag', 'LIKE', '週報@%')
+            ->orderBy('created_at', 'desc')
+            ->first();
+    }
+
 }
