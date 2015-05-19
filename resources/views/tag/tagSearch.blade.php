@@ -8,15 +8,15 @@
                 <h3>{{ $tag->tag }}</h3>
                 <div class="tag-metrics">
                     <div class="tag-stats-metric">
-                        <div class="count">{{ count($snippetsWithTag) }}</div>
+                        <div class="count">{{ $tagCount }}</div>
                         <div class="unit">投稿</div>
                     </div>
                     <div class="tag-stats-description">
-                        <p>{{ $tag->tag }}に関する情報が集まっています。現在{{ count($snippetsWithTag) }}件の投稿があります。</p>
+                        <p>{{ $tag->tag }}に関する情報が集まっています。現在{{ $tagCount }}件の投稿があります。</p>
                     </div>
                 </div>
                 <div class="tag-search-section">
-                    @if(count($snippetsWithTag) == 0)
+                    @if($tagCount === 0)
                         <h2>まだ投稿がありません</h2>
                     @else
                     <h2>最近タグが付いた投稿</h2>

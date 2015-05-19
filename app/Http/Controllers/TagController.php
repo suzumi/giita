@@ -41,7 +41,8 @@ class TagController extends Controller
             $tag = $this->tag->where('tag', 'like', $tagName)->firstOrFail();
 
             $snippetsWithTag = $this->tag->getSnippetWithTags($tag->id);
-            return view('tag.tagSearch')->with(compact('tag', 'snippetsWithTag'));
+            $tagCount = $this->tag->getSnippetWithTagsCount($tag->id);
+            return view('tag.tagSearch')->with(compact('tag', 'snippetsWithTag', 'tagCount'));
 
         } catch(ModelNotFoundException $e) {
 

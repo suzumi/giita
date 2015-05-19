@@ -12,6 +12,20 @@ class Tag extends Model {
     }
 
     /**
+     * 検索されたタグが紐づくスニペットを集計
+     * @param $tagId
+     * @return mixed
+     */
+    public function getSnippetWithTagsCount($tagId)
+    {
+        return \DB::table('snippet_tag')
+            ->leftjoin('snippets', 'snippet_tag.snippet_id', '=', 'snippets.id')
+            ->leftjoin('users', 'snippets.user_id', '=', 'users.id')
+            ->where('snippet_tag.tag_id', '=', $tagId)
+            ->count();
+    }
+
+    /**
      * 検索されたタグが紐づくスニペットを取得
      * @param $tagId
      * @return mixed
