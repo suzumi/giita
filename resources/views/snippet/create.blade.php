@@ -18,13 +18,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="snippet-form-tag">
-                                @if(isset($isWeeklyReport))
-                                    <div class="alert alert-warning" role="alert">※週報は「週報」タグを選択してください</div>
-                                @endif
-                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple">
-                                    {{--@if(isset($isWeeklyReport))--}}
-                                    {{--<option value="9999" selected>週報</option>--}}
-                                    {{--@endif--}}
+                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple" @if(isset($isWeeklyReport)) data-is-weekly-report="true" @endif>
                                 </select>
                             </div>
                         </div>

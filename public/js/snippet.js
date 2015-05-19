@@ -67,22 +67,28 @@
         //    //}
         //},
         _tagAutocomplete: function () {
-            var weeklyReportId = 63;
             $.ajax({
                 'type': 'GET',
-                'url': '/api/tag'
+                'url': '/api/tag',
+                'data': {
+                    isWeekly: true
+                }
             })
             .done(function (data) {
+                var tags = data.tags;
+                var weeklyReportId = data.wrTag.id;
                 $(".js-tags-autocomplete").select2({
                     placeholder: "タグを選択してください",
-                    data: data
+                    data: tags
                 });
-                $('.select2-search__field').keyup();
-                $('.select2-results__option').each(function(i) {
-                    if ((i + 1) === weeklyReportId) {
-                        $(this).mouseup();
-                    }
-                });
+                if ($(".js-tags-autocomplete").data("is-weekly-report")) {
+                    $('.select2-search__field').keyup();
+                    $('.select2-results__option').each(function(i) {
+                        if ((i + 1) === weeklyReportId) {
+                            $(this).mouseup();
+                        }
+                    });
+                }
             })
             .fail(function () {
             });
