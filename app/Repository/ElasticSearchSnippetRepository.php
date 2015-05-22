@@ -21,6 +21,11 @@ class ElasticSearchSnippetRepository extends Controller
 
     public function search($q)
     {
+        $params['index'] = 'biita';
+        $params['type']  = 'snippets';
+        $params['body']['query']['match']['title'] = $q;
+        return $this->es->search($params);
+
         return $query = $this->es->search([
             'body' => [
                 'query' => [
