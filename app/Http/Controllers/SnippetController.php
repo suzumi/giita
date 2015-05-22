@@ -167,24 +167,30 @@ class SnippetController extends Controller
     {
         $isWeeklyReport = true;
         $template = <<< EOS
-
 #### 今週の学習時間
----
+***
+
 
 #### 学習している内容
----
+***
+
 
 #### 来週の学習予定時間
----
+***
+
 
 #### 来週の学習予定の内容
----
+***
+
 
 #### 今週の業務内容
----
+***
+
 
 #### 所感
----
+***
+
+
 EOS;
 
         return redirect()->to('/snippet/create')->with(compact('isWeeklyReport', 'template'));
