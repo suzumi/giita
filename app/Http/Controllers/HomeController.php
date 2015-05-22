@@ -2,27 +2,20 @@
 
 use App\Snippet;
 use App\User;
+use App\News;
 
 class HomeController extends Controller {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
+	private $news;
 
 	/**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(News $news)
 	{
+		$this->news = $news;
 		$this->middleware('auth');
 	}
 
@@ -34,13 +27,14 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$snippets = Snippet::orderBy('created_at', 'desc')->paginate(15);
+		$newsPickup = $this->news->orderBy('created_at', 'desc')->first();
 //		$snippet = Snippet::first();
 //		dd($snippet->tags->toArray());
 //        $snippet = new Snippet();
 //        $snippets = $snippet->getTags();
 //        dd($snippet);
 //        dd($snippet->getTags());
-        return view('home')->with(compact('snippets'));
+        return view('home')->with(compact('snippets', 'newsPickup'));
 	}
 
 }

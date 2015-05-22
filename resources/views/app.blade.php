@@ -146,6 +146,38 @@ pre {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.news-title__area {
+    border: 1px dotted #ccc;
+    border-radius: 3px;
+    padding: 10px 5px;
+    font-size: 12px;
+    /*font-weight: bold;*/
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.news-title__area p {
+    margin: 0 15px 0 0;
+}
+.news-title__area .news-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.news-pickup {
+    padding-left: 5px;
+}
+.news-pickup__date {
+    font-weight: bold;
+    font-size: 12px;
+    color: #FF0000;
+}
+.news-pickup__title {
+    padding: 0 5px;
+    font-weight: bold;
+}
+.news-pickup__description {
+    padding: 5px;
+}
 .faq-title {
     border: 1px dotted #ccc;
     border-radius: 3px;
@@ -179,6 +211,26 @@ pre {
 }
 .accordion-inner {
     border-top: none;
+}
+/*-------------------------------------
+  お知らせ一覧
+-------------------------------------*/
+.info-wrapper {
+    padding: 10px 0;
+}
+.info-list {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.info-list__date {
+    font-weight: bold;
+    color: #f00;
+}
+.info-list__title {
+    font-weight: bold;
+}
+.info-list__description {
+    padding: 10px 0;
 }
 /*-------------------------------------
   Snippet Form

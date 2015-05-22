@@ -88,6 +88,15 @@
                         <li role="presentation" class="active"><a href="/">フィード</a></li>
                     </ul>
                 </div>
+                <div class="news-title__area clearfix">
+                    <p class="news-title"><i class="fa fa-info-circle"></i>お知らせ</p>
+                    <div class="news-pickup">
+                        <p class="news-pickup__date">{{ $newsPickup->created_at->format('Y/m/d') }}</p>
+                        <p class="news-pickup__title">{{ $newsPickup->title }}</p>
+                        <p class="news-pickup__description">{{ $newsPickup->body }}</p>
+                    </div>
+                    <p class="pull-right"><a href="/info">過去のお知らせ</a></p>
+                </div>
                 <div class="ad-banner-blog">
                     <a href="http://engineer.blue-corporation.jp/" target="_blank">
                         <img src="/img/assets/07a7b746e4e773b5cb59dfc69a5f5ce2.png" class="img-responsive">
@@ -95,21 +104,6 @@
                 </div>
                 <div class="faq-list">
                     <div class="faq-title"><i class="fa fa-question-circle"></i>よくある質問</div>
-                    <div class="accordion" id="side-bar">
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse"
-                                   data-parent="#side-bar" href="#area01">投稿を編集しようとするとタグが消える</a>
-                            </div>
-                            <div id="area01" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    仕様です。<br>
-                                    使用しているライブラリの都合上消えてしまいます。<br>
-                                    お手数ですが再度タグの設定をお願いします。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="accordion" id="side-bar">
                         <div class="accordion-group">
                             <div class="accordion-heading">
