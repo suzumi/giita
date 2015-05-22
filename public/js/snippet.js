@@ -88,6 +88,17 @@
                             $(this).mouseup();
                         }
                     });
+                } else if ($(".js-tags-autocomplete").data("tags")) {
+                    var tags = $(".js-tags-autocomplete").data("tags");
+                    var tagsLength = tags.length;
+                    $('.select2-search__field').keyup();
+                    $('.select2-results__option').each(function(i) {
+                        for (var j = 0; j < tagsLength; j++) {
+                            if ((i + 1) === tags[j]) {
+                                $(this).mouseup();
+                            }
+                        }
+                    });
                 }
             })
             .fail(function () {
