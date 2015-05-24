@@ -40,8 +40,8 @@
                 </ul>
             </div>
             <ul class="mypage-knowledge-list">
-            @foreach($stocks as $stock)
-                @if($stock->snippet_id != null)
+            @if($stocks['total'] === 0)
+                @foreach($stocks as $stock)
                     <li>
                         <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
                         <div class="blue-knowledge-list-info">
@@ -58,14 +58,14 @@
                             </p>
                         </div>
                     </li>
-                @else
-                    <div>
-                        <p class="no-post-yet">ストックがまだありません</p>
-                        <p class="">お気に入りのスニペットをストックしましょう！</p>
-                    </div>
-                @endif
-            @endforeach
+                @endforeach
             </ul>
+            @else
+                <div>
+                    <p class="no-post-yet">ストックがまだありません</p>
+                    <p class="">お気に入りの投稿をストックしましょう！</p>
+                </div>
+            @endif
             {!! $stocks->render() !!}
         </div>
     </div>

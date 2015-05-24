@@ -42,9 +42,8 @@
                                 </div>
                             @endif
                             <span>
-                                <img src="/{{$snippet->users['thumbnail']}}" class="snippet-user-thumb img-rounded"><a
-                                        href="/users/{{ $snippet->users['id'] }}"
-                                        class="snippet-user-name">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}
+                                <a href="/users/{{ $snippet->users['id'] }}"><img src="/{{$snippet->users['thumbnail']}}" class="snippet-user-thumb img-rounded"></a>
+                                <a href="/users/{{ $snippet->users['id'] }}" class="snippet-user-name">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}
                                 に投稿
                             </span>
                         </div>

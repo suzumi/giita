@@ -82,44 +82,42 @@
                             </div>
                         @endif
                     </ul>
-                    @if(count($snippets) >= 5)
-                        <a href="/users/{{ $user->id }}/items" class="btn btn-default btn-block">もっと見る</a>
-                    @endif
+                        @if(count($snippets) >= 5)
+                            <a href="/users/{{ $user->id }}/items" class="btn btn-default btn-block">もっと見る</a>
+                        @endif
                 </div>
                 <!--ストックした一覧-->
                 <div class="tab-pane fade" id="stock-list">
                     <ul class="mypage-knowledge-list">
-
+                        @if($stocks)
                             @foreach($stocks as $stock)
-                                @if($stock->snippet_id != null)
-                                    <li>
-                                        <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
-                                        <div class="blue-knowledge-list-info">
-                                            <a href="/snippet/{{ $stock->snippet_id }}" class="blue-knowledge-list-title">{{ $stock->title }}</a>
-                                            {{--<ul class="list-inline">--}}
-                                            {{--@foreach($snippet->tags as $tag)--}}
-                                            {{--<li>--}}
-                                            {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
-                                            {{--</li>--}}
-                                            {{--@endforeach--}}
-                                            {{--</ul>--}}
-                                            <p class="blue-knowledge-list-name">
-                                                <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ $stock->snippet_created_at }}に投稿
-                                            </p>
-                                        </div>
-                                    </li>
-                                @else
-                                    <div>
-                                        <p class="no-post-yet">ストックがまだありません</p>
-                                        <p class="">お気に入りのスニペットをストックしましょう！</p>
+                                <li>
+                                    <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
+                                    <div class="blue-knowledge-list-info">
+                                        <a href="/snippet/{{ $stock->snippet_id }}" class="blue-knowledge-list-title">{{ $stock->title }}</a>
+                                        {{--<ul class="list-inline">--}}
+                                        {{--@foreach($snippet->tags as $tag)--}}
+                                        {{--<li>--}}
+                                        {{--<a href="" class="btn btn-default btn-xs">{{{ $tag['tag'] }}}</a>--}}
+                                        {{--</li>--}}
+                                        {{--@endforeach--}}
+                                        {{--</ul>--}}
+                                        <p class="blue-knowledge-list-name">
+                                            <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ $stock->snippet_created_at }}に投稿
+                                        </p>
                                     </div>
-                                @endif
+                                </li>
                             @endforeach
-
-                            @if(count($stocks) >= 5)
-                                <a href="/users/{{ $user->id }}/stocks" class="btn btn-default btn-block">もっと見る</a>
-                            @endif
+                        @else
+                            <div>
+                                <p class="no-post-yet">ストックがまだありません</p>
+                                <p class="">お気に入りの投稿をストックしましょう！</p>
+                            </div>
+                        @endif
                     </ul>
+                        @if(count($stocks) >= 5)
+                            <a href="/users/{{ $user->id }}/stocks" class="btn btn-default btn-block">もっと見る</a>
+                        @endif
                 </div>
             </div>
         </div>

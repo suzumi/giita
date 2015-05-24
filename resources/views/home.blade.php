@@ -17,9 +17,8 @@
                             <div class="comments-list" id="articles-list">
                                 <ul class="blue-knowledge-list">
                                     @foreach($snippets as $snippet)
-{{--                                        {{{ dd($snippet) }}}--}}
                                     <li>
-                                        <img class="blue-knowledge-list-thumb img-rounded" src="/{{{ $snippet->users['thumbnail'] }}}" alt="">
+                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{{ $snippet->users['thumbnail'] }}}" alt=""></a>
                                         <div class="blue-knowledge-list-info">
                                             <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
                                             <ul class="list-inline">
@@ -29,8 +28,7 @@
                                                 </li>
                                             @endforeach
                                             </ul>
-                                            <p class="blue-knowledge-list-name">{{{ $snippet->users['name'] }}}が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>
-                                            {{--<p class="blue-knowledge-list-date">{{{ $snippet->created_at->format('Y/m/d H:i') }}}</p>--}}
+                                            <p class="blue-knowledge-list-name"><a href="users/{{ $snippet->users['id'] }}">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>
                                         </div>
                                     </li>
                                     @endforeach

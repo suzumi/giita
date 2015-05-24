@@ -113,9 +113,11 @@ class SnippetController extends Controller
      */
     public function edit($id)
     {
-
         $snippet = $this->snippet->find($id);
-        return view('snippet.edit')->with(compact('snippet'));
+        if ($snippet->user_id === Auth::user()->id) {
+            return view('snippet.edit')->with(compact('snippet'));
+        }
+        return redirect()->back();
     }
 
     /**
