@@ -39,8 +39,8 @@
                     <li role="presentation" class="active"><a href="/users/{{ $user->id }}/stocks">ストックした一覧</a></li>
                 </ul>
             </div>
+            @if(count($stocks) !== 0)
             <ul class="mypage-knowledge-list">
-            @if($stocks['total'] === 0)
                 @foreach($stocks as $stock)
                     <li>
                         <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
