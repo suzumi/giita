@@ -8,7 +8,7 @@
                         <div class="col-sm-12">
                             <div class="snippet-form-title">
                                 @if(isset($isWeeklyReport))
-                                    <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞">
+                                    <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞" required>
                                 @else
                                     {!! Form::input('text', 'title', old('title'), ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
                                 @endif

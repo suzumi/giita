@@ -8,9 +8,9 @@
                 <div class="col-sm-12">
                     <div class="snippet-form-title">
                         @if(Session::has('snippetFormError'))
-                            <input type="text" name="title" class="form-control" value="{{{ old('title') }}}">
+                            <input type="text" name="title" class="form-control" value="{{{ old('title') }}}" required>
                         @else
-                            <input type="text" name="title" class="form-control" value="{{{ $snippet->title }}}">
+                            <input type="text" name="title" class="form-control" value="{{{ $snippet->title }}}" required>
                         @endif
                     </div>
                 </div>
@@ -38,9 +38,9 @@
                             </div>
                             <div class="snippet-form-body-panel">
                                 @if(Session::has('snippetFormError'))
-                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body">{{ old('body') }}</textarea>
+                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{ old('body') }}</textarea>
                                 @else
-                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body">{{ $snippet->body }}</textarea>
+                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{ $snippet->body }}</textarea>
                                 @endif
                             </div>
                         </div>
