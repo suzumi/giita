@@ -23,17 +23,13 @@ class ElasticSearchSnippetRepository extends Controller
     {
         $params['index'] = 'biita';
         $params['type']  = 'snippets';
-        $params['body']['query']['match']['title'] = $q;
-        return $this->es->search($params);
 
-        return $query = $this->es->search([
+        return $this->es->search([
             'body' => [
                 'query' => [
-                    'bool' => [
-                        'should' => [
-                            ['match' => ['title' => $q]],
-                            ['match' => ['body' => $q]]
-                        ]
+                    'multi_match' => [
+                        'query' => $q,
+                        'fields' => ['title', 'body']
                     ]
                 ]
             ]

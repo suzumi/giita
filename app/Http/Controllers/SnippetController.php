@@ -201,14 +201,14 @@ EOS;
         $name = \Input::get('q');
         $es = new ElasticSearchSnippetRepository();
         $query = $es->search($name);
-        echo '<pre>', print_r($query), '<pre>';
+        $count = $query['hits']['total'];
+//        echo '<pre>', print_r($query), '<pre>';
 
-        if($query['hits']['total'] >= 1) {
-            $result = $query['hits']['hits'];
+        if($query['hits']['total'] > 0) {
+            $results = $query['hits']['hits'];
 
-            foreach($result as $res) {
-                echo $res['_source']['title'] . PHP_EOL;
-            }
+            return view('snippet.search')->with(compact('results', 'name', 'count'));
         }
+        return view('snippet.search')->with(compact('name', 'count'));
     }
 }

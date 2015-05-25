@@ -749,6 +749,7 @@ pre {
 /*-------------------------------------
   タグ検索一覧
 -------------------------------------*/
+.keyword-search-wrapper,
 .tag-search-wrapper {
     margin: 10px 0;
     border-right: 1px solid #ccc;
@@ -906,6 +907,41 @@ pre {
     display: table-cell;
 }
 /*-------------------------------------
+  キーワード検索
+-------------------------------------*/
+.keyword-search-formwrapper {
+    margin-bottom: 40px;
+}
+.keyword-search__form {
+    display: table;
+    width: 100%;
+}
+.keyword-search__textform {
+    display: table-cell;
+    font-size: 25px;
+    height: 50px;
+}
+.keyword-search__form div {
+    display: table-cell;
+    width: 100px;
+    padding-left: 17px;
+    vertical-align: top;
+}
+.keyword-search__form div button {
+    background-color: #59bb0c;
+    height: 50px;
+}
+.keyword-search__notfound {
+    margin-top: 50px;
+}
+.keyword-search__notfound{
+    color: #999;
+    font-size: 32px;
+}
+.keyword-search__notfoundText {
+    font-size: 14px;
+}
+/*-------------------------------------
   Component
 -------------------------------------*/
 .u-mb0 {
@@ -919,6 +955,11 @@ pre {
 }
 .u-paginate {
     padding: 15px 0;
+}
+.u-badge {
+    margin-left: 3px;
+    vertical-align: middle;
+    font-size: 10px;
 }
 .u-tag {
     background-color: #dfdfdf;
@@ -993,15 +1034,15 @@ pre {
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            {{--<ul class="nav navbar-nav">--}}
-                {{--<li>--}}
-                    {{--<form class="navbar-form navbar-left" action="/api/search" role="search" method="get">--}}
-                        {{--<div class="form-group">--}}
-                            {{--<input type="search" class="form-control" autocomplete="off" placeholder="検索">--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</li>--}}
-            {{--</ul>--}}
+            <ul class="nav navbar-nav">
+                <li>
+                    <form class="navbar-form navbar-left" action="/search" role="search" method="get">
+                        <div class="form-group">
+                            <input type="search" class="form-control" autocomplete="off" name="q" placeholder="キーワードを入力">
+                        </div>
+                    </form>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/auth/login') }}">ログイン</a></li>
