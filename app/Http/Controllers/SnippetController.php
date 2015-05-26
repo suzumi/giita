@@ -220,7 +220,7 @@ EOS;
 
         if($query['hits']['total'] > 0) {
             $hitList = $query['hits']['hits'];
-            $perPage = 1;
+            $perPage = 15;
 //            $paginatedSearchResults =  new LengthAwarePaginator($hitList, $query['hits']['total'], $perPage);
 
             $chunk_articles = array_chunk($hitList, $perPage);
