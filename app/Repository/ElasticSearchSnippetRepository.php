@@ -26,6 +26,8 @@ class ElasticSearchSnippetRepository extends Controller
 
         return $this->es->search([
             'body' => [
+                'from' => 0,
+                'size' => 1000,
                 'query' => [
                     'multi_match' => [
                         'query' => $q,

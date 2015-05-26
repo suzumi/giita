@@ -1090,7 +1090,7 @@ pre {
                 <li>
                     <form class="navbar-form navbar-left" action="/search" role="search" method="get">
                         <div class="form-group">
-                            <input type="search" class="form-control" autocomplete="off" name="q" placeholder="キーワードを入力">
+                            <input type="search" class="form-control" autocomplete="off" name="q" placeholder="キーワードを入力" required>
                         </div>
                     </form>
                 </li>
