@@ -8,7 +8,7 @@
                         <div class="col-sm-12">
                             <div class="snippet-form-title">
                                 @if(isset($isWeeklyReport))
-                                    <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞">
+                                    <input type="text" name="title" class="form-control" value="＜週報＞  {{ Auth::user()->name }}＜{{date('Y/m/d')}}＞" required>
                                 @else
                                     {!! Form::input('text', 'title', old('title'), ['required', 'class' => 'form-control', 'placeholder' => 'タイトル']) !!}
                                 @endif
@@ -18,17 +18,16 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="snippet-form-tag">
-                                @if(isset($isWeeklyReport))
-                                    <div class="alert alert-warning" role="alert">※週報は「週報」タグを選択してください</div>
-                                @endif
-                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple">
-                                    {{--@if(isset($isWeeklyReport))--}}
-                                    {{--<option value="9999" selected>週報</option>--}}
-                                    {{--@endif--}}
+                                <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple" @if(isset($isWeeklyReport)) data-is-weekly-report="true" @endif>
                                 </select>
                             </div>
                         </div>
                     </div>
+                    @if(isset($isWeeklyReport))
+                    <div class="alert alert-warning">
+                        「***」は罫線です。箇条書きではありません。
+                    </div>
+                    @endif
                     @if(Session::has('snippetFormError'))
                         <div class="alert alert-danger" role="alert">
                             {!! Session::get('snippetFormError') !!}
