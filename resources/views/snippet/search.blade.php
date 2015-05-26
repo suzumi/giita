@@ -25,7 +25,7 @@
                                 <div class="keyword-search__notfoundText">「{{ $name }}」に一致する記事は見つかりませんでした。</div>
                             </div>
                         @else
-                            @foreach($results as $result)
+                            @foreach($paginatedSearchResults as $result)
                                 <li>
                                     <a href="/users/{{ $result['_source']['user_id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="/{{ $result['_source']['thumbnail'] }}" alt=""></a>
                                     <div class="blue-knowledge-list-info">
@@ -48,7 +48,7 @@
                             @endforeach
                         @endif
                     </ul>
-                    {{--{!! $results->render() !!}--}}
+                    {!! $paginatedSearchResults->appends(Request::query())->render() !!}
                 </div>
             </div>
             <div class="col-sm-4">

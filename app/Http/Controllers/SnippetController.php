@@ -7,8 +7,11 @@ use App\User;
 use App\Comment;
 use App\Repository\ElasticSearchSnippetRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class SnippetController extends Controller
 {
@@ -196,18 +199,35 @@ EOS;
         return view('auth.mypage');
     }
 
+    /**
+     * ElasticSearchで全文検索
+     * @return $this
+     */
     public function searchOnES()
     {
         $name = \Input::get('q');
         $es = new ElasticSearchSnippetRepository();
         $query = $es->search($name);
         $count = $query['hits']['total'];
-//        echo '<pre>', print_r($query), '<pre>';
 
         if($query['hits']['total'] > 0) {
-            $results = $query['hits']['hits'];
+            $hitList = $query['hits']['hits'];
+            $perPage = 1;
+//            $paginatedSearchResults =  new LengthAwarePaginator($hitList, $query['hits']['total'], $perPage);
 
-            return view('snippet.search')->with(compact('results', 'name', 'count'));
+            $chunk_articles = array_chunk($hitList, $perPage);
+            $current_page = \Input::get('page', 1);
+            $paginatedSearchResults = new LengthAwarePaginator($chunk_articles [$current_page - 1], count($hitList), $perPage);
+
+//            $currentPage = LengthAwarePaginator::resolveCurrentPage();
+//            $collection = new Collection($hitList);
+//
+//            $currentPageSearchResults = $collection->slice($currentPage * $perPage, $perPage)->all();
+//            $paginatedSearchResults = new LengthAwarePaginator($currentPageSearchResults, count($collection), $perPage);
+
+            $paginatedSearchResults->setPath("search");
+
+            return view('snippet.search')->with(compact('paginatedSearchResults', 'name', 'count'));
         }
         return view('snippet.search')->with(compact('name', 'count'));
     }
