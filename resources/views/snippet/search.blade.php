@@ -48,7 +48,9 @@
                             @endforeach
                         @endif
                     </ul>
-                    {!! $paginatedSearchResults->appends(Request::query())->render() !!}
+                    @unless($count === 0)
+                        {!! $paginatedSearchResults->appends(Request::query())->render() !!}
+                    @endunless
                 </div>
             </div>
             <div class="col-sm-4">
