@@ -120,20 +120,6 @@
                         <div class="accordion-group">
                             <div class="accordion-heading">
                                 <a class="accordion-toggle" data-toggle="collapse"
-                                   data-parent="#side-bar" href="#area03">検索機能はないの？</a>
-                            </div>
-                            <div id="area03" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    全文検索を実装しようとしています。<br>
-                                    鋭意開発中です。
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion" id="side-bar">
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse"
                                    data-parent="#side-bar" href="#area04">タグを追加したい！</a>
                             </div>
                             <div id="area04" class="accordion-body collapse">
