@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel {
 		$schedule->command('inspire')
 				 ->hourly();
 
-		$schedule->call('App\Console\Commands\Tag@buildNextWeekTag')->sundays();
+		$schedule->call('App\Console\Commands\Tag@buildNextWeekTag')->mondays();
 	}
 
 }
