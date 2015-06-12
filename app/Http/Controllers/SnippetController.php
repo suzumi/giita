@@ -94,6 +94,7 @@ class SnippetController extends Controller
             $snippet = $this->snippet->findOrFail($id);
             $comments = Comment::commentList($id);
             $stocksAndComments = $this->snippet->stocksAndCommentsCount($id);
+            $popularSnippets = User::getMyPopularSnippets($snippet['user_id']);
 
             $parsedComment = array_map(function ($comment) use ($parser) {
                 $comment->parsedComment = $parser->parse($comment->comment);
@@ -102,7 +103,7 @@ class SnippetController extends Controller
 
             $markdown = $parser->parse($snippet->body);
             $snippet['body'] = $markdown;
-            return view('snippet.show')->with(compact('snippet', 'parsedComment', 'stocksAndComments'));
+            return view('snippet.show')->with(compact('snippet', 'parsedComment', 'stocksAndComments', 'popularSnippets'));
 
         } catch(ModelNotFoundException $e){
             return \Response::view('errors.404', [], '404');

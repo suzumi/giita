@@ -83,12 +83,22 @@ SQL;
 
     /**
      * 自分の投稿した人気のあるスニペットを取得
-     * @param $is
+     * @param $id int ユーザーID
      * @return mixed
      */
-    public static function getMyPopularSnippets($id)
+    public static function getMyPopularSnippets($userId, $count =5)
     {
-        //
+        return \DB::table('stocks')
+            ->leftjoin('snippets', 'stocks.snippet_id', '=', 'snippets.id')
+            ->leftjoin('users', 'snippets.user_id', '=', 'users.id')
+            ->where('snippets.user_id', '=', $userId)
+            ->groupBy('snippets.id')
+            ->orderBy(\DB::raw('count(snippets.id)'), 'desc')
+            ->select([
+                '*'
+            ])
+            ->take($count)
+            ->get();
     }
 
     /**

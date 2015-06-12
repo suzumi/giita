@@ -500,6 +500,28 @@ pre {
     outline: none;
 }
 
+/* 右カラム */
+.snippet-right__profile > img {
+    float: left;
+    margin-right: 5px;
+}
+
+.snippet-right__profile > a {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.snippet-right__snippetList > h6 {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.snippet-right__snippetList > ul {
+    padding-left: 15px;
+    font-size: 12px;
+    /*color: #337ab7;*/
+}
+
 /*-------------------------------------
   Mypage
 -------------------------------------*/
