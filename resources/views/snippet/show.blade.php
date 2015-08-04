@@ -199,3 +199,8 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+<script src="{{ asset('/js/comment.js') }}"></script>
+<script src="{{ asset('/js/stock.js') }}"></script>
+@endsection
