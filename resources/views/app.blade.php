@@ -103,14 +103,17 @@
 @section('footer')
     @include('layout.footer')
 @show
+
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
-<script src="{{ asset('/js/snippet.js') }}"></script>
-<script src="{{ asset('/js/highlight.pack.js') }}"></script>
-<script src="{{ asset('/js/marked.min.js') }}"></script>
-<script src="{{ asset('js/jquery.glanceyear.min.js') }}"></script>
-    <script src="{{ asset('js/particlebackground.js') }}"></script>
+<script src="{{ asset('/js/libs/highlight.pack.js') }}"></script>
+<script src="{{ asset('/js/libs/marked.min.js') }}"></script>
+<script src="{{ asset('js/libs/jquery.glanceyear.min.js') }}"></script>
+<script src="{{ asset('js/libs/particlebackground.js') }}"></script>
+
+@yield('scripts')
+
 </body>
 </html>
