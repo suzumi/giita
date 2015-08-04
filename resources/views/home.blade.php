@@ -8,17 +8,17 @@
                 <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
-                        <li class="active"><a href="#newarraival" data-toggle="tab">新着投稿</a></li>
+                        <li class="active"><a href="#newarrival" data-toggle="tab">新着投稿</a></li>
                         <li><a href="#unsubmitted-user" data-toggle="tab">週報未提出者</a></li>
                     </ul>
                     <div class="tab-content">
                         <!--新着-->
-                        <div class="tab-pane active" id="newarraival">
+                        <div class="tab-pane active" id="newarrival">
                             <div class="comments-list" id="articles-list">
                                 <ul class="blue-knowledge-list">
                                     @foreach($snippets as $snippet)
                                     <li>
-                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{{ $snippet->users['thumbnail'] }}}" alt=""></a>
+                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->users['thumbnail'] }}}" alt=""></a>
                                         <div class="blue-knowledge-list-info">
                                             <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
                                             <ul class="list-inline">
