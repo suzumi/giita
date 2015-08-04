@@ -8,27 +8,27 @@
                 <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
-                        <li class="active"><a href="#newarraival" data-toggle="tab">新着投稿</a></li>
-                        {{--<li><a href="#weekly-report" data-toggle="tab">週報</a></li>--}}
+                        <li class="active"><a href="#newarrival" data-toggle="tab">新着投稿</a></li>
+                        <li><a href="#unsubmitted-user" data-toggle="tab">週報未提出者</a></li>
                     </ul>
                     <div class="tab-content">
                         <!--新着-->
-                        <div class="tab-pane active" id="newarraival">
+                        <div class="tab-pane active" id="newarrival">
                             <div class="comments-list" id="articles-list">
                                 <ul class="blue-knowledge-list">
                                     @foreach($snippets as $snippet)
                                     <li>
-                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{{ $snippet->users['thumbnail'] }}}" alt=""></a>
+                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->users['thumbnail'] }}" alt=""></a>
                                         <div class="blue-knowledge-list-info">
-                                            <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                                            <a href="/snippet/{{ $snippet->id }}" class="blue-knowledge-list-title">{{ $snippet->title }}</a>
                                             <ul class="list-inline">
                                             @foreach($snippet->tags as $tag)
                                                 <li>
-                                                    <a href="/tags/{{ $tag['tag'] }}" class="u-tag">{{{ $tag['tag'] }}}</a>
+                                                    <a href="/tags/{{ $tag['tag'] }}" class="u-tag">{{ $tag['tag'] }}</a>
                                                 </li>
                                             @endforeach
                                             </ul>
-                                            <p class="blue-knowledge-list-name"><a href="users/{{ $snippet->users['id'] }}">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>
+                                            <p class="blue-knowledge-list-name"><a href="users/{{ $snippet->users['id'] }}">{{ $snippet->users['name'] }}</a>が{{ $snippet->created_at->format('Y/m/d H:i') }}に投稿しました</p>
                                         </div>
                                     </li>
                                     @endforeach
@@ -39,13 +39,16 @@
                             </div>
                         </div>
                         <!--マイフィード-->
-                        <!--<div class="tab-pane" id="myfeed">-->
-                        <!--<div class="comments-list">-->
-                        <!--<% @articles.each do |article| %>-->
-                        <!--<div class="media">-->
-                        <!--<span class="media-left">-->
-                        <!--&lt;!&ndash;<img src="http://lorempixel.com/40/40/people/1/">&ndash;&gt;-->
-                        <!--</span>-->
+                        <div class="tab-pane" id="unsubmitted-user">
+                            <h3>週報未提出者（<code>毎日0時00分更新</code>）</h3>
+                            <div>
+                                <ul class="tag-list__tags clearfix">
+                                    @foreach($unsubmittedUsers as $user)
+                                        <li><a href="javascript:void(0)">{{$user}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
 
                         <!--<div class="media-body">-->
                         <!--<p>-->
