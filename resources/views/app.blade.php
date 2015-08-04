@@ -96,7 +96,7 @@ pre {
     font-size: 16px;
     font-weight: bold;
     color: #337ab7;
-    line-height: 24px;
+    /*line-height: 24px;*/
     text-decoration: none;
 }
 .blue-knowledge-list-title:hover,
