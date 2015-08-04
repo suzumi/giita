@@ -18,17 +18,17 @@
                                 <ul class="blue-knowledge-list">
                                     @foreach($snippets as $snippet)
                                     <li>
-                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->users['thumbnail'] }}}" alt=""></a>
+                                        <a href="users/{{ $snippet->users['id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->users['thumbnail'] }}" alt=""></a>
                                         <div class="blue-knowledge-list-info">
-                                            <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
+                                            <a href="/snippet/{{ $snippet->id }}" class="blue-knowledge-list-title">{{ $snippet->title }}</a>
                                             <ul class="list-inline">
                                             @foreach($snippet->tags as $tag)
                                                 <li>
-                                                    <a href="/tags/{{ $tag['tag'] }}" class="u-tag">{{{ $tag['tag'] }}}</a>
+                                                    <a href="/tags/{{ $tag['tag'] }}" class="u-tag">{{ $tag['tag'] }}</a>
                                                 </li>
                                             @endforeach
                                             </ul>
-                                            <p class="blue-knowledge-list-name"><a href="users/{{ $snippet->users['id'] }}">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}に投稿しました</p>
+                                            <p class="blue-knowledge-list-name"><a href="users/{{ $snippet->users['id'] }}">{{ $snippet->users['name'] }}</a>が{{ $snippet->created_at->format('Y/m/d H:i') }}に投稿しました</p>
                                         </div>
                                     </li>
                                     @endforeach
