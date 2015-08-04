@@ -9,7 +9,7 @@
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
                         <li class="active"><a href="#newarraival" data-toggle="tab">新着投稿</a></li>
-                        {{--<li><a href="#weekly-report" data-toggle="tab">週報</a></li>--}}
+                        <li><a href="#unsubmitted-user" data-toggle="tab">週報未提出者</a></li>
                     </ul>
                     <div class="tab-content">
                         <!--新着-->
@@ -39,13 +39,16 @@
                             </div>
                         </div>
                         <!--マイフィード-->
-                        <!--<div class="tab-pane" id="myfeed">-->
-                        <!--<div class="comments-list">-->
-                        <!--<% @articles.each do |article| %>-->
-                        <!--<div class="media">-->
-                        <!--<span class="media-left">-->
-                        <!--&lt;!&ndash;<img src="http://lorempixel.com/40/40/people/1/">&ndash;&gt;-->
-                        <!--</span>-->
+                        <div class="tab-pane" id="unsubmitted-user">
+                            <h3>週報未提出者（<code>毎日0時00分更新</code>）</h3>
+                            <div>
+                                <ul class="tag-list__tags clearfix">
+                                    @foreach($unsubmittedUsers as $user)
+                                        <li><a href="javascript:void(0)">{{$user}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
 
                         <!--<div class="media-body">-->
                         <!--<p>-->
