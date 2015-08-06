@@ -15,14 +15,14 @@ class Tag
     }
 
     /**
-     * 月曜日になると今週の週報タグを生成する
+     * 金曜日になると今週の週報タグを生成する
      */
     public function buildNextWeekTag()
     {
         \Log::info('Start generate tag of This week. ');
         $dt = new Carbon();
 //        $dt->setTestNow($dt->createFromDate(2015, 5, 31));
-        if($dt->now()->dayOfWeek === Carbon::MONDAY) {
+        if($dt->now()->dayOfWeek === Carbon::FRIDAY) {
             //翌月
             $nextMonth =  $dt->parse('next month')->month;
             // 現在が何週目か
@@ -44,7 +44,7 @@ class Tag
             }
             \Log::info('End generate tag');
         } else {
-            \Log::info('Today is not Monday.');
+            \Log::info('Today is not Friday.');
         }
     }
 }
