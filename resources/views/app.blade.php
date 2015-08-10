@@ -78,8 +78,164 @@
                     </li>
                     <li><a href="/users/{{ Auth::user()->id }}/stocks">ストック一覧</a></li>
                     <li>
-                        <div class="notification-wrapper">
+                        <div class="notification-wrapper js-notify-btn">
                             <div class="notification-count">0</div>
+                        </div>
+                        <div class="globalNotifications_container js-notify-box">
+                            <div class="globalNotifications_arrow"></div>
+                            <div class="globalNotifications_contents"><div class="globalNotifications_contentsHeader">お知らせ</div><ul class="list-unstyled globalNotifications_contentsBody js-globalNotification_list">
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="globalNotificationContents_listItem">
+                                        <a href="http://qiita.com/suzumi/items/9a8aa8a56aa0e2cd6855" class="globalNotificationContents_itemLink">
+                                            <div class="globalNotificationContents_itemIcon">
+
+                                                <img src="https://pbs.twimg.com/profile_images/22188042/060219_1929_001_normal.jpg">
+
+                                            </div>
+                                            <div class="globalNotificationContents_itemText">
+                                                <span class="bold">wkaoru@github</span>があなたの投稿<span class="title">"ec2にGitBucketをインストール"</span>を<span class="bold">ストック</span>しました。
+                                                <div class="status">
+                                                    3日前
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul><div class="globalNotifications_contentsFooter"><a href="/notifications">通知一覧を見る</a></div>
+                            </div>
                         </div>
                     </li>
                     <li class="dropdown">
@@ -117,7 +273,7 @@
 <script src="{{ asset('/js/libs/marked.min.js') }}"></script>
 <script src="{{ asset('js/libs/jquery.glanceyear.min.js') }}"></script>
 <script src="{{ asset('js/libs/particlebackground.js') }}"></script>
-
+<script src="{{ asset('js/common.js') }}"></script>
 @yield('scripts')
 
 </body>
