@@ -77,6 +77,11 @@
                         </ul>
                     </li>
                     <li><a href="/users/{{ Auth::user()->id }}/stocks">ストック一覧</a></li>
+                    <li>
+                        <div class="notification-wrapper">
+                            <div class="notification-count">0</div>
+                        </div>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{--<img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">--}}

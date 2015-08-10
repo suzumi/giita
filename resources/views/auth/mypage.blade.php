@@ -20,7 +20,7 @@
                 <p class="mypage-user-name">{{{ $user->name }}}</p>
                 <div class="mypage-user-edit-btn">
                     @if(Auth::user()->id === $user->id)
-                    <a href="/settings/account" class="btn btn-info">プロフィールを編集する</a>
+                    <a href="/settings/account" class="btn u-btn">プロフィールを編集する</a>
                     @endif
                 </div>
             </div>

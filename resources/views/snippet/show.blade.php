@@ -108,7 +108,7 @@
                                                 href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
                                     <time class="pull-right">{{ $comment->created_at }}</time>
                                     @if($comment->user_id === Auth::user()->id)
-                                        <button class="btn btn-info btn-xs js-comment-edit">編集</button>
+                                        <button class="btn u-btn btn-xs js-comment-edit">編集</button>
                                         {!! Form::open(['route'=>['comment.destroy',$snippet->id], 'method'=>'DELETE',
                                         'class' => 'comment-delete-form'])!!}
                                         <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">

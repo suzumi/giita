@@ -70,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="btn btn-info pull-right"><i class="fa fa-pencil-square-o"></i>投稿する</button>
+                            <button class="btn u-btn pull-right"><i class="fa fa-pencil-square-o"></i>投稿する</button>
                         </div>
                     </div>
             {!! Form::close() !!}
