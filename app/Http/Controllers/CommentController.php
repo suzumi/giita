@@ -3,10 +3,13 @@
 use App\Comment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Utillity\NotificationTrait as Notify;
 
 use Illuminate\Http\Request;
 
 class CommentController extends Controller {
+
+	use Notify;
 
     private $comment;
 
@@ -46,7 +49,8 @@ class CommentController extends Controller {
 		$input = $request->all();
         $input['user_id'] = \Auth::user()->id;
         $this->comment->fill($input);
-        $this->comment->save();
+        $savedRecord = $this->comment->create($input);
+		$this->notificationStore($input['snippet_owner_id'], $input['user_id'], $input['snippet_id'], $savedRecord->id);
 
         return redirect()->to("/snippet/{$input['snippet_id']}");
 	}

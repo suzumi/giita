@@ -101,7 +101,7 @@
                         </div>
                         <div class="comment-wrapper">
                             @foreach($parsedComment as $comment)
-                                <div class="comment-form-header">
+                                <div class="comment-form-header" id="comment-{{ $comment->comment_id }}">
                                     <img src="/{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
 
                                     <div class="comment-form-title"><a
@@ -169,6 +169,7 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="snippet_id" value="{{ $snippet->id }}">
+                                <input type="hidden" name="snippet_owner_id" value="{{ $snippet->user_id }}">
                                 <button class="btn btn-success js-submit-btn" style="float: right;">投稿する</button>
                                 {!! Form::close() !!}
                             </div>
