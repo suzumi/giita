@@ -10,6 +10,10 @@
     color: #fff;
     background-color: #3175CC;
 }
+
+.u-form-r1 {
+    border-radius: 1px;
+}
 /*-------------------------------------
   ログイン
 -------------------------------------*/
@@ -41,6 +45,9 @@ pre {
 .navbar-default {
     /*background-color: inherit !important;*/
     /*margin-bottom: 0;*/
+}
+.nav-search .form-control {
+    border-radius: 1px;
 }
 .img-rounded {
     border-radius: 1px;
@@ -365,23 +372,25 @@ pre {
 /*-------------------------------------
   Snippet Form
 -------------------------------------*/
+.snippet-form-container {
+    padding: 0 5px;
+}
 .btn-post {
     margin-bottom: 20px;
 }
 .snippet-form-title {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .snippet-form-title input {
     height: 56px;
     font-size: 28px;
 }
 .snippet-form-tag {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .snippet-form-wrapper {
-    padding: 20px 15px 30px;
-    /*background-color: #f8faf7;*/
-    background-color: #f3faf8;
+    padding: 5px 0 30px;
+    background-color: #f8faf7;
 }
 .select2-container {
     width: 100% !important;

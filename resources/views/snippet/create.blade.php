@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="snippet-form-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid snippet-form-container">
             {!! Form::open(['route' => 'snippet.store', 'class' => 'snippet-form']) !!}
                     <div class="row">
                         <div class="col-sm-12">
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-12">
                             <div class="snippet-form-tag">
                                 <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple" @if(isset($isWeeklyReport)) data-is-weekly-report="true" @endif>
                                 </select>
@@ -51,14 +51,14 @@
                             <div class="snippet-body-wrapper clearfix">
                                 <div class="col-sm-6 snippet-body-left">
                                     <div class="snippet-form-tabs">
-                                        <span class="snippet-form-tab" style="display: inline-block; background-color: #fff;">Markdown</span>
+                                        <span class="snippet-form-tab" style="display: inline-block; background-color: #fff;">本文</span>
                                         <button type="button" class="comment-form-tab" data-toggle="modal" data-target="#markdown-help"><i class="fa fa-question-circle"></i>書き方</button>
                                     </div>
                                     <div class="snippet-form-body-panel">
                                         @if(isset($isWeeklyReport))
-                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{{ $template }}}</textarea>
+                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" placeholder="Markdownで入力" required>{{{ $template }}}</textarea>
                                         @else
-                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{ old('body') }}</textarea>
+                                            <textarea class="form-control snippet-form-body" id="snippet-body" name="body" placeholder="Markdownで入力" required>{{ old('body') }}</textarea>
                                         @endif
                                     </div>
                                 </div>
