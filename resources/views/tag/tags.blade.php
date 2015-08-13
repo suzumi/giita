@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    タグ一覧
+@endsection
+
 @section('content')
     <div class="container">
         <h3>タグ一覧</h3>

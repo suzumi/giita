@@ -1,5 +1,8 @@
 @extends('app')
 
+@section('title')
+    「{{ $name }}」の検索結果
+@endsection
 
 @section('content')
 

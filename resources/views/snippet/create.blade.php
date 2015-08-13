@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    新規投稿
+@endsection
+
 @section('content')
     <div class="snippet-form-wrapper">
         <div class="container-fluid">

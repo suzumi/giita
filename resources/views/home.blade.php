@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    ホーム
+@endsection
+
 @section('content')
     <div class="container snippet-container">
         <div class="row">

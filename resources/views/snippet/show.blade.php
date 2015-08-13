@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    {{ $snippet->title }}
+@endsection
+
 @section('content')
     <div class="item-wrapper">
         <div class="item-header">

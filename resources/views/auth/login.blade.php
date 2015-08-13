@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    ログイン
+@endsection
+
 @section('content')
     <div class="container login-wrapper">
 

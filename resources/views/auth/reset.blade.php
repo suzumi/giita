@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    パスワードをリセット
+@endsection
+
 @section('content')
 <div class="container-fluid passwordreset-wrapper">
 	<div class="row">

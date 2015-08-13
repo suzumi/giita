@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    {{ $user->name }}の投稿
+@endsection
+
 @section('content')
     <div class="user-page-header">
         <div class="container">

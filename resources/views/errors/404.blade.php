@@ -2,7 +2,9 @@
 <head>
     <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Comfortaa:300' rel='stylesheet' type='text/css'>
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 
     <style>
         body {
@@ -43,6 +45,7 @@
             font-weight: 100;
         }
     </style>
+    <title>お探しのページは見つかりません。404: Not Found</title>
 </head>
 <body>
 <div class="container">
@@ -50,11 +53,13 @@
         <div class="brand-logo">Biita</div>
         <div class="title">
             <h2>お探しのページは存在しません。</h2>
+            <h3>404: Not Found</h3>
         </div>
         <div class="description">
             <p>お探しのページは移動もしくは削除された可能性があります。</p>
             <p>URLにタイプミスがないかご確認ください。</p>
         </div>
+        <a href="/" class="btn u-btn">Biitaトップへ</a>
     </div>
 </div>
 </body>

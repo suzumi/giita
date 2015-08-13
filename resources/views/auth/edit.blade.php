@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    ユーザー設定
+@endsection
+
 @section('content')
     @if(Session::has('success'))
         <div class="alert alert-success text-center" role="alert">

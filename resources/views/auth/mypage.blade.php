@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    {{ $user->name }}
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row mypage">

@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    「{{ $snippet->title }}」を編集
+@endsection
+
 @section('content')
     <div class="snippet-form-wrapper">
         <div class="container-fluid">
