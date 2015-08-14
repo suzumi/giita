@@ -34,6 +34,7 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
 	Route::post('unstock', 'SnippetController@unstock');
     Route::get('stocked', 'SnippetController@stocked');
 	Route::get('tag', 'TagController@all');
+    Route::get('notifications', 'NotificationController@checkNotifications');
 	Route::resource('activity', 'UserController');
 });
 Route::group(['prefix' => 'users/{id}'], function() {

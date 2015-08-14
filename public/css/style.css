@@ -212,6 +212,12 @@ pre {
     padding: 13px 15px;
     line-height: 20px;
 }
+.js-notification-unread-color {
+    background-color: #FBE9CF;
+}
+.js-notify-btn > .js-notification-cnt {
+    background-color: #FDB242;
+}
 .notification-count {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;

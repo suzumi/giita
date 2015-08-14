@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Utillity\NotificationTrait;
 
 class SnippetController extends Controller
 {
+
+    use NotificationTrait;
 
     private $snippet;
 
@@ -88,9 +91,11 @@ class SnippetController extends Controller
     public function show($id)
     {
         $parser = new \cebe\markdown\GithubMarkdown();
+        $query = \Request::query();
 
         try {
 
+            if (array_key_exists('read', $query)) $this->isNtyChecked($query['nty']);
             $snippet = $this->snippet->findOrFail($id);
             $comments = Comment::commentList($id);
             $stocksAndComments = $this->snippet->stocksAndCommentsCount($id);
