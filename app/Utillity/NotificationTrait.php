@@ -24,6 +24,12 @@ trait NotificationTrait {
             ]);
     }
 
+    /**
+     * 通知一覧を取得
+     * @param $userId
+     * @param int $count
+     * @return mixed
+     */
     public function getNotification($userId, $count = 10)
     {
         //comment_userがあなたの投稿"snippet_name"にコメントしました。
@@ -31,6 +37,7 @@ trait NotificationTrait {
             ->join('snippets', 'notifications.snippet_id', '=', 'snippets.id')
             ->join('users', 'notifications.comment_user_id', '=', 'users.id')
             ->where('notifications.snippet_owner_id', '=', $userId)
+            ->where('notifications.comment_user_id', '!=', $userId)
             ->select([
                 '*',
                 'notifications.id as notify_id',
@@ -42,7 +49,10 @@ trait NotificationTrait {
             ->get();
     }
 
-    // 通知をチェックしたか
+    /**
+     * 通知をチェック
+     * @param $ntyId
+     */
     public function isNtyChecked($ntyId)
     {
         \DB::table('notifications')
