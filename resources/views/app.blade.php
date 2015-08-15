@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Biita</title>
+    <title>@yield('title') - Biita</title>
 
     <link href="{{ asset('/css/glanceyear.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
@@ -54,7 +54,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav nav-search">
                 <li>
                     <form class="navbar-form navbar-left" action="/search" role="search" method="get">
                         <div class="form-group">
@@ -77,11 +77,22 @@
                         </ul>
                     </li>
                     <li><a href="/users/{{ Auth::user()->id }}/stocks">ストック一覧</a></li>
+                    <li>
+                        <div class="notification-wrapper js-notify-btn">
+                            <div class="notification-count">0</div>
+                        </div>
+                        <div class="globalNotifications_container js-notify-box">
+                            <div class="globalNotifications_arrow"></div>
+                            <div class="globalNotifications_contents"><div class="globalNotifications_contentsHeader">お知らせ</div>
+                                <ul class="list-unstyled globalNotifications_contentsBody js-globalNotification_list">
+                                </ul><div class="globalNotifications_contentsFooter"><a href="/notifications">通知一覧を見る</a></div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{--<img class="img-rounded img-profile-icon" src="http://pbs.twimg.com/profile_images/493797738232836097/7m5qqKSw_normal.jpeg">--}}
                             <img class="img-rounded img-profile-icon" src="/{{ Auth::user()->thumbnail }}">
-                            <span>{{ Auth::user()->name }}</span>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/users/{{ Auth::user()->id }}"><i class="fa fa-user"></i>マイページ</a></li>
@@ -112,7 +123,7 @@
 <script src="{{ asset('/js/libs/marked.min.js') }}"></script>
 <script src="{{ asset('js/libs/jquery.glanceyear.min.js') }}"></script>
 <script src="{{ asset('js/libs/particlebackground.js') }}"></script>
-
+<script src="{{ asset('js/common.js') }}"></script>
 @yield('scripts')
 
 </body>
