@@ -85,7 +85,7 @@
                             <div class="globalNotifications_arrow"></div>
                             <div class="globalNotifications_contents"><div class="globalNotifications_contentsHeader">お知らせ</div>
                                 <ul class="list-unstyled globalNotifications_contentsBody js-globalNotification_list">
-                                </ul><div class="globalNotifications_contentsFooter"><a href="/notifications">通知一覧を見る</a></div>
+                                </ul><div class="globalNotifications_contentsFooter"><span>通知一覧</span></div>
                             </div>
                         </div>
                     </li>
