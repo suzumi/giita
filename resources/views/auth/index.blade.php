@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    ユーザー一覧
+@endsection
+
 @section('content')
     <div class="container">
         <h3>ユーザー一覧</h3>

@@ -1,8 +1,12 @@
 @extends('app')
 
+@section('title')
+    「{{ $snippet->title }}」を編集
+@endsection
+
 @section('content')
     <div class="snippet-form-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid snippet-form-container">
             {!! Form::open(['route' => ['snippet.update', $snippet->id], 'method' => 'PUT']) !!}
             <div class="row">
                 <div class="col-sm-12">
@@ -16,7 +20,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-12">
                     <div class="snippet-form-tag">
                         <select class="js-tags-autocomplete form-control" name="selected-tags[]" multiple="multiple"  data-tags="[@for($i = 0; $i < count($snippet->tags); $i++)@if($i === 0){{$snippet->tags[$i]['id']}}@else{{', '.$snippet->tags[$i]['id']}}@endif @endfor]">
                         </select>
@@ -33,14 +37,14 @@
                     <div class="snippet-body-wrapper clearfix">
                         <div class="col-sm-6 snippet-body-left">
                             <div class="snippet-form-tabs">
-                                <span class="snippet-form-tab" style="display: inline-block; background-color: #fff;">Markdown</span>
+                                <span class="snippet-form-tab" style="display: inline-block; background-color: #fff;">本文</span>
                                 <button type="button" class="comment-form-tab" data-toggle="modal" data-target="#markdown-help"><i class="fa fa-question-circle"></i>書き方</button>
                             </div>
                             <div class="snippet-form-body-panel">
                                 @if(Session::has('snippetFormError'))
-                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{ old('body') }}</textarea>
+                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body" placeholder="Markdownで入力" required>{{ old('body') }}</textarea>
                                 @else
-                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body" required>{{ $snippet->body }}</textarea>
+                                    <textarea class="form-control snippet-form-body" id="snippet-body" name="body" placeholder="Markdownで入力" required>{{ $snippet->body }}</textarea>
                                 @endif
                             </div>
                         </div>
@@ -56,7 +60,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn btn-info pull-right"><i class="fa fa-upload"></i>更新する</button>
+                    <button class="btn u-btn pull-right"><i class="fa fa-upload"></i>更新する</button>
                 </div>
             </div>
             {!! Form::close() !!}

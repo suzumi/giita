@@ -1,5 +1,8 @@
 @extends('app')
 
+@section('title')
+    お知らせ
+@endsection
 
 @section('content')
     <div class="container">

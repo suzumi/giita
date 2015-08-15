@@ -1,5 +1,8 @@
 @extends('app')
 
+@section('title')
+    {{ $tag->tag }}に関する{{ $tagCount }}件の投稿
+@endsection
 
 @section('content')
     <div class="container">

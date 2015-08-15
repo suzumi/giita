@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('title')
+    {{ $snippet->title }}
+@endsection
+
 @section('content')
     <div class="item-wrapper">
         <div class="item-header">
@@ -101,14 +105,14 @@
                         </div>
                         <div class="comment-wrapper">
                             @foreach($parsedComment as $comment)
-                                <div class="comment-form-header">
+                                <div class="comment-form-header" id="comment-{{ $comment->comment_id }}">
                                     <img src="/{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
 
                                     <div class="comment-form-title"><a
                                                 href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
                                     <time class="pull-right">{{ $comment->created_at }}</time>
                                     @if($comment->user_id === Auth::user()->id)
-                                        <button class="btn btn-info btn-xs js-comment-edit">編集</button>
+                                        <button class="btn u-btn btn-xs js-comment-edit">編集</button>
                                         {!! Form::open(['route'=>['comment.destroy',$snippet->id], 'method'=>'DELETE',
                                         'class' => 'comment-delete-form'])!!}
                                         <input type="hidden" name="comment_id" value="{{ $comment->comment_id }}">
@@ -169,6 +173,7 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="snippet_id" value="{{ $snippet->id }}">
+                                <input type="hidden" name="snippet_owner_id" value="{{ $snippet->user_id }}">
                                 <button class="btn btn-success js-submit-btn" style="float: right;">投稿する</button>
                                 {!! Form::close() !!}
                             </div>

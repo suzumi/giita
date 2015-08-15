@@ -1,11 +1,15 @@
 @extends('app')
 
+@section('title')
+    ホーム
+@endsection
+
 @section('content')
     <div class="container snippet-container">
         <div class="row">
             <div class="col-sm-9">
                 <h4>ナレッジを共有しよう</h4>
-                <a href="{{ url('/snippet/create') }}" class="btn btn-info btn-post">ノウハウ・Tips・週報を投稿する</a>
+                <a href="{{ url('/snippet/create') }}" class="btn u-btn btn-post">ノウハウ・Tipsを投稿する</a>
                 <div class="tab-pane active" id="feeds">
                     <ul class="nav nav-tabs top-tabs">
                         <li class="active"><a href="#newarrival" data-toggle="tab">新着投稿</a></li>
