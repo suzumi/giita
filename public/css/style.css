@@ -379,7 +379,10 @@ pre {
   Snippet Form
 -------------------------------------*/
 .snippet-form-container {
-    padding: 0 5px;
+    padding: 0 0;
+}
+.snippet-form-container .row {
+    margin: 0 0;
 }
 .btn-post {
     margin-bottom: 20px;
