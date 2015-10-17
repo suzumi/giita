@@ -10,12 +10,12 @@
         <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
 
             <div class="row">
-                <h2 class="brand-logo text-center">Biita</h2>
+                <h2 class="brand-logo text-center">Giita</h2>
             </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="panel-title text-center">Biitaログイン</div>
+                    <div class="panel-title text-center">Giitaログイン</div>
                 </div>
 
                 <div class="panel-body">

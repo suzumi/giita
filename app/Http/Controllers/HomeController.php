@@ -28,15 +28,15 @@ class HomeController extends Controller {
 	{
 		$snippets = Snippet::orderBy('created_at', 'desc')->paginate(15);
 		$newsPickup = $this->news->orderBy('created_at', 'desc')->first();
-		$redis = \Redis::connection();
-		$unsubmittedUsers = $redis->lrange('unsubmittedUsers', 0, -1);
-//		$snippet = Snippet::first();
-//		dd($snippet->tags->toArray());
-//        $snippet = new Snippet();
-//        $snippets = $snippet->getTags();
-//        dd($snippet);
-//        dd($snippet->getTags());
-        return view('home')->with(compact('snippets', 'newsPickup', 'unsubmittedUsers'));
+//		$redis = \Redis::connection();
+//		$unsubmittedUsers = $redis->lrange('unsubmittedUsers', 0, -1);
+//        if (isset($snippets) && isset($newsPickup)) {
+            return view('home')->with(compact('snippets', 'newsPickup'));
+//        } else {
+//            list($snippets, $newsPickup) = array([],[]);
+//            return view('home')->with(compact('snippets', 'newsPickup'));
+//        }
+
 	}
 
 }

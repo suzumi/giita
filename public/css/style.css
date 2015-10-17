@@ -3,12 +3,15 @@
 }
 .u-btn {
     color: #fff;
-    background-color: rgba(49, 117, 204, 0.8);
-    border-color: #3175CC;
+    background-color: rgba(7, 80, 37, 0.8);
+    border-color: #075025;
+}
+.u-btn-warn {
+    background-color: #f0ad4e !important;
 }
 .u-btn:hover {
     color: #fff;
-    background-color: #3175CC;
+    background-color: #075025;
 }
 
 .u-form-r1 {
@@ -37,7 +40,7 @@ pre {
     overflow: auto;
 }
 .brand-logo {
-    color: #3175CC !important;
+    color: #075025 !important;
     font-family: 'Comfortaa', cursive;
     /*font-family: 'Quicksand', sans-serif;*/
     font-size: 35px;
@@ -87,7 +90,7 @@ pre {
     display: block;
     font-size: 16px;
     font-weight: bold;
-    color: #337ab7;
+    color: #075025;
     /*line-height: 24px;*/
     text-decoration: none;
 }
@@ -188,7 +191,7 @@ pre {
 }
 .accordion-heading {
     border: 1px solid #ccc;
-    background-color: #DFF6FF;
+    background-color: #C5ECD5;
 }
 .accordion-heading > a {
     color: #555;
@@ -503,8 +506,7 @@ pre {
 }
 
 .item-header {
-    /*background-color: #31a5cc;*/
-    background-color: #3175CC;
+    background-color: #075025;
     color: #fff;
     margin-bottom: 30px;
     padding: 30px 0;
@@ -571,7 +573,7 @@ pre {
     color: #262626;
     background-color: #f5f5f5;
 }
-.biita-blog-ad {
+.gizumo-ad {
     border-top: 1px dotted #ccc;
     margin-top: 30px;
     padding-top: 20px;
@@ -912,9 +914,9 @@ pre {
     font-weight: 900;
 }
 .user-page-ribbon {
-    background: #E9F8FC;
-    border-bottom: solid 1px #BCD7E0;
-    border-top: solid 1px #BCD7E0;
+    background: #E4F5EB;
+    border-bottom: solid 1px #C5ECD5;
+    border-top: solid 1px #C5ECD5;
     padding: 1em 0;
 }
 .tag-list__tags
@@ -1032,7 +1034,7 @@ pre {
 }
 .event-list-date {
     display: table-cell;
-    background-color: #32a8ff;
+    background-color: #116734;
     border-right: dotted 1px #e6e6e6;
     text-align: center;
     padding: 8px 5px;

@@ -34,7 +34,7 @@ class MailController extends Controller
         }
 
         \Mail::send('emails.feedback', ['name' => $this->userName, 'body' => $input['feedback-form']], function($message) {
-            $message->to('shibue@blue-corporation.jp')->cc('arata@blue-corporation.jp')->subject("【Biita】{$this->userName}さんからのお問い合わせ【フィードバック】");
+            $message->to('shibue@gizumo-inc.jp')->cc('arata@gizumo-inc.jp')->subject("【Giita】{$this->userName}さんからのお問い合わせ【フィードバック】");
         });
 
         \Session::flash('feedbackSuccess', 'お問い合わせを送信しました。ありがとうございます。');

@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="animsition">
     <div class="user-page-header">
         <div class="container">
             <div class="row">
@@ -18,7 +19,7 @@
                 </div>
                 <div class="col-sm-4">
                     @if(Auth::user()->id == $user->id)
-                        <a href="/settings/account" class="btn btn-info">プロフィールを編集する</a>
+                        <a href="/settings/account" class="btn u-btn">プロフィールを編集する</a>
                     @endif
                 </div>
             </div>
@@ -73,4 +74,5 @@
             {!! $stocks->render() !!}
         </div>
     </div>
+</div>
 @endsection

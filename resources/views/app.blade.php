@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>@yield('title') - Biita</title>
-
+    <title>@yield('title') - Giita</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.0/css/animsition.min.css" rel="stylesheet">
     <link href="{{ asset('/css/glanceyear.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/github.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
         {!! Session::get('feedbackSuccess') !!}
     </div>
 @elseif(Session::has('feedbackError'))
-    <div class="alert alert-danger text-center" role="alert">
+    <div class="alert alert-danger text-center u-mb0" role="alert">
         {!! Session::get('feedbackError') !!}
     </div>
 @endif
@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand brand-logo" href="/">
-                Biita
+                Giita
             </a>
         </div>
 
@@ -73,7 +73,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/snippet/create"><i class="fa fa-pencil-square-o"></i>新規投稿する</a></li>
-                            <li><a href="/weekly-report"><i class="fa fa-file-text-o"></i>週報を投稿する</a></li>
+                            {{--<li><a href="/weekly-report"><i class="fa fa-file-text-o"></i>週報を投稿する</a></li>--}}
                         </ul>
                     </li>
                     <li><a href="/users/{{ Auth::user()->id }}/stocks">ストック一覧</a></li>
@@ -119,12 +119,35 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.0/js/animsition.min.js"></script>
 <script src="{{ asset('/js/libs/highlight.pack.js') }}"></script>
 <script src="{{ asset('/js/libs/marked.min.js') }}"></script>
 <script src="{{ asset('js/libs/jquery.glanceyear.min.js') }}"></script>
 <script src="{{ asset('js/libs/particlebackground.js') }}"></script>
 <script src="{{ asset('js/common.js') }}"></script>
 @yield('scripts')
-
+<script>
+    $(document).ready(function() {
+        $(".animsition").animsition({
+            inClass: 'fade-in',
+            outClass: 'fade-out',
+            inDuration: 1000,
+            outDuration: 300,
+            linkElement: '.animsition-link',
+            loading: true,
+            loadingParentElement: 'body', //animsition wrapper element
+            loadingClass: 'animsition-loading',
+            loadingInner: '', // e.g '<img src="loading.svg" />'
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: [ 'animation-duration', '-webkit-animation-duration'],
+            overlay : false,
+            overlayClass : 'animsition-overlay-slide',
+            overlayParentElement : 'body',
+            transition: function(url){ window.location.href = url; }
+        });
+    });
+</script>
 </body>
 </html>

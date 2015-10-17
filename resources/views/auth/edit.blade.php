@@ -10,7 +10,7 @@
             {!! Session::get('success') !!}
         </div>
     @endif
-    <div class="container">
+    <div class="container animsition">
         <h3>ユーザー設定</h3>
         <div class="row edit-form-wrapper">
             <div class="col-sm-2">

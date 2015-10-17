@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="animsition">
 <div class="container">
     <div class="row mypage">
         <div class="col-md-3 mypage-user">
@@ -151,7 +152,7 @@
         {{--</div>--}}
     </div>
 </div>
-
+</div>
 @endsection
 
 @section('scripts')

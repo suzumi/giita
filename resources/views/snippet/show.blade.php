@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="item-wrapper">
+    <div class="item-wrapper animsition">
         <div class="item-header">
             <div class="container">
                 <div class="row">
@@ -98,10 +98,9 @@
                 <div class="row">
                     <div class="col-sm-9">
                         {!! $snippet->body !!}
-                        <div class="biita-blog-ad">
-                            <span class="label label-info">PR</span>
-                            <a target="_blank" id="ad-48" href="http://engineer.blue-corporation.jp/">blueエンジニアブログで記事を発信しよう
-                                - Blue enginner blog</a>
+                        <div class="gizumo-ad">
+                            <span class="label u-btn">PR</span>
+                            <a target="_blank" id="ad-48" href="http://54.92.125.67:8080/gitbucket/">社内のGitリポジトリはこちら！ - GitBucket</a>
                         </div>
                         <div class="comment-wrapper">
                             @foreach($parsedComment as $comment)

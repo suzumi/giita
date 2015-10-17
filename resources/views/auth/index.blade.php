@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container animsition">
         <h3>ユーザー一覧</h3>
         <div class="row user-list__wrapper">
         @foreach($users as $user)

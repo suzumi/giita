@@ -10,7 +10,6 @@
         _initialize: function() {
             this._eventsOfConnpass();
         },
-
         _eventsOfConnpass: function() {
             var date = new Date();
 
@@ -18,7 +17,7 @@
                 'type': 'GET',
                 'url': 'http://connpass.com/api/v1/event/',
                 'dataType': 'jsonp',
-                'timeout':3000,
+                'timeout':5000,
                 'data': {
                     'ym': date.getFullYear() + '0' + (Number(date.getMonth()) + 1),
                     'keyword': '東京',
@@ -32,7 +31,7 @@
                     template +=
                     '<div class="event-list">' +
                         '<div class="event-list-date">' +
-                            '<div class="count">' + (dateTime.getMonth() + 1) + '/' + dateTime.getDate()+ '</div>' +
+                            '<div class="count">' + (dateTime.getMonth() + 1) + '/' + pad(dateTime.getDate())+ '</div>' +
                             '<div class="unit">' + dateTime.getHours() + ':' + ('0' + dateTime.getMinutes()).slice(-2) + '</div>' +
                         '</div>' +
                         '<div class="event-list-description">' +
@@ -52,6 +51,8 @@
         }
     };
 })(window);
+
+function pad(n) {return (n<10 ? '0'+n : n);}
 
 $(function() {
     var connpass = new app.Connpass();

@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container animsition">
         <div class="row">
             <div class="col-sm-8 keyword-search-wrapper">
                 <div class="keyword-search-formwrapper">

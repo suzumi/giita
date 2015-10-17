@@ -50,10 +50,10 @@
             <div class="col-sm-4">
                 <div class="event-col">
                     <div class="event-col-head">
-                        <img src="{{ asset('/img/assets/connpass_logo_3.png') }}" class="img-responsive">
+                        <a href="http://connpass.com/" target="_blank"><img src="{{ asset('/img/assets/connpass_logo_3.png') }}" class="img-responsive"></a>
                         <span>外部の勉強会(新着順)</span>
                     </div>
-                    <div class="event js-event-list">
+                    <div class="event js-event-list animsition">
                     </div>
                 </div>
             </div>
