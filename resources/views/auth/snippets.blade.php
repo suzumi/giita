@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-8 clearfix">
                     <div class="user-page-icon">
-                        <img src="/{{ $user->thumbnail }}" class="img-rounded img-responsive">
+                        <img src="{{ $user->thumbnail }}" class="img-rounded img-responsive">
                     </div>
                     <div class="user-page-name">
                         <h2>{{ $user->name }}</h2>
@@ -48,7 +48,7 @@
                 @foreach($snippets as $snippet)
                     @if($snippet->id != null)
                         <li>
-                            <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $snippet->thumbnail }}" alt="">
+                            <img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->thumbnail }}" alt="">
                             <div class="blue-knowledge-list-info">
                                 <a href="/snippet/{{ $snippet->id }}" class="blue-knowledge-list-title">{{ $snippet->title }}</a>
                                 {{--<ul class="list-inline">--}}

@@ -67,7 +67,7 @@
             <div class="col-sm-4">
                 <div class="user-info">
                     <div class="user-info-left">
-                        <img class="img-rounded" src="/{{ Auth::user()->thumbnail }}">
+                        <img class="img-rounded" src="{{ Auth::user()->thumbnail }}">
                     </div>
                     <div class="user-info-right">
                         <div class="user-info-name">
@@ -78,7 +78,7 @@
                 <div class="category-navigation">
                     <ul class="nav nav-pills nav-stacked">
                         <li role="presentation" class="active"><a href="/">フィード</a></li>
-                        <li role="presentation"><a href="/">勉強会アーカイブ</a></li>
+                        <li role="presentation"><a href="/events">勉強会アーカイブ</a></li>
                     </ul>
                 </div>
                 <div class="news-title__area clearfix">

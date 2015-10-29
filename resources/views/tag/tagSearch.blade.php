@@ -26,7 +26,7 @@
                     <ul class="mypage-knowledge-list">
                         @foreach($snippetsWithTag as $snippet)
                             <li>
-                                <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $snippet->thumbnail }}" alt="">
+                                <img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->thumbnail }}" alt="">
                                 <div class="blue-knowledge-list-info">
                                     <a href="/snippet/{{ $snippet->snippet_id }}" class="blue-knowledge-list-title">{{ $snippet->title }}</a>
                                     {{--<ul class="list-inline">--}}

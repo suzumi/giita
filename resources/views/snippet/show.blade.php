@@ -50,7 +50,7 @@
                             @endif
                             <span>
                                 <a href="/users/{{ $snippet->users['id'] }}"><img
-                                            src="/{{$snippet->users['thumbnail']}}"
+                                            src="{{$snippet->users['thumbnail']}}"
                                             class="snippet-user-thumb img-rounded"></a>
                                 <a href="/users/{{ $snippet->users['id'] }}"
                                    class="snippet-user-name">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}
@@ -105,7 +105,7 @@
                         <div class="comment-wrapper">
                             @foreach($parsedComment as $comment)
                                 <div class="comment-form-header" id="comment-{{ $comment->comment_id }}">
-                                    <img src="/{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
+                                    <img src="{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
 
                                     <div class="comment-form-title"><a
                                                 href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
@@ -153,7 +153,7 @@
                             @endforeach
                             <div class="item-comment">
                                 <div class="comment-form-header">
-                                    <img src="/{{ Auth::user()->thumbnail }}" class="comment-form-icon img-rounded">
+                                    <img src="{{ Auth::user()->thumbnail }}" class="comment-form-icon img-rounded">
 
                                     <div class="comment-form-title">コメントを投稿する</div>
                                 </div>
@@ -181,7 +181,7 @@
                     <div class="col-sm-3">
                         <div class="snippet-right">
                             <div class="snippet-right__profile clearfix">
-                                <img src="/{{ $snippet->users['thumbnail'] }}" class="blue-knowledge-list-thumb img-rounded">
+                                <img src="{{ $snippet->users['thumbnail'] }}" class="blue-knowledge-list-thumb img-rounded">
                                 <a href="/users/{{ $snippet->users['id'] }}">{{ $snippet->users['name'] }}</a>
                             </div>
                             <div class="snippet-right__snippetList">

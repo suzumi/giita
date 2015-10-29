@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="animsition">
     <div class="container login-wrapper">
 
         <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
@@ -321,4 +322,5 @@ C13.952,16.124,13.353,16.173,12.795,16.384z"></path>
 c-0.049-0.366-0.046-0.739-0.025-1.11c0.009-0.125,0.024-0.25,0.042-0.375C12.122,17.814,12.141,17.732,12.164,17.65z"></path>
         </g>
     </svg>
+</div>
 @endsection

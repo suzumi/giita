@@ -30,7 +30,7 @@
                         @else
                             @foreach($paginatedSearchResults as $result)
                                 <li>
-                                    <a href="/users/{{ $result['_source']['user_id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="/{{ $result['_source']['thumbnail'] }}" alt=""></a>
+                                    <a href="/users/{{ $result['_source']['user_id'] }}"><img class="blue-knowledge-list-thumb img-rounded" src="{{ $result['_source']['thumbnail'] }}" alt=""></a>
                                     <div class="blue-knowledge-list-info">
                                         <a href="/snippet/{{ $result['_id'] }}" class="blue-knowledge-list-title">{{ $result['_source']['title'] }}</a>
                                         <ul class="list-inline">

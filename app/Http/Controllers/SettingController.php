@@ -48,7 +48,7 @@ class SettingController extends Controller
             $name = md5(sha1(uniqid(mt_rand(), true))). '.'. $image->getClientOriginalExtension();
             $upload = $image->move('media', $name);
             File::delete(public_path($this->user->thumbnail));
-            $updateSet['thumbnail'] = $upload;
+            $updateSet['thumbnail'] = '/' . $upload;
         }
 
         User::where('id', $this->userId)->update($updateSet);

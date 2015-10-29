@@ -1,6 +1,9 @@
 .u-mr8 {
     margin-right: 8px;
 }
+.u-mt20 {
+    margin-top: 20px;
+}
 .u-btn {
     color: #fff;
     background-color: rgba(7, 80, 37, 0.8);
@@ -1165,6 +1168,59 @@ pre {
 }
 .keyword-search__notfoundText {
     font-size: 14px;
+}
+
+/*-------------------------------------
+  イベント
+-------------------------------------*/
+.event__wrap {
+
+}
+.event-list-eyecatch {
+    display: table-cell;
+    /*background-color: #116734;*/
+    border-right: dotted 1px #e6e6e6;
+    text-align: center;
+    padding: 8px;
+    min-width: 60px;
+    width: 60px;
+    position: relative;
+}
+.event-list-eyecatch .schedule {
+
+}
+.event-list-eyecatch a {
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.event-list-eyecatch .schedule {
+    position: absolute;
+    height: 100px;
+    width: 150px;
+    background-image: url("/img/assets/schedule_shadow.png");
+    top: 8px;
+    left: 8px;
+    padding: 8px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 1.0);
+    text-align: left;
+}
+.event-list-eyecatch .schedule .count{
+    font-size: 12px;
+}
+.event-list-eyecatch .schedule .unit{
+    font-size: 22px;
+}
+.work-shop .event-list-description {
+    display: table-cell;
+    background-color: #fff;
+    padding: 8px 10px;
+    vertical-align: top;
+    color: #999;
+}
+.event-img > img {
+    height: 100px;
+    width: 150px;
 }
 /*-------------------------------------
   Component

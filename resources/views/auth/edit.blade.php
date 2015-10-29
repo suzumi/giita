@@ -31,7 +31,7 @@
                         <label>アイコン</label>
                     </dt>
                     <dd class="clearfix">
-                        <img src="/{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded js-user-thumb">
+                        <img src="{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded js-user-thumb">
                         <label class="mypage-input-file-wrap">
                             <input type="file" name="profile-icon" class="mypage-input-file js-input-file" accept="image/*">
                             ファイルを選択

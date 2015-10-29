@@ -31,7 +31,7 @@
                     template +=
                     '<div class="event-list">' +
                         '<div class="event-list-date">' +
-                            '<div class="count">' + (dateTime.getMonth() + 1) + '/' + pad(dateTime.getDate())+ '</div>' +
+                            '<div class="count">' + pad(dateTime.getMonth() + 1) + '/' + pad(dateTime.getDate())+ '</div>' +
                             '<div class="unit">' + dateTime.getHours() + ':' + ('0' + dateTime.getMinutes()).slice(-2) + '</div>' +
                         '</div>' +
                         '<div class="event-list-description">' +
