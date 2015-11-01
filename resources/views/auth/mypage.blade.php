@@ -76,7 +76,7 @@
                                         {{--</li>--}}
                                         {{--@endforeach--}}
                                         {{--</ul>--}}
-                                        <p class="blue-knowledge-list-name">{{{ $snippet->created_at }}}に投稿</p>
+                                        <p class="blue-knowledge-list-name">{{ Carbon\Carbon::parse($snippet->created_at)->format('Y/m/d') }}に投稿</p>
                                     </div>
                                 </li>
                             @endforeach
@@ -108,7 +108,7 @@
                                         {{--@endforeach--}}
                                         {{--</ul>--}}
                                         <p class="blue-knowledge-list-name">
-                                            <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ $stock->snippet_created_at }}に投稿
+                                            <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ Carbon\Carbon::parse($stock->snippet_created_at)->format('Y/m/d') }}に投稿
                                         </p>
                                     </div>
                                 </li>

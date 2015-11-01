@@ -4,6 +4,12 @@
 .u-mt20 {
     margin-top: 20px;
 }
+.u-mb40 {
+    margin-bottom: 40px;
+}
+.u-pl15 {
+    padding-left: 15px;
+}
 .u-btn {
     color: #fff;
     background-color: rgba(7, 80, 37, 0.8);
@@ -1171,7 +1177,7 @@ pre {
 }
 
 /*-------------------------------------
-  イベント
+  イベント一覧
 -------------------------------------*/
 .event__wrap {
 
@@ -1196,7 +1202,7 @@ pre {
 }
 .event-list-eyecatch .schedule {
     position: absolute;
-    height: 100px;
+    height: 98px;
     width: 150px;
     background-image: url("/img/assets/schedule_shadow.png");
     top: 8px;
@@ -1218,10 +1224,62 @@ pre {
     vertical-align: top;
     color: #999;
 }
+.event-list-description a {
+    font-weight: bold;
+    font-size: 22px;
+}
 .event-img > img {
     height: 100px;
     width: 150px;
 }
+.event-eyecatch-thumb {
+    height: 100px;
+    width: 150px;
+}
+
+.event-detail__header__schedule {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-color: #eea236;
+    color: #fff;
+    border-radius: 5px;
+}
+.detail__header__month {
+    margin: 0;
+}
+.detail__header__date {
+    font-weight: bold;
+    font-size: 20px;
+}
+.event-detail__header__title {
+    float: left;
+    margin: 10px 0 0 5px;
+}
+.event-detail__header__area {
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+.event-detail__desc {
+    border-top: 1px solid #999;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+}
+.event-detail__desc .bs-callout span {
+    font-size: 18px;
+    font-weight: 500;
+}
+.event-detail__desc__title {
+    background-color: #f5f4f1;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.event-detail__desc__body {
+    padding: 0 20px;
+}
+
 /*-------------------------------------
   Component
 -------------------------------------*/
@@ -1284,4 +1342,18 @@ pre {
 .service-worker__notify {
     margin-bottom: 5px;
     color: #838383;
+}
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-left-width: 5px;
+}
+.bs-callout-warning {
+    border-left-color: #aa6708;
+}
+.bs-callout-info {
+     border-left-color: #075025;
 }

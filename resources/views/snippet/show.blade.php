@@ -109,7 +109,7 @@
 
                                     <div class="comment-form-title"><a
                                                 href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
-                                    <time class="pull-right">{{ $comment->created_at }}</time>
+                                    <time class="pull-right">{{ Carbon\Carbon::parse($comment->created_at)->format('Y/m/d H:i') }}</time>
                                     @if($comment->user_id === Auth::user()->id)
                                         <button class="btn u-btn btn-xs js-comment-edit">編集</button>
                                         {!! Form::open(['route'=>['comment.destroy',$snippet->id], 'method'=>'DELETE',

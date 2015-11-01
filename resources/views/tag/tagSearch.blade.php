@@ -37,7 +37,7 @@
                                     {{--@endforeach--}}
                                     {{--</ul>--}}
                                     <p class="blue-knowledge-list-name">
-                                        <a href="/users/{{ $snippet->user_id }}">{{ $snippet->name }}</a>が{{ $snippet->snippet_created_at }}に投稿
+                                        <a href="/users/{{ $snippet->user_id }}">{{ $snippet->name }}</a>が{{ Carbon\Carbon::parse($snippet->snippet_created_at)->format('Y年m月d日') }}に投稿
                                     </p>
                                 </div>
                             </li>

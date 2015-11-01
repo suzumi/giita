@@ -33,7 +33,11 @@
                                                             </li>
                                                         @endforeach
                                                     </ul>
-                                                    <p class="blue-knowledge-list-name"><a href="users/{{ $snippet->users['id'] }}">{{ $snippet->users['name'] }}</a>が{{ $snippet->created_at->format('Y/m/d H:i') }}に投稿しました</p>
+                                                    <p class="blue-knowledge-list-name">
+                                                        <?php Carbon\Carbon::setLocale('ja'); ?>
+                                                        <a href="users/{{ $snippet->users['id'] }}">{{ $snippet->users['name'] }}</a>が
+                                                        {{ Carbon\Carbon::parse($snippet->created_at)->diffForHumans() }}に投稿しました
+                                                    </p>
                                                 </div>
                                             </li>
                                         @endforeach

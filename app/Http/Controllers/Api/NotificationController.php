@@ -15,6 +15,7 @@ class NotificationController extends BaseApiController
 
     public function checkNotifications()
     {
+        Carbon::setLocale('ja');
         $notifications = $this->getNotification(\Auth::user()->id);
         $notificationsTimeAgo = array_map(function($e){
             $h = Carbon::parse($e->notify_created_at);
