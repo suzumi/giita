@@ -1202,9 +1202,10 @@ pre {
 }
 .event-list-eyecatch .schedule {
     position: absolute;
-    height: 98px;
-    width: 150px;
+    height: 68.75px;
+    width: 182.5px;
     background-image: url("/img/assets/schedule_shadow.png");
+    background-repeat: no-repeat;
     top: 8px;
     left: 8px;
     padding: 8px;
@@ -1220,21 +1221,21 @@ pre {
 .work-shop .event-list-description {
     display: table-cell;
     background-color: #fff;
-    padding: 8px 10px;
+    padding: 8px 15px;
     vertical-align: top;
     color: #999;
 }
-.event-list-description a {
+.work-shop__title a {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 16px;
 }
 .event-img > img {
-    height: 100px;
-    width: 150px;
+    height: 68.75px;
+    width: 182.5px;
 }
 .event-eyecatch-thumb {
-    height: 100px;
-    width: 150px;
+    height: 68.75px;
+    width: 182.5px;
 }
 
 .event-detail__header__schedule {
@@ -1251,6 +1252,9 @@ pre {
 .detail__header__date {
     font-weight: bold;
     font-size: 20px;
+}
+.event-detail__header__eyecatch > img{
+    margin: 0 auto;
 }
 .event-detail__header__title {
     float: left;

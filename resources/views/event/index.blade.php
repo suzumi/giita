@@ -16,7 +16,7 @@
                                 <div class="event-list-eyecatch">
                                     <a href="/events/{{$event->id}}">
                                         <div class="event-img">
-                                            <img src="{{$event->event_eyecatch_img}}" height="72px" width="108px">
+                                            <img src="{{$event->event_eyecatch_img}}">
                                         </div>
                                         <div class="schedule">
                                             <div class="count">{{Carbon\Carbon::parse($event->event_date)->format('m月')}}</div>
@@ -24,7 +24,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="event-list-description">
+                                <div class="event-list-description work-shop__title">
                                     <a href="/events/{{$event->id}}">{{$event->event_title}}</a>
 
                                     <div class="event-address">

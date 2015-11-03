@@ -4,17 +4,20 @@ use App\EventDoc;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Event;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use Illuminate\Http\Request;
 
 class EventController extends Controller {
 
     private $event;
+    private $sidebar;
 
     public function __construct(Event $event)
     {
         $this->middleware('auth');
         $this->event = $event;
+        $this->sidebar = 'events';
     }
 
 	/**
@@ -52,11 +55,17 @@ class EventController extends Controller {
             'docsUrl' => $input['docs_url'],
         ];
         if (\Input::hasFile('event_eyecatch_img')) {
+            // 画像のアップロード
             $image = \Input::file('event_eyecatch_img');
             $name = md5(sha1(uniqid(mt_rand(), true))). '.'. $image->getClientOriginalExtension();
-            $upload = $image->move('media', $name);
+            $uploadPath = $image->move('media', $name);
+            // リサイズして上書き
+            $img = \Image::make($uploadPath)->resize(730, null, function($constraint) {
+                $constraint->aspectRatio();
+            })->crop(730, 275);
+            $img->save($uploadPath);
 //            \File::delete(public_path($this->user->thumbnail));
-            $input['event_eyecatch_img'] = '/' . $upload;
+            $input['event_eyecatch_img'] = '/' . $uploadPath;
         }
         unset($input['docs_url']);
         $this->event->fill($input);
@@ -79,11 +88,13 @@ class EventController extends Controller {
 	public function show($id)
 	{
         try {
+            $sidebar = $this->sidebar;
             $event = $this->event->findOrFail($id);
             if ('dummyimage.com' === parse_url($event->event_eyecatch_img, PHP_URL_HOST)) unset($event->event_eyecatch_img);
             $docs = EventDoc::getDocsByEventId($id);
-            return view('event.show')->with(compact('event', 'docs'));
-        } catch(\ModelNotFoundException $e){
+            return view('event.show')->with(compact('event', 'docs', 'sidebar'));
+
+        } catch(ModelNotFoundException $e){
             return \Response::view('errors.404', [], '404');
         }
 	}

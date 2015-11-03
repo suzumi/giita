@@ -75,6 +75,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/snippet/create"><i class="fa fa-pencil-square-o"></i>新規投稿する</a></li>
                             {{--<li><a href="/weekly-report"><i class="fa fa-file-text-o"></i>週報を投稿する</a></li>--}}
+                            <li><a href="/events/create"><i class="fa fa-file-text-o"></i>勉強会情報を投稿する</a></li>
                         </ul>
                     </li>
                     <li><a href="/users/{{ Auth::user()->id }}/stocks">ストック一覧</a></li>

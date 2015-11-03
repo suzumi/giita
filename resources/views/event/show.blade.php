@@ -6,13 +6,12 @@
 
 @section('content')
     <div class="container animsition">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="event-detail__wrap u-mt20 u-mb40">
                 <div class="event-detail__header__area clearfix">
                     <div class="event-detail__header__schedule">
-                        <p class="detail__header__month text-center">10月</p>
-                        <p class="detail__header__date text-center">31</p>
+                        <p class="detail__header__month text-center">{{Carbon\Carbon::parse($event->event_date)->format('m月')}}</p>
+                        <p class="detail__header__date text-center">{{Carbon\Carbon::parse($event->event_date)->format('d')}}</p>
                     </div>
                     <h2 class="event-detail__header__title">{{ $event->event_title }}</h2>
                 </div>
@@ -67,6 +66,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-4 u-mt20 u-mb40">
+            @section('sidebar')
+                @include('layout.sidebar')
+            @show
+        </div>
     </div>
 @endsection
