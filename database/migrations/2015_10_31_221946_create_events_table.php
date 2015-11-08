@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration {
             $table->time('event_time');
             $table->text('event_description');
             $table->string('event_eyecatch_img')->default('http://dummyimage.com/183x69/ccc/ffffff.png&text=No+Image');
+            $table->integer('user_id');
             $table->string('event_youtube_video_id');
             $table->tinyInteger('event_status')->default(0);
             $table->timestamps();

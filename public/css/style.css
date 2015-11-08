@@ -15,6 +15,11 @@
     background-color: rgba(7, 80, 37, 0.8);
     border-color: #075025;
 }
+.u-require {
+    margin-left: 5px;
+    color: #fff;
+    background-color: #eea236;
+}
 .u-btn-warn {
     background-color: #f0ad4e !important;
 }

@@ -31,6 +31,24 @@ class EventDoc extends Model {
 
     }
 
+
+    /**
+     * 資料を更新する
+     * @param array $params
+     */
+    public static function updateDocs($params)
+    {
+        \DB::transaction(function () use ($params) {
+            \DB::table('events_docs')
+                ->where('id', '=', $params['id'])
+                ->update([
+                    'doc_type' => 1,
+                    'docs_url' => $params['docsUrl'],
+                ]);
+        });
+
+    }
+
     /**
      * 勉強会に紐づく資料の取得
      * @param $id
@@ -43,6 +61,7 @@ class EventDoc extends Model {
             ->where('events_docs.events_id', '=', $id)
             ->orderBy('events_docs.created_at', 'desc')
             ->select([
+                'events_docs.id',
                 'events_docs.docs_url'
             ])
             ->get();

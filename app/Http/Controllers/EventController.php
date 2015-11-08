@@ -27,7 +27,7 @@ class EventController extends Controller {
 	 */
 	public function index()
 	{
-        $events = $this->event->paginate(10);
+        $events = $this->event->orderBy('created_at', 'desc')->paginate(10);
         return view('event.index')->with(compact('events'));
 	}
 
@@ -54,6 +54,7 @@ class EventController extends Controller {
             'docType' => 1,
             'docsUrl' => $input['docs_url'],
         ];
+        $input['user_id'] = \Auth::user()->id;
         if (\Input::hasFile('event_eyecatch_img')) {
             // 画像のアップロード
             $image = \Input::file('event_eyecatch_img');
@@ -107,7 +108,12 @@ class EventController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $event = $this->event->find($id);
+        $docs = EventDoc::getDocsByEventId($id);
+        if ($event->user_id === \Auth::user()->id) {
+            return view('event.edit')->with(compact('event', 'docs'));
+        }
+        return redirect()->back();
 	}
 
 	/**
@@ -116,9 +122,55 @@ class EventController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request, $id)
 	{
-		//
+        $input = $request->all();
+        $postDocRow = [
+            'docType' => 1,
+            'docsUrl' => $input['docs_url'],
+        ];
+        $updateRow = [
+            'event_title' => $input['event_title'],
+            'event_sponsor' => $input['event_sponsor'],
+            'event_date' => $input['event_date'],
+            'event_time' => $input['event_time'],
+            'event_description' => $input['event_description'],
+            'event_youtube_video_id' => $input['event_youtube_video_id'],
+        ];
+        if (\Input::hasFile('event_eyecatch_img')) {
+            // 画像のアップロード
+            $image = \Input::file('event_eyecatch_img');
+            $name = md5(sha1(uniqid(mt_rand(), true))). '.'. $image->getClientOriginalExtension();
+            $uploadPath = $image->move('media', $name);
+            // リサイズして上書き
+            $img = \Image::make($uploadPath)->resize(730, null, function($constraint) {
+                $constraint->aspectRatio();
+            })->crop(730, 275);
+            $img->save($uploadPath);
+            // 古い画像は削除
+//            \File::delete(public_path($this->user->thumbnail));
+            $input['event_eyecatch_img'] = '/' . $uploadPath;
+            $updateRow['event_eyecatch_img'] = $input['event_eyecatch_img'];
+        }
+        unset($input['docs_url']);
+        $this->event->where('id', $id)->update($updateRow);
+        if (array_has($input, 'doc_id')) {
+            // 資料を添付していれば資料を登録する
+            if ($postDocRow['docsUrl'] !== '') {
+                $postDocRow['id'] = $input['doc_id'];
+                $postDocRow['eventsId'] = $id;
+                EventDoc::updateDocs($postDocRow);
+            }
+        } else {
+            if ($postDocRow['docsUrl'] !== '') {
+                $postDocRow['eventsId'] = $id;
+                EventDoc::postDocs($postDocRow);
+            }
+        }
+
+
+
+        return redirect()->to("/events/{$id}");
 	}
 
 	/**
@@ -129,7 +181,10 @@ class EventController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $data = $this->event->find($id);
+        $data->delete();
+
+        return redirect()->to('/events');
 	}
 
 }

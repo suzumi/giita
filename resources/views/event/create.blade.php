@@ -14,7 +14,7 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="name">イベント名</label>
+                    <label class="col-md-4 control-label" for="name">イベント名<span class="label u-require">必須</span></label>
                     <div class="col-md-4">
                         <input name="event_title" type="text" placeholder="例）イマドキのJavaScript勉強会" class="form-control input-md" required="">
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="name">主催者</label>
+                    <label class="col-md-4 control-label" for="name">主催者<span class="label u-require">必須</span></label>
                     <div class="col-md-4">
                         <input name="event_sponsor" type="text" placeholder="例）田中太郎" class="form-control input-md" required="">
 
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="name">日時</label>
+                    <label class="col-md-4 control-label" for="name">日時<span class="label u-require">必須</span></label>
                     <div class="col-md-2">
                         <input name="event_date" type="date" placeholder="" class="form-control input-md" required="">
                     </div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="name">詳細</label>
+                    <label class="col-md-4 control-label" for="name">詳細<span class="label u-require">必須</span></label>
                     <div class="col-md-4">
                         <textarea rows="3" name="event_description" class="form-control input-md" required></textarea>
                     </div>

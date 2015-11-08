@@ -46,9 +46,15 @@ class SettingController extends Controller
         if(Input::hasFile('profile-icon')) {
             $image = Input::file('profile-icon');
             $name = md5(sha1(uniqid(mt_rand(), true))). '.'. $image->getClientOriginalExtension();
-            $upload = $image->move('media', $name);
+            $uploadPath = $image->move('media', $name);
+            //リサイズして上書き
+            $img = \Image::make($uploadPath)->resize(200, null, function($constraint) {
+                $constraint->aspectRatio();
+            })->crop(200, 200);
+            $img->save($uploadPath);
+            // 古い画像は削除
             File::delete(public_path($this->user->thumbnail));
-            $updateSet['thumbnail'] = '/' . $upload;
+            $updateSet['thumbnail'] = '/' . $uploadPath;
         }
 
         User::where('id', $this->userId)->update($updateSet);

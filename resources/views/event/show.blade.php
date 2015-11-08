@@ -7,6 +7,30 @@
 @section('content')
     <div class="container animsition">
         <div class="col-md-8">
+            @if($event->user_id === Auth::user()->id)
+                <div class="btn-group u-mt20">
+                    <a href="/events/{{ $event->id }}/edit" class="btn btn-warning btn-sm">
+                        イベントを編集
+                    </a>
+                    <button type="button" class="btn btn-warning dropdown-toggle btn-sm"
+                            data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-cog"></i>
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            {!!
+                            Form::open(['route'=>['events.destroy',$event->id],'method'=>'DELETE'])
+                            !!}
+                            <button class="dropdown-form-button js-snippet-delete"><i
+                                        class="fa fa-trash-o"></i>イベントを削除
+                            </button>
+                            {!! Form::close() !!}
+                        </li>
+                    </ul>
+                </div>
+            @endif
             <div class="event-detail__wrap u-mt20 u-mb40">
                 <div class="event-detail__header__area clearfix">
                     <div class="event-detail__header__schedule">
@@ -19,7 +43,7 @@
                     <img src="{{ $event->event_eyecatch_img }}" class="img-responsive">
                 </div>
                 <div class="event-detail__desc">
-                    <div class="event-detail__desc__title">
+                    <div class="event-detail__desc__title clearfix">
                         <h4><i class="fa fa-calendar"></i>イベント詳細</h4>
                     </div>
                     <div class="event-detail__desc__schedule">
