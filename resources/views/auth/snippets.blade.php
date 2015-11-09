@@ -5,12 +5,13 @@
 @endsection
 
 @section('content')
+<div class="animsition">
     <div class="user-page-header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 clearfix">
                     <div class="user-page-icon">
-                        <img src="/{{ $user->thumbnail }}" class="img-rounded img-responsive">
+                        <img src="{{ $user->thumbnail }}" class="img-rounded img-responsive">
                     </div>
                     <div class="user-page-name">
                         <h2>{{ $user->name }}</h2>
@@ -18,7 +19,7 @@
                 </div>
                 <div class="col-sm-4">
                     @if(Auth::user()->id == $user->id)
-                        <a href="/settings/account" class="btn btn-info">プロフィールを編集する</a>
+                        <a href="/settings/account" class="btn u-btn">プロフィールを編集する</a>
                     @endif
                 </div>
             </div>
@@ -47,7 +48,7 @@
                 @foreach($snippets as $snippet)
                     @if($snippet->id != null)
                         <li>
-                            <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $snippet->thumbnail }}" alt="">
+                            <img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->thumbnail }}" alt="">
                             <div class="blue-knowledge-list-info">
                                 <a href="/snippet/{{ $snippet->id }}" class="blue-knowledge-list-title">{{ $snippet->title }}</a>
                                 {{--<ul class="list-inline">--}}
@@ -58,7 +59,7 @@
                                 {{--@endforeach--}}
                                 {{--</ul>--}}
                                 <p class="blue-knowledge-list-name">
-                                    {{ $snippet->created_at }}に投稿
+                                    {{ Carbon\Carbon::parse($snippet->created_at)->format('Y/m/d') }}に投稿
                                 </p>
                             </div>
                         </li>
@@ -73,4 +74,5 @@
             {!! $snippets->render() !!}
         </div>
     </div>
+</div>
 @endsection

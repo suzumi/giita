@@ -1,14 +1,31 @@
 .u-mr8 {
     margin-right: 8px;
 }
+.u-mt20 {
+    margin-top: 20px;
+}
+.u-mb40 {
+    margin-bottom: 40px;
+}
+.u-pl15 {
+    padding-left: 15px;
+}
 .u-btn {
     color: #fff;
-    background-color: rgba(49, 117, 204, 0.8);
-    border-color: #3175CC;
+    background-color: rgba(7, 80, 37, 0.8);
+    border-color: #075025;
+}
+.u-require {
+    margin-left: 5px;
+    color: #fff;
+    background-color: #eea236;
+}
+.u-btn-warn {
+    background-color: #f0ad4e !important;
 }
 .u-btn:hover {
     color: #fff;
-    background-color: #3175CC;
+    background-color: #075025;
 }
 
 .u-form-r1 {
@@ -37,7 +54,7 @@ pre {
     overflow: auto;
 }
 .brand-logo {
-    color: #3175CC !important;
+    color: #075025 !important;
     font-family: 'Comfortaa', cursive;
     /*font-family: 'Quicksand', sans-serif;*/
     font-size: 35px;
@@ -87,7 +104,7 @@ pre {
     display: block;
     font-size: 16px;
     font-weight: bold;
-    color: #337ab7;
+    color: #075025;
     /*line-height: 24px;*/
     text-decoration: none;
 }
@@ -188,7 +205,7 @@ pre {
 }
 .accordion-heading {
     border: 1px solid #ccc;
-    background-color: #DFF6FF;
+    background-color: #C5ECD5;
 }
 .accordion-heading > a {
     color: #555;
@@ -503,8 +520,7 @@ pre {
 }
 
 .item-header {
-    /*background-color: #31a5cc;*/
-    background-color: #3175CC;
+    background-color: #075025;
     color: #fff;
     margin-bottom: 30px;
     padding: 30px 0;
@@ -571,7 +587,7 @@ pre {
     color: #262626;
     background-color: #f5f5f5;
 }
-.biita-blog-ad {
+.gizumo-ad {
     border-top: 1px dotted #ccc;
     margin-top: 30px;
     padding-top: 20px;
@@ -912,9 +928,9 @@ pre {
     font-weight: 900;
 }
 .user-page-ribbon {
-    background: #E9F8FC;
-    border-bottom: solid 1px #BCD7E0;
-    border-top: solid 1px #BCD7E0;
+    background: #E4F5EB;
+    border-bottom: solid 1px #C5ECD5;
+    border-top: solid 1px #C5ECD5;
     padding: 1em 0;
 }
 .tag-list__tags
@@ -1032,7 +1048,7 @@ pre {
 }
 .event-list-date {
     display: table-cell;
-    background-color: #32a8ff;
+    background-color: #116734;
     border-right: dotted 1px #e6e6e6;
     text-align: center;
     padding: 8px 5px;
@@ -1164,6 +1180,115 @@ pre {
 .keyword-search__notfoundText {
     font-size: 14px;
 }
+
+/*-------------------------------------
+  イベント一覧
+-------------------------------------*/
+.event__wrap {
+
+}
+.event-list-eyecatch {
+    display: table-cell;
+    /*background-color: #116734;*/
+    border-right: dotted 1px #e6e6e6;
+    text-align: center;
+    padding: 8px;
+    min-width: 60px;
+    width: 60px;
+    position: relative;
+}
+.event-list-eyecatch .schedule {
+
+}
+.event-list-eyecatch a {
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.event-list-eyecatch .schedule {
+    position: absolute;
+    height: 68.75px;
+    width: 182.5px;
+    background-image: url("/img/assets/schedule_shadow.png");
+    background-repeat: no-repeat;
+    top: 8px;
+    left: 8px;
+    padding: 8px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 1.0);
+    text-align: left;
+}
+.event-list-eyecatch .schedule .count{
+    font-size: 12px;
+}
+.event-list-eyecatch .schedule .unit{
+    font-size: 22px;
+}
+.work-shop .event-list-description {
+    display: table-cell;
+    background-color: #fff;
+    padding: 8px 15px;
+    vertical-align: top;
+    color: #999;
+}
+.work-shop__title a {
+    font-weight: bold;
+    font-size: 16px;
+}
+.event-img > img {
+    height: 68.75px;
+    width: 182.5px;
+}
+.event-eyecatch-thumb {
+    height: 68.75px;
+    width: 182.5px;
+}
+
+.event-detail__header__schedule {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-color: #eea236;
+    color: #fff;
+    border-radius: 5px;
+}
+.detail__header__month {
+    margin: 0;
+}
+.detail__header__date {
+    font-weight: bold;
+    font-size: 20px;
+}
+.event-detail__header__eyecatch > img{
+    margin: 0 auto;
+}
+.event-detail__header__title {
+    float: left;
+    margin: 10px 0 0 5px;
+}
+.event-detail__header__area {
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+.event-detail__desc {
+    border-top: 1px solid #999;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+}
+.event-detail__desc .bs-callout span {
+    font-size: 18px;
+    font-weight: 500;
+}
+.event-detail__desc__title {
+    background-color: #f5f4f1;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.event-detail__desc__body {
+    padding: 0 20px;
+}
+
 /*-------------------------------------
   Component
 -------------------------------------*/
@@ -1226,4 +1351,18 @@ pre {
 .service-worker__notify {
     margin-bottom: 5px;
     color: #838383;
+}
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-left-width: 5px;
+}
+.bs-callout-warning {
+    border-left-color: #aa6708;
+}
+.bs-callout-info {
+     border-left-color: #075025;
 }

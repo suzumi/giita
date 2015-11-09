@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="animsition">
     <div class="snippet-form-wrapper">
         <div class="container-fluid snippet-form-container">
             {!! Form::open(['route' => 'snippet.store', 'class' => 'snippet-form']) !!}
@@ -173,6 +174,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 

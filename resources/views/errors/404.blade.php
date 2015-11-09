@@ -50,7 +50,7 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="brand-logo">Biita</div>
+        <div class="brand-logo">Giita</div>
         <div class="title">
             <h2>お探しのページは存在しません。</h2>
             <h3>404: Not Found</h3>
@@ -59,7 +59,7 @@
             <p>お探しのページは移動もしくは削除された可能性があります。</p>
             <p>URLにタイプミスがないかご確認ください。</p>
         </div>
-        <a href="/" class="btn u-btn">Biitaトップへ</a>
+        <a href="/" class="btn u-btn">Giitaトップへ</a>
     </div>
 </div>
 </body>

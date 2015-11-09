@@ -5,11 +5,12 @@
 @endsection
 
 @section('content')
+<div class="animsition">
 <div class="container">
     <div class="row mypage">
         <div class="col-md-3 mypage-user">
             <!-- 左側 -->
-            <img src="/{{ $user->thumbnail }}" class="mypage-user-thumb img-rounded">
+            <img src="{{ $user->thumbnail }}" class="mypage-user-thumb img-rounded">
             {{--<div style="backgrund-image: url(data:image/jpg;base64,{{{ $user->thumbnail }}});" class="mypage-user-thumb"></div>--}}
             @if($user->github)
                 <a href="https://github.com/{{ $user->github }}" class="mypage-user-account" target="_blank"><i class="fa fa-github u-mr8"></i>GitHub</a>
@@ -65,7 +66,7 @@
                         @if($snippets)
                             @foreach($snippets as $snippet)
                                 <li>
-                                    <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $snippet->thumbnail }}" alt="">
+                                    <img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->thumbnail }}" alt="">
                                     <div class="blue-knowledge-list-info">
                                         <a href="/snippet/{{{ $snippet->id }}}" class="blue-knowledge-list-title">{{{ $snippet->title }}}</a>
                                         {{--<ul class="list-inline">--}}
@@ -75,7 +76,7 @@
                                         {{--</li>--}}
                                         {{--@endforeach--}}
                                         {{--</ul>--}}
-                                        <p class="blue-knowledge-list-name">{{{ $snippet->created_at }}}に投稿</p>
+                                        <p class="blue-knowledge-list-name">{{ Carbon\Carbon::parse($snippet->created_at)->format('Y/m/d') }}に投稿</p>
                                     </div>
                                 </li>
                             @endforeach
@@ -96,7 +97,7 @@
                         @if($stocks)
                             @foreach($stocks as $stock)
                                 <li>
-                                    <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
+                                    <img class="blue-knowledge-list-thumb img-rounded" src="{{ $stock->thumbnail }}" alt="">
                                     <div class="blue-knowledge-list-info">
                                         <a href="/snippet/{{ $stock->snippet_id }}" class="blue-knowledge-list-title">{{ $stock->title }}</a>
                                         {{--<ul class="list-inline">--}}
@@ -107,7 +108,7 @@
                                         {{--@endforeach--}}
                                         {{--</ul>--}}
                                         <p class="blue-knowledge-list-name">
-                                            <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ $stock->snippet_created_at }}に投稿
+                                            <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ Carbon\Carbon::parse($stock->snippet_created_at)->format('Y/m/d') }}に投稿
                                         </p>
                                     </div>
                                 </li>
@@ -151,7 +152,7 @@
         {{--</div>--}}
     </div>
 </div>
-
+</div>
 @endsection
 
 @section('scripts')

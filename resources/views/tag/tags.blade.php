@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container animsition">
         <h3>タグ一覧</h3>
         <div>
             <ul class="tag-list__tags clearfix">

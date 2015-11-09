@@ -5,12 +5,13 @@
 @endsection
 
 @section('content')
+<div class="animsition">
     <div class="user-page-header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 clearfix">
                     <div class="user-page-icon">
-                        <img src="/{{ $user->thumbnail }}" class="img-rounded img-responsive">
+                        <img src="{{ $user->thumbnail }}" class="img-rounded img-responsive">
                     </div>
                     <div class="user-page-name">
                         <h2>{{ $user->name }}</h2>
@@ -18,7 +19,7 @@
                 </div>
                 <div class="col-sm-4">
                     @if(Auth::user()->id == $user->id)
-                        <a href="/settings/account" class="btn btn-info">プロフィールを編集する</a>
+                        <a href="/settings/account" class="btn u-btn">プロフィールを編集する</a>
                     @endif
                 </div>
             </div>
@@ -47,7 +48,7 @@
             <ul class="mypage-knowledge-list">
                 @foreach($stocks as $stock)
                     <li>
-                        <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $stock->thumbnail }}" alt="">
+                        <img class="blue-knowledge-list-thumb img-rounded" src="{{ $stock->thumbnail }}" alt="">
                         <div class="blue-knowledge-list-info">
                             <a href="/snippet/{{ $stock->snippet_id }}" class="blue-knowledge-list-title">{{ $stock->title }}</a>
                             {{--<ul class="list-inline">--}}
@@ -58,7 +59,7 @@
                             {{--@endforeach--}}
                             {{--</ul>--}}
                             <p class="blue-knowledge-list-name">
-                                <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ $stock->snippet_created_at }}に投稿
+                                <a href="/users/{{ $stock->user_id }}">{{ $stock->name }}</a>が{{ Carbon\Carbon::parse($stock->snippet_created_at)->format('Y/m/d') }}に投稿
                             </p>
                         </div>
                     </li>
@@ -73,4 +74,5 @@
             {!! $stocks->render() !!}
         </div>
     </div>
+</div>
 @endsection

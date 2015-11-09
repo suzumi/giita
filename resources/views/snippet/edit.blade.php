@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="animsition">
     <div class="snippet-form-wrapper">
         <div class="container-fluid snippet-form-container">
             {!! Form::open(['route' => ['snippet.update', $snippet->id], 'method' => 'PUT']) !!}
@@ -159,6 +160,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('scripts')

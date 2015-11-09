@@ -29,10 +29,13 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+        $hash = md5(strtolower(trim($data['email'])));
+        $gravatarUrl = 'http://www.gravatar.com/avatar/'. $hash . '?s=300&d=retro&r=g';
 		return User::create([
 			'name' => $data['name'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
+            'thumbnail' => $gravatarUrl,
 		]);
 	}
 

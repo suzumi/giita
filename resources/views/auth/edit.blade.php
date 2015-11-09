@@ -10,7 +10,7 @@
             {!! Session::get('success') !!}
         </div>
     @endif
-    <div class="container">
+    <div class="container animsition">
         <h3>ユーザー設定</h3>
         <div class="row edit-form-wrapper">
             <div class="col-sm-2">
@@ -31,7 +31,7 @@
                         <label>アイコン</label>
                     </dt>
                     <dd class="clearfix">
-                        <img src="/{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded js-user-thumb">
+                        <img src="{{ $user->thumbnail }}" class="mypage-user-edit-thumb img-rounded js-user-thumb">
                         <label class="mypage-input-file-wrap">
                             <input type="file" name="profile-icon" class="mypage-input-file js-input-file" accept="image/*">
                             ファイルを選択

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container animsition">
         <div class="info-wrapper">
             <h4>お知らせ</h4>
             @foreach($infoList as $info)

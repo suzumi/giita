@@ -14,7 +14,7 @@
 //Route::get('/', 'WelcomeController@index');
 
 Route::get('/', 'HomeController@index');
-Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
+//Route::get('weekly-report', 'SnippetController@weeklyReportTemplate');
 Route::post('/feedback', 'MailController@feedback');
 Route::get('/search', 'SnippetController@searchOnES');
 Route::get('/info', 'NewsController@getIndex');
@@ -22,6 +22,7 @@ Route::get('/info', 'NewsController@getIndex');
 //Route::get('mypage', 'SnippetController@mypage');
 Route::resource('comment', 'CommentController');
 Route::resource('snippet', 'SnippetController');
+Route::resource('events', 'EventController');
 Route::resource('users', 'Auth\UserController');
 Route::controllers([
 	'auth' => 'Auth\AuthController',

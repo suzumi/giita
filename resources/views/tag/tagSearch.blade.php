@@ -26,7 +26,7 @@
                     <ul class="mypage-knowledge-list">
                         @foreach($snippetsWithTag as $snippet)
                             <li>
-                                <img class="blue-knowledge-list-thumb img-rounded" src="/{{ $snippet->thumbnail }}" alt="">
+                                <img class="blue-knowledge-list-thumb img-rounded" src="{{ $snippet->thumbnail }}" alt="">
                                 <div class="blue-knowledge-list-info">
                                     <a href="/snippet/{{ $snippet->snippet_id }}" class="blue-knowledge-list-title">{{ $snippet->title }}</a>
                                     {{--<ul class="list-inline">--}}
@@ -37,7 +37,7 @@
                                     {{--@endforeach--}}
                                     {{--</ul>--}}
                                     <p class="blue-knowledge-list-name">
-                                        <a href="/users/{{ $snippet->user_id }}">{{ $snippet->name }}</a>が{{ $snippet->snippet_created_at }}に投稿
+                                        <a href="/users/{{ $snippet->user_id }}">{{ $snippet->name }}</a>が{{ Carbon\Carbon::parse($snippet->snippet_created_at)->format('Y年m月d日') }}に投稿
                                     </p>
                                 </div>
                             </li>
@@ -50,10 +50,10 @@
             <div class="col-sm-4">
                 <div class="event-col">
                     <div class="event-col-head">
-                        <img src="{{ asset('/img/assets/connpass_logo_3.png') }}" class="img-responsive">
+                        <a href="http://connpass.com/" target="_blank"><img src="{{ asset('/img/assets/connpass_logo_3.png') }}" class="img-responsive"></a>
                         <span>外部の勉強会(新着順)</span>
                     </div>
-                    <div class="event js-event-list">
+                    <div class="event js-event-list animsition">
                     </div>
                 </div>
             </div>

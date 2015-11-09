@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="item-wrapper">
+    <div class="item-wrapper animsition">
         <div class="item-header">
             <div class="container">
                 <div class="row">
@@ -50,7 +50,7 @@
                             @endif
                             <span>
                                 <a href="/users/{{ $snippet->users['id'] }}"><img
-                                            src="/{{$snippet->users['thumbnail']}}"
+                                            src="{{$snippet->users['thumbnail']}}"
                                             class="snippet-user-thumb img-rounded"></a>
                                 <a href="/users/{{ $snippet->users['id'] }}"
                                    class="snippet-user-name">{{{ $snippet->users['name'] }}}</a>が{{{ $snippet->created_at->format('Y/m/d H:i') }}}
@@ -98,19 +98,18 @@
                 <div class="row">
                     <div class="col-sm-9">
                         {!! $snippet->body !!}
-                        <div class="biita-blog-ad">
-                            <span class="label label-info">PR</span>
-                            <a target="_blank" id="ad-48" href="http://engineer.blue-corporation.jp/">blueエンジニアブログで記事を発信しよう
-                                - Blue enginner blog</a>
+                        <div class="gizumo-ad">
+                            <span class="label u-btn">PR</span>
+                            <a target="_blank" id="ad-48" href="http://54.92.125.67:8080/gitbucket/">社内のGitリポジトリはこちら！ - GitBucket</a>
                         </div>
                         <div class="comment-wrapper">
                             @foreach($parsedComment as $comment)
                                 <div class="comment-form-header" id="comment-{{ $comment->comment_id }}">
-                                    <img src="/{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
+                                    <img src="{{ $comment->thumbnail }}" class="comment-form-icon img-rounded">
 
                                     <div class="comment-form-title"><a
                                                 href="/users/{{ $comment->user_id }}">{{ $comment->name }}</a></div>
-                                    <time class="pull-right">{{ $comment->created_at }}</time>
+                                    <time class="pull-right">{{ Carbon\Carbon::parse($comment->created_at)->format('Y/m/d H:i') }}</time>
                                     @if($comment->user_id === Auth::user()->id)
                                         <button class="btn u-btn btn-xs js-comment-edit">編集</button>
                                         {!! Form::open(['route'=>['comment.destroy',$snippet->id], 'method'=>'DELETE',
@@ -154,7 +153,7 @@
                             @endforeach
                             <div class="item-comment">
                                 <div class="comment-form-header">
-                                    <img src="/{{ Auth::user()->thumbnail }}" class="comment-form-icon img-rounded">
+                                    <img src="{{ Auth::user()->thumbnail }}" class="comment-form-icon img-rounded">
 
                                     <div class="comment-form-title">コメントを投稿する</div>
                                 </div>
@@ -182,7 +181,7 @@
                     <div class="col-sm-3">
                         <div class="snippet-right">
                             <div class="snippet-right__profile clearfix">
-                                <img src="/{{ $snippet->users['thumbnail'] }}" class="blue-knowledge-list-thumb img-rounded">
+                                <img src="{{ $snippet->users['thumbnail'] }}" class="blue-knowledge-list-thumb img-rounded">
                                 <a href="/users/{{ $snippet->users['id'] }}">{{ $snippet->users['name'] }}</a>
                             </div>
                             <div class="snippet-right__snippetList">
