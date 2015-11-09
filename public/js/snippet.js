@@ -24,7 +24,7 @@
             })
             .done(function (data) {
                 var tags = data.tags;
-                var weeklyReportId = data.wrTag.id;
+                //var weeklyReportId = data.wrTag.id;
                 $(".js-tags-autocomplete").select2({
                     placeholder: "タグを選択してください",
                     data: tags
@@ -32,9 +32,9 @@
                 if ($(".js-tags-autocomplete").data("is-weekly-report")) {
                     $('.select2-search__field').keyup();
                     $('.select2-results__option').each(function(i) {
-                        if ((i + 1) === weeklyReportId) {
-                            $(this).mouseup();
-                        }
+                        //if ((i + 1) === weeklyReportId) {
+                        //    $(this).mouseup();
+                        //}
                     });
                 } else if ($(".js-tags-autocomplete").data("tags")) {
                     var tags = $(".js-tags-autocomplete").data("tags");
