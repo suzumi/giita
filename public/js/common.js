@@ -54,7 +54,7 @@
                                     unreadList +
                                     '<a href="/snippet/' + data.notifications[i].snippet_id + '?read=1&nty=' + data.notifications[i].notify_id + '#comment-' + data.notifications[i].comment_id + '" class="globalNotificationContents_itemLink">' +
                                     '<div class="globalNotificationContents_itemIcon">' +
-                                        '<img src="/' + data.notifications[i].thumbnail + '">' +
+                                        '<img src="' + data.notifications[i].thumbnail + '">' +
                                     '</div>' +
                                     '<div class="globalNotificationContents_itemText">' +
                                         '<span class="bold">' + data.notifications[i].name + '</span>があなたの投稿<span class="title">"' + data.notifications[i].title + '"</span>に<span class="bold">コメント</span>しました。' +
