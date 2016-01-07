@@ -28,8 +28,7 @@ return [
 	|
 	*/
 
-//	'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-	'host' => 'smtp.gmail.com',
+	'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -42,8 +41,7 @@ return [
 	|
 	*/
 
-//	'port' => env('MAIL_PORT', 587),
-	'port' => 465,
+	'port' => env('MAIL_PORT', 587),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -56,13 +54,9 @@ return [
 	|
 	*/
 
-//	'from' => [
-//		'address' => env('MAIL_FROM_ADDRESS', null),
-//		'name' => env('MAIL_FROM_NAME', null)
-//	],
 	'from' => [
-		'address' => 'official.blue.inc.engineer@gmail.com',
-		'name' => 'Biitaお問い合わせ'
+		'address' => env('MAIL_FROM_ADDRESS', null),
+		'name' => env('MAIL_FROM_NAME', null)
 	],
 
 	/*
@@ -76,8 +70,7 @@ return [
 	|
 	*/
 
-//	'encryption' => env('MAIL_ENCRYPTION', null),
-	'encryption' => 'ssl',
+	'encryption' => env('MAIL_ENCRYPTION', null),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -90,8 +83,8 @@ return [
 	|
 	*/
 
-//	'username' => env('MAIL_USERNAME', null),
-	'username' => 'official.blue.inc.engineer@gmail.com',
+	'username' => env('MAIL_USERNAME', null),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -104,8 +97,7 @@ return [
 	|
 	*/
 
-//	'password' => env('MAIL_PASSWORD', null),
-	'password' => 'adminadminadmin',
+	'password' => env('MAIL_PASSWORD', null),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -131,6 +123,5 @@ return [
 	|
 	*/
 
-//	'pretend' => env('MAIL_PRETEND', false),
-	'pretend' => false,
+	'pretend' => env('MAIL_PRETEND', false),
 ];
